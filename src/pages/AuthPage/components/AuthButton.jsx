@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const AuthButton = ({ type }) => {
+const AuthButton = ({ type, handleToggle }) => {
   const buttonName = type === 'login' ? '로그인' : '회원가입';
   return <Button>{buttonName}</Button>;
 };
