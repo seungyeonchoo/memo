@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
-const AuthButton = ({ children }) => {
-  return <Button>{children}</Button>;
+const AuthButton = ({ type }) => {
+  const buttonName = type === 'login' ? '로그인' : '회원가입';
+  return <Button>{buttonName}</Button>;
 };
 
 export default AuthButton;

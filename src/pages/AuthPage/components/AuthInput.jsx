@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-const AuthInput = ({ label, name }) => {
+const AuthInput = ({ label, type }) => {
   return (
     <Label>
       {label}
-      <Input type={name} />
+      <Input type={type} />
     </Label>
   );
 };
