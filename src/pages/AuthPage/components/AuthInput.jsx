@@ -1,16 +1,10 @@
 import styled from 'styled-components';
-
-const Place_Holder = {
-  이메일: '이메일을 입력해주세요.',
-  비밀번호: '비밀번호를 입력해주세요.',
-  비밀번호확인: '비밀번호를 다시 한 번 입력해주세요',
-  이름: '이름을 입력해주세요.',
-};
+import { LabelText, Place_Holder } from '../../../constant/Constant';
 
 const AuthInput = ({ label, type }) => {
   return (
     <Label>
-      {label === '비밀번호확인' ? '비밀번호 확인' : label}
+      {LabelText[label]}
       <Input type={type} placeholder={Place_Holder[label]} />
     </Label>
   );

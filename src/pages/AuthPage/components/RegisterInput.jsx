@@ -4,10 +4,10 @@ import AuthInputBox from './AuthInputBox';
 const RegisterInput = () => {
   return (
     <AuthInputBox>
-      <AuthInput label="이메일" type="email" />
-      <AuthInput label="비밀번호" type="password" />
-      <AuthInput label="비밀번호확인" type="password" />
-      <AuthInput label="이름" type="text" />
+      <AuthInput label="email" type="email" />
+      <AuthInput label="password" type="password" />
+      <AuthInput label="password_confirm" type="password" />
+      <AuthInput label="name" type="text" />
     </AuthInputBox>
   );
 };

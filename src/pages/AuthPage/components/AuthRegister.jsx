@@ -1,13 +1,12 @@
 import styled from 'styled-components';
-import useToggle from '../../../hooks/useToggle';
 
 const message = {
-  login: '이미 계정이 있으신가요?',
-  register: '아직 계정이 없으신가요?',
+  register: '이미 계정이 있으신가요?',
+  login: '아직 계정이 없으신가요?',
 };
 
 const AuthRegister = ({ type, handleToggle }) => {
-  const moveTo = type === 'login' ? '로그인' : '회원가입';
+  const moveTo = type === 'login' ? '회원가입' : '로그인';
   return (
     <Box>
       {message[type]} <Button onClick={handleToggle}>{moveTo} 화면으로</Button>
