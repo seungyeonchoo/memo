@@ -8,4 +8,10 @@ const AuthTitle = ({ type }) => {
 
 export default AuthTitle;
 
-const TitleText = styled.h1``;
+const TitleText = styled.h1`
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 1em;
+  text-align: center;
+  color: #212121;
+`;

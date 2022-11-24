@@ -6,4 +6,8 @@ const AuthInputBox = ({ children }) => {
 
 export default AuthInputBox;
 
-const Box = styled.div``;
+const Box = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
