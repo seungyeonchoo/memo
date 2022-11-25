@@ -5,13 +5,13 @@ class Http {
     this.url = url;
   }
 
-  get = () => {
-    const response = fetch(`${BASE_URL}/${this.url}`).then(res => res.json());
+  get = async () => {
+    const response = await fetch(`${BASE_URL}/${this.url}`).then(res => res.json());
     return response;
   };
 
-  post = item => {
-    const response = fetch(`${BASE_URL}/${this.url}`, {
+  post = async item => {
+    const response = await fetch(`${BASE_URL}/${this.url}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -21,3 +21,5 @@ class Http {
     return response;
   };
 }
+
+export default Http;
