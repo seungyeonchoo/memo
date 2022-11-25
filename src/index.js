@@ -5,14 +5,27 @@ import reportWebVitals from './reportWebVitals';
 import GlobalStyles from './styles/GlobalStyle';
 import { Provider } from 'react-redux';
 import store from './store';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+      retry: false,
+    },
+  },
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <GlobalStyles />
-      <App />
-    </Provider>
+    <QueryClientProvider client={queryClient}>
+      <Provider store={store}>
+        <GlobalStyles />
+        <App />
+      </Provider>
+    </QueryClientProvider>
   </React.StrictMode>
 );
 
