@@ -1,11 +1,18 @@
 import styled from 'styled-components';
 import { LabelText, Place_Holder } from '../../../constant/Constant';
+import useInput from '../../../hooks/useInput';
 
 const AuthInput = ({ label, type }) => {
+  const { handleInputChange } = useInput();
   return (
     <Label>
       {LabelText[label]}
-      <Input type={type} placeholder={Place_Holder[label]} />
+      <Input
+        type={type}
+        name={label}
+        placeholder={Place_Holder[label]}
+        onChange={handleInputChange}
+      />
     </Label>
   );
 };

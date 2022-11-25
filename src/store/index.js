@@ -1,6 +1,10 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { applyMiddleware, combineReducers, configureStore } from '@reduxjs/toolkit';
+import logger from 'redux-logger';
+import inputSlice from './slices/inputSlice';
 
-const rootReducer = combineReducers({});
+const rootReducer = combineReducers({
+  input: inputSlice,
+});
 
 const store = configureStore({
   reducer: rootReducer,

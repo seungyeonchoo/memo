@@ -1,15 +1,16 @@
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { inputChange } from '../store/slices/inputSlice';
 
 const useInput = () => {
-  const [input, setInput] = useState();
+  const dispatch = useDispatch();
+  const { inputState } = useSelector(state => state.input);
 
   const handleInputChange = e => {
     const { name, value } = e.target;
-    console.log({ [name]: value });
-    // setInput({ ...input, [name]: value });
+    dispatch(inputChange({ ...inputState, [name]: value }));
   };
 
-  return { input, handleInputChange };
+  return { inputState, handleInputChange };
 };
 
 export default useInput;
