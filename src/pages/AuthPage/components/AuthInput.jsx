@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { LabelText, Place_Holder } from '../../../constant/Constant';
+import { LabelText, Place_Holder } from '../../../utils/constant';
 import useInput from '../../../hooks/useInput';
 
-const AuthInput = ({ label, type }) => {
+const AuthInput = ({ label, type, value }) => {
   const { handleInputChange } = useInput();
   return (
     <Label>
@@ -10,8 +10,8 @@ const AuthInput = ({ label, type }) => {
       <Input
         type={type}
         name={label}
+        value={value}
         placeholder={Place_Holder[label]}
-        // onChange={label !== 'password_confirm' ? handleInputChange : null}
         onChange={handleInputChange}
       />
     </Label>
