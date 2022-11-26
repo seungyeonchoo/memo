@@ -1,4 +1,4 @@
-const BASE_URL = process.env.REACT_APP_BASE_URL;
+import instance from './instance';
 
 class Http {
   constructor(url) {
@@ -6,19 +6,13 @@ class Http {
   }
 
   get = async () => {
-    const response = await fetch(`${BASE_URL}/${this.url}`).then(res => res.json());
-    return response;
+    const { data } = await instance.get(this.url);
+    return data;
   };
 
   post = async item => {
-    const response = await fetch(`${BASE_URL}/${this.url}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(item),
-    });
-    return response;
+    const { data } = await instance.post(this.url, item);
+    return data;
   };
 }
 

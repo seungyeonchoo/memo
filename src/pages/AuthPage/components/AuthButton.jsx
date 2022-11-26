@@ -1,8 +1,11 @@
 import styled from 'styled-components';
+import useAuth from '../../../hooks/useAuth';
 
-const AuthButton = ({ type, handleToggle }) => {
+const AuthButton = ({ type }) => {
   const buttonName = type === 'login' ? '로그인' : '회원가입';
-  return <Button>{buttonName}</Button>;
+  const { handleAuthEvent } = useAuth(type);
+
+  return <Button onClick={handleAuthEvent}>{buttonName}</Button>;
 };
 
 export default AuthButton;
