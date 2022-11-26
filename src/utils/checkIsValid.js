@@ -1,13 +1,10 @@
+export const emailCheck = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/g;
+export const passwordCheck = /^.{8,}$/g;
+
 export const checkLoginInput = input => {
-  const idCheck = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/g;
-  const passwordCheck = /^.{8,}$/g;
-  const validation = idCheck.test(input.email) && passwordCheck.test(input.password);
-  if (input.email === undefined || input.password === undefined) return false;
-  return validation;
+  return emailCheck.test(input.email) && passwordCheck.test(input.password);
 };
 
 export const checkSignupInput = input => {
-  const validation = checkLoginInput(input) && input.password === input.password_confirm;
-  if (input.password_confirm === undefined || input.name === undefined) return false;
-  return validation;
+  return checkLoginInput(input) && input.password === input.password_confirm;
 };
