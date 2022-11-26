@@ -3,7 +3,7 @@ import Http from '../services/Http';
 import TokenStorage from '../utils/TokenStorage';
 import useInput from './useInput';
 
-const useAuth = type => {
+const useAuth = (type, handleToggle) => {
   const authService = new Http(type);
   const tokenStorage = new TokenStorage();
 
@@ -11,9 +11,18 @@ const useAuth = type => {
   const { mutate } = useMutation(authService.post);
 
   const handleAuthEvent = () => {
-    mutate(inputState, {
-      onSuccess: data => tokenStorage.setToken(data.accessToken),
-    });
+    if (type === 'login') {
+      mutate(inputState, {
+        onSuccess: data => tokenStorage.setToken(data.accessToken),
+      });
+    }
+    if (type === 'signup') {
+      const signupInput = { ...inputState, password_confirm: true };
+      mutate(signupInput, {
+        onSuccess: data => tokenStorage.setToken(data.accessToken),
+      });
+      handleToggle();
+    }
   };
 
   return { handleAuthEvent };

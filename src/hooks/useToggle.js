@@ -4,7 +4,7 @@ const useToggle = () => {
   const [isToggled, setIsToggled] = useState(false);
 
   const handleIsToggled = e => {
-    e.preventDefault();
+    // e.preventDefault();
     setIsToggled(!isToggled);
   };
 

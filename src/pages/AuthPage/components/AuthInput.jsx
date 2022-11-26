@@ -11,6 +11,7 @@ const AuthInput = ({ label, type }) => {
         type={type}
         name={label}
         placeholder={Place_Holder[label]}
+        // onChange={label !== 'password_confirm' ? handleInputChange : null}
         onChange={handleInputChange}
       />
     </Label>
