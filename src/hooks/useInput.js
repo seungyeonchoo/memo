@@ -10,7 +10,11 @@ const useInput = () => {
     dispatch(inputChange({ ...inputState, [name]: value }));
   };
 
-  return { inputState, handleInputChange };
+  const handleInputInit = () => {
+    dispatch(inputChange({}));
+  };
+
+  return { inputState, handleInputChange, handleInputInit };
 };
 
 export default useInput;

@@ -8,7 +8,7 @@ import RegisterInput from './components/RegisterInput';
 
 const AuthPage = () => {
   const { isToggled, handleIsToggled } = useToggle();
-  const type = isToggled ? 'register' : 'login';
+  const type = isToggled ? 'signup' : 'login';
 
   return (
     <Container>
