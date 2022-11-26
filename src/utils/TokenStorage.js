@@ -1,4 +1,4 @@
-import { TOKEN_KEY } from '../constant/Constant';
+import { TOKEN_KEY } from './constant';
 
 const STORAGE = localStorage;
 
