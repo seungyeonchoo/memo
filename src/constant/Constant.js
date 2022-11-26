@@ -11,3 +11,5 @@ export const LabelText = {
   password_confirm: '비밀번호 확인',
   name: '이름',
 };
+
+export const TOKEN_KEY = 'ACCESS_TOKEN';
