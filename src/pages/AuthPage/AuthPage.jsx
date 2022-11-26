@@ -7,15 +7,14 @@ import LoginInput from './components/LoginInput';
 import RegisterInput from './components/RegisterInput';
 
 const AuthPage = () => {
-  const { isToggled, handleIsToggled } = useToggle();
-  const type = isToggled ? 'signup' : 'login';
+  const { authToggle, handleAuthToggle } = useToggle();
 
   return (
     <Container>
-      <AuthTitle type={type} />
-      {isToggled ? <RegisterInput /> : <LoginInput />}
-      <AuthButton type={type} handleToggle={handleIsToggled} />
-      <AuthRegister type={type} handleToggle={handleIsToggled} />
+      <AuthTitle />
+      {authToggle ? <RegisterInput /> : <LoginInput />}
+      <AuthButton handleToggle={handleAuthToggle} />
+      <AuthRegister handleToggle={handleAuthToggle} />
     </Container>
   );
 };

@@ -1,13 +1,16 @@
 import styled from 'styled-components';
 import useAuth from '../../../hooks/useAuth';
 import useInput from '../../../hooks/useInput';
+import useToggle from '../../../hooks/useToggle';
 import { checkLoginInput, checkSignupInput } from '../../../utils/checkIsValid';
 
-const AuthButton = ({ type, handleToggle }) => {
-  const buttonName = type === 'login' ? '로그인' : '회원가입';
-  const { handleAuthEvent } = useAuth(type, handleToggle);
-  const { inputState } = useInput();
-  const isValid = type === 'login' ? checkLoginInput(inputState) : checkSignupInput(inputState);
+const AuthButton = () => {
+  const { authToggle } = useToggle();
+  const { signin, signup } = useInput();
+  const { handleAuthEvent } = useAuth();
+
+  const buttonName = authToggle ? '회원가입' : '로그인';
+  const isValid = authToggle ? checkSignupInput(signup) : checkLoginInput(signin);
 
   return (
     <Button onClick={handleAuthEvent} disabled={!isValid}>

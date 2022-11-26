@@ -1,14 +1,15 @@
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { authToggleChange } from '../store/slices/toggleSlice';
 
 const useToggle = () => {
-  const [isToggled, setIsToggled] = useState(false);
+  const dispatch = useDispatch();
+  const { authToggle } = useSelector(state => state.toggle);
 
-  const handleIsToggled = e => {
-    // e.preventDefault();
-    setIsToggled(!isToggled);
+  const handleAuthToggle = () => {
+    dispatch(authToggleChange());
   };
 
-  return { isToggled, handleIsToggled };
+  return { authToggle, handleAuthToggle };
 };
 
 export default useToggle;
