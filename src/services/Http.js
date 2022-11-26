@@ -14,6 +14,16 @@ class Http {
     const { data } = await instance.post(this.url, item);
     return data;
   };
+
+  put = async item => {
+    const { data } = await instance.post(this.url, item);
+    return data;
+  };
+
+  patch = async item => {
+    const { data } = await instance.post(this.url, item);
+    return data;
+  };
 }
 
 export default Http;
