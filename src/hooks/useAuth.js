@@ -10,6 +10,7 @@ const useAuth = () => {
 
   const authService = new Http(authToggle ? 'signup' : 'signin');
   const tokenStorage = new TokenStorage();
+  let nowLogin;
 
   const { mutate } = useMutation(authService.post);
 
@@ -17,8 +18,7 @@ const useAuth = () => {
     if (authToggle) {
       const signupInput = { ...signup, password_confirm: true };
       mutate(signupInput, {
-        onSuccess: data => {
-          tokenStorage.setToken(data.accessToken);
+        onSuccess: () => {
           handleAuthToggle();
         },
       });
@@ -33,7 +33,7 @@ const useAuth = () => {
     handleInputInit();
   };
 
-  return { handleAuthEvent };
+  return { handleAuthEvent, nowLogin };
 };
 
 export default useAuth;

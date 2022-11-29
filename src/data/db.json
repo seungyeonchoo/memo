@@ -3,28 +3,10 @@
     {
       "email": "admin@admin.com",
       "password": "$2a$10$W.7Rtf9ld5BpCLYt966QjO6wmeeJKVx39aFrJx4igcMDEj95KPxty",
-      "password_confirm": "admin1234",
+      "password_confirm": true,
       "name": "admin",
-      "id": 1
-    },
-    {
-      "email": "test@test.com",
-      "password": "$2a$10$xW3eAcTqPJTSy1wBA5DIcud/oN0p2FACfw.uIz9BXSQyUIWmb1H3K",
-      "name": "test계정",
-      "id": 2
-    },
-    {
-      "email": "test@t.com",
-      "password": "$2a$10$gMbn.ehO8DDy37cpQclCKO2Zhl8ujBQGiilfqoQ52SwcucUjKsNC.",
-      "name": "test",
-      "id": 3
-    },
-    {
-      "email": "aaa@aaa.com",
-      "password": "$2a$10$GE5USmFkSK5FqmNLQEdDKeblToRX7QukygSTZvsNNLzXN.ngXArxC",
-      "password_confirm": null,
-      "name": "aaa",
-      "id": 4
+      "id": 1,
+      "interest": ["IT/Tech", "건강"]
     }
   ]
 }
