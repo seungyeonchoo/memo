@@ -1,14 +1,18 @@
 import styled from 'styled-components';
-import UserProfile from './components/UserProfile';
+import UserGoal from './components/UserGoal/UserGoal';
+import UserProfile from './components/UserProfile/UserProfile';
 
 const UserPage = () => {
   return (
     <UserContainer>
       <UserProfile />
+      <UserGoal />
     </UserContainer>
   );
 };
 
 export default UserPage;
 
-const UserContainer = styled.section``;
+const UserContainer = styled.section`
+  display: flex;
+`;
