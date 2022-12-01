@@ -9,6 +9,7 @@ const GoalItem = ({ data }) => {
             <div>
               <div>{goal.due_date}까지</div>
               <div>{goal.goal_name}</div>
+              <div>{goal.description}</div>
             </div>
             <div>
               <button>완료</button>

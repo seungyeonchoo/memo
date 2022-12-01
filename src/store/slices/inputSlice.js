@@ -3,13 +3,13 @@ import { createSlice } from '@reduxjs/toolkit';
 const inputSlice = createSlice({
   name: 'input',
   initialState: {
-    inputState: {},
     signin: { email: '', password: '' },
     signup: { email: '', password: '', password_confirm: '', name: '' },
+    goalInput: { due_date: '', goal_name: '', description: '' },
   },
   reducers: {
-    inputChange: (state, action) => {
-      state.inputState = action.payload;
+    goalInputChange: (state, action) => {
+      state.goalInput = action.payload;
     },
     signinChange: (state, action) => {
       state.signin = action.payload;
@@ -20,5 +20,5 @@ const inputSlice = createSlice({
   },
 });
 
-export const { inputChange, signinChange, signupChange } = inputSlice.actions;
+export const { goalInputChange, signinChange, signupChange } = inputSlice.actions;
 export default inputSlice.reducer;
