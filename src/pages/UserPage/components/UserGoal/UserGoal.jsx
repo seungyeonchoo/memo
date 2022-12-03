@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import useGoal from '../../../../hooks/useGoal';
 import useToggle from '../../../../hooks/useToggle';
 import useUser from '../../../../hooks/useUser';
 import GoalInput from './components/GoalInput';
@@ -6,9 +7,10 @@ import GoalItem from './components/GoalItem';
 import GoalTitle from './components/GoalTitle';
 
 const UserGoal = () => {
-  const { data, addUserGoal } = useUser('profile', '1');
+  const { data } = useUser('profile', '1');
+  const { createNewGoal } = useGoal();
   const { addGoal, handleAddGoal } = useToggle();
-  const handleCreateGoal = addGoal ? addUserGoal : handleAddGoal;
+  const handleCreateGoal = addGoal ? createNewGoal : handleAddGoal;
   return (
     <GoalContainer>
       <GoalTitle data={data} />

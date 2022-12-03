@@ -16,12 +16,12 @@ class Http {
   };
 
   put = async item => {
-    const { data } = await instance.post(this.url, item);
+    const { data } = await instance.put(this.url, item);
     return data;
   };
 
-  patch = async item => {
-    const { data } = await instance.post(this.url, item);
+  patch = async (url, item) => {
+    const { data } = await instance.patch(`${this.url}/${url}`, item);
     return data;
   };
 }

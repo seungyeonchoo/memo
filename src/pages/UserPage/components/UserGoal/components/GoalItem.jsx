@@ -1,6 +1,8 @@
 import styled from 'styled-components';
+import useGoal from '../../../../../hooks/useGoal';
 
 const GoalItem = ({ data }) => {
+  const { completeGoal } = useGoal();
   return (
     <ItemBox>
       {data?.user_goals.map(goal => {
@@ -12,7 +14,7 @@ const GoalItem = ({ data }) => {
               <div>{goal.description}</div>
             </div>
             <div>
-              <button>완료</button>
+              <button onClick={completeGoal}>완료</button>
               <button>수정</button>
             </div>
           </Item>

@@ -1,9 +1,7 @@
-import { useMutation, useQuery } from 'react-query';
+import { useQuery } from 'react-query';
 import { useDispatch, useSelector } from 'react-redux';
 import Http from '../services/Http';
 import { goalInputChange } from '../store/slices/inputSlice';
-import { addGoalChange } from '../store/slices/toggleSlice';
-import useToggle from './useToggle';
 
 const useUser = (queryId, userId) => {
   // fetch user data
@@ -19,19 +17,7 @@ const useUser = (queryId, userId) => {
     dispatch(goalInputChange({ ...goalInput, [name]: value }));
   };
 
-  // mutation server state
-  // 1. add new user goal
-  const goalPost = new Http('goals');
-  const { mutate } = useMutation(goalPost.post);
-  const addUserGoal = () => {
-    mutate(goalInput, {
-      onSuccess: () => {
-        dispatch(addGoalChange());
-      },
-    });
-  };
-
-  return { data, handleInputChange, addUserGoal };
+  return { data, handleInputChange };
 };
 
 export default useUser;
