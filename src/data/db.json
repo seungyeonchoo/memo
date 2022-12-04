@@ -6,32 +6,7 @@
       "password_confirm": true,
       "name": "admin",
       "id": 1,
-      "interest": [
-        "IT/Tech",
-        "건강"
-      ],
-      "user_goals": [
-        {
-          "id": 1,
-          "date": "2022-11-30",
-          "due_date": "2022-12-25",
-          "is_public": false,
-          "goal_name": "자바스크립트 마스터",
-          "is_complete": false,
-          "is_edit": false,
-          "description": "자바스크립트를 마스터한다."
-        },
-        {
-          "id": 2,
-          "date": "2022-11-30",
-          "due_date": "2022-12-25",
-          "is_public": false,
-          "goal_name": "리액트 마스터",
-          "is_complete": false,
-          "is_edit": false,
-          "description": "리액트를 마스터한다."
-        }
-      ]
+      "interest": ["IT/Tech", "건강"]
     }
   ],
   "goals": [
@@ -42,7 +17,7 @@
       "due_date": "2022-12-25",
       "is_public": false,
       "goal_name": "자바스크립트 마스터",
-      "is_complete": false,
+      "is_complete": true,
       "is_edit": false,
       "description": "자바스크립트를 마스터한다."
     },
@@ -74,6 +49,12 @@
       "goal_name": "11",
       "description": "22",
       "id": 5
+    },
+    {
+      "due_date": "2022-12-08",
+      "goal_name": "asd",
+      "description": "asda",
+      "id": 6
     }
   ]
 }

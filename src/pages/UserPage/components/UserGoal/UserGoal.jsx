@@ -7,16 +7,16 @@ import GoalItem from './components/GoalItem';
 import GoalTitle from './components/GoalTitle';
 
 const UserGoal = () => {
-  const { data } = useUser('profile', '1');
+  const { userData } = useUser();
   const { createNewGoal } = useGoal();
   const { addGoal, handleAddGoal } = useToggle();
   const handleCreateGoal = addGoal ? createNewGoal : handleAddGoal;
   return (
     <GoalContainer>
-      <GoalTitle data={data} />
+      <GoalTitle data={userData} />
       {addGoal && <GoalInput />}
       <CreateButton onClick={handleCreateGoal}>목표 추가하기</CreateButton>
-      <GoalItem data={data} />
+      <GoalItem data={userData} />
     </GoalContainer>
   );
 };

@@ -5,7 +5,7 @@ const GoalItem = ({ data }) => {
   const { completeGoal } = useGoal();
   return (
     <ItemBox>
-      {data?.user_goals.map(goal => {
+      {data?.goals.map(goal => {
         return (
           <Item key={goal.id}>
             <div>

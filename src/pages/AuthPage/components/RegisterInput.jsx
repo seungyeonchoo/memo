@@ -1,9 +1,9 @@
-import useInput from '../../../hooks/useInput';
+import useAuth from '../../../hooks/useAuth';
 import AuthInput from './AuthInput';
 import AuthInputBox from './AuthInputBox';
 
 const RegisterInput = () => {
-  const { signup } = useInput();
+  const { signup } = useAuth();
   return (
     <AuthInputBox>
       <AuthInput label="email" type="email" value={signup.email} />

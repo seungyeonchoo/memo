@@ -1,16 +1,24 @@
 import { useMutation } from 'react-query';
 import { useDispatch, useSelector } from 'react-redux';
 import Http from '../services/Http';
+import { goalInputChange } from '../store/slices/inputSlice';
 import { addGoalChange } from '../store/slices/toggleSlice';
 
 const useGoal = () => {
-  const goalPost = new Http('goals');
   const dispatch = useDispatch();
   const { goalInput } = useSelector(state => state.input);
 
+  // handle goal input
+
+  const handleGoalInput = e => {
+    const { name, value } = e.target;
+    dispatch(goalInputChange({ ...goalInput, [name]: value }));
+  };
+
   // mutation server state
   // 1. add new user goal
-  const { mutate: createGoal } = useMutation(goalPost.post);
+  const postGoal = new Http('goals').post;
+  const { mutate: createGoal } = useMutation(postGoal);
   const createNewGoal = () => {
     createGoal(goalInput, {
       onSuccess: () => {
@@ -19,12 +27,13 @@ const useGoal = () => {
     });
   };
   // 2. update is_complete of goal
-  const { mutate: updateIsComplete } = useMutation(goalPost.patch);
+  const patchIsComplete = new Http('goals/1').patch;
+  const { mutate: updateIsComplete } = useMutation(patchIsComplete);
   const completeGoal = () => {
-    updateIsComplete(1, { is_complete: true });
+    updateIsComplete({ is_complete: true });
   };
 
-  return { createNewGoal, completeGoal };
+  return { createNewGoal, completeGoal, handleGoalInput };
 };
 
 export default useGoal;

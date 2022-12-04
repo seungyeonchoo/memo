@@ -1,15 +1,17 @@
 import styled from 'styled-components';
+import useAuth from '../../../../hooks/useAuth';
 import useUser from '../../../../hooks/useUser';
 import BasicInfo from './components/BasicInfo';
 import ProfileImg from './components/ProfileImg';
 
 const UserProfile = () => {
-  const { data } = useUser('profile', '1');
+  const { authData } = useAuth();
+  const { userData } = useUser(authData?.user.id);
   return (
     <ProfileBox>
       <Box>
-        <ProfileImg data={data} />
-        <BasicInfo data={data} />
+        <ProfileImg data={userData} />
+        <BasicInfo data={userData} />
       </Box>
     </ProfileBox>
   );

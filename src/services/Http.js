@@ -5,8 +5,8 @@ class Http {
     this.url = url;
   }
 
-  get = async () => {
-    const { data } = await instance.get(this.url);
+  get = async _params => {
+    const { data } = await instance.get(this.url, { params: _params });
     return data;
   };
 
@@ -16,13 +16,11 @@ class Http {
   };
 
   put = async item => {
-    const { data } = await instance.put(this.url, item);
-    return data;
+    await instance.put(this.url, item);
   };
 
-  patch = async (url, item) => {
-    const { data } = await instance.patch(`${this.url}/${url}`, item);
-    return data;
+  patch = async item => {
+    await instance.patch(this.url, item);
   };
 }
 

@@ -1,39 +1,63 @@
 import { useMutation } from 'react-query';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import Http from '../services/Http';
-import TokenStorage from '../utils/TokenStorage';
-import useInput from './useInput';
+import { signinChange, signupChange } from '../store/slices/inputSlice';
+import { saveUserId } from '../store/slices/userSlice';
+import TokenStorage from '../utils/Storage';
 import useToggle from './useToggle';
 
 const useAuth = () => {
+  const nav = useNavigate();
+  const dispatch = useDispatch();
   const { authToggle, handleAuthToggle } = useToggle();
-  const { signin, signup, handleInputInit } = useInput();
-
   const authService = new Http(authToggle ? 'signup' : 'signin');
   const tokenStorage = new TokenStorage();
-  let nowLogin;
 
-  const { mutate } = useMutation(authService.post);
+  // handle Auth input change
+
+  const { signin, signup } = useSelector(state => state.input);
+
+  const initialSignin = { email: '', password: '' };
+  const initialSignup = { email: '', password: '', password_confirm: '', name: '' };
+
+  const handleAuthInput = e => {
+    const { name, value } = e.target;
+    if (authToggle) dispatch(signupChange({ ...signup, [name]: value }));
+    else dispatch(signinChange({ ...signin, [name]: value }));
+  };
+
+  const handleInputInit = () => {
+    if (authToggle) dispatch(signupChange(initialSignup));
+    else dispatch(signinChange(initialSignin));
+  };
+
+  // handle login / signup
+
+  const { mutate: handleAuth, data: authData } = useMutation(authService.post);
 
   const handleAuthEvent = () => {
     if (authToggle) {
       const signupInput = { ...signup, password_confirm: true };
-      mutate(signupInput, {
+      handleAuth(signupInput, {
         onSuccess: () => {
           handleAuthToggle();
         },
       });
     }
     if (!authToggle) {
-      mutate(signin, {
+      handleAuth(signin, {
         onSuccess: data => {
           tokenStorage.setToken(data.accessToken);
+          dispatch(saveUserId(data.user.id));
+          nav(`user/${data.user.id}`);
         },
       });
     }
     handleInputInit();
   };
 
-  return { handleAuthEvent, nowLogin };
+  return { authData, signin, signup, handleAuthInput, handleAuthEvent };
 };
 
 export default useAuth;

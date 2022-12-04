@@ -1,23 +1,12 @@
 import { useQuery } from 'react-query';
-import { useDispatch, useSelector } from 'react-redux';
 import Http from '../services/Http';
-import { goalInputChange } from '../store/slices/inputSlice';
 
-const useUser = (queryId, userId) => {
+const useUser = user_id => {
   // fetch user data
-  const userFetch = new Http(userId ? `users/${userId}` : 'users');
-  const { data } = useQuery(['User', queryId], () => userFetch.get());
+  const userFetch = new Http(`users/${user_id}`);
+  const { data: userData } = useQuery(['user', user_id], () => userFetch.get({ _embed: 'goals' }));
 
-  // handle goal input change
-  const dispatch = useDispatch();
-  const { goalInput } = useSelector(state => state.input);
-
-  const handleInputChange = e => {
-    const { name, value } = e.target;
-    dispatch(goalInputChange({ ...goalInput, [name]: value }));
-  };
-
-  return { data, handleInputChange };
+  return { userData };
 };
 
 export default useUser;
