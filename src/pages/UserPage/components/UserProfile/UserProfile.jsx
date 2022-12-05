@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import useAuth from '../../../../hooks/useAuth';
 import useUser from '../../../../hooks/useUser';
+import { UserStorage } from '../../../../utils/Storage';
 import BasicInfo from './components/BasicInfo';
 import ProfileImg from './components/ProfileImg';
 
 const UserProfile = () => {
-  const { authData } = useAuth();
-  const { userData } = useUser(authData?.user.id);
+  const user_id = new UserStorage().getId();
+  const { userData } = useUser(user_id);
   return (
     <ProfileBox>
       <Box>

@@ -6,7 +6,10 @@
       "password_confirm": true,
       "name": "admin",
       "id": 1,
-      "interest": ["IT/Tech", "건강"]
+      "interest": [
+        "IT/Tech",
+        "건강"
+      ]
     }
   ],
   "goals": [
@@ -55,6 +58,27 @@
       "goal_name": "asd",
       "description": "asda",
       "id": 6
+    },
+    {
+      "due_date": "2022-12-08",
+      "goal_name": "asdas",
+      "description": "asdas",
+      "userId": "1",
+      "id": 7
+    },
+    {
+      "due_date": "2022-12-01",
+      "goal_name": "asdad",
+      "description": "asdsa",
+      "userId": "1",
+      "id": 8
+    },
+    {
+      "due_date": "2022-12-29",
+      "goal_name": "ASDAD",
+      "description": "ASDA",
+      "userId": "1",
+      "id": 9
     }
   ]
 }

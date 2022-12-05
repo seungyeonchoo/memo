@@ -23,10 +23,10 @@ export class UserStorage {
     USER_STORAGE.setItem('user_name', info);
   };
   getId = () => {
-    USER_STORAGE.getItem('user_id');
+    return USER_STORAGE.getItem('user_id');
   };
   getName = () => {
-    USER_STORAGE.getItem('user_name');
+    return USER_STORAGE.getItem('user_name');
   };
 }
 
