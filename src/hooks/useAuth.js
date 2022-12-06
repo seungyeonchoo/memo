@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Http from '../services/Http';
 import { signinChange, signupChange } from '../store/slices/inputSlice';
 import { saveUserId } from '../store/slices/userSlice';
-import TokenStorage from '../utils/Storage';
+import TokenStorage, { UserStorage } from '../utils/Storage';
 import useToggle from './useToggle';
 
 const useAuth = () => {
@@ -13,6 +13,7 @@ const useAuth = () => {
   const { authToggle, handleAuthToggle } = useToggle();
   const authService = new Http(authToggle ? 'signup' : 'signin');
   const tokenStorage = new TokenStorage();
+  const setUserId = new UserStorage().setId;
 
   // handle Auth input change
 
@@ -49,7 +50,7 @@ const useAuth = () => {
       handleAuth(signin, {
         onSuccess: data => {
           tokenStorage.setToken(data.accessToken);
-          dispatch(saveUserId(data.user.id));
+          setUserId(data.user.id);
           nav(`user/${data.user.id}`);
         },
       });

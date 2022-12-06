@@ -7,7 +7,7 @@ import { UserStorage } from '../utils/Storage';
 
 const useGoal = goal_id => {
   const dispatch = useDispatch();
-  const user_id = new UserStorage().getId();
+  const user_id = Number(new UserStorage().getId());
   const { goalInput } = useSelector(state => state.input);
 
   // handle goal input
@@ -35,7 +35,14 @@ const useGoal = goal_id => {
     updateIsComplete({ is_complete: true });
   };
 
-  return { createNewGoal, completeGoal, handleGoalInput };
+  // 3. delete goals
+  const deleteGoal = new Http(`goals/${Number(goal_id)}`).delete;
+  const { mutate: removeGoal } = useMutation(deleteGoal);
+  const handleDelete = () => {
+    removeGoal(Number(goal_id));
+  };
+
+  return { createNewGoal, completeGoal, handleGoalInput, handleDelete };
 };
 
 export default useGoal;

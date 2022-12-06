@@ -22,6 +22,10 @@ class Http {
   patch = async item => {
     await instance.patch(this.url, item);
   };
+
+  delete = async () => {
+    await instance.delete(this.url);
+  };
 }
 
 export default Http;

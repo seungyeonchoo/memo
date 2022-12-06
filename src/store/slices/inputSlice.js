@@ -5,7 +5,16 @@ const inputSlice = createSlice({
   initialState: {
     signin: { email: '', password: '' },
     signup: { email: '', password: '', password_confirm: '', name: '' },
-    goalInput: { due_date: '', goal_name: '', description: '' },
+    goalInput: {
+      due_date: '',
+      goal_name: '',
+      description: '',
+      userId: '',
+      date: '',
+      is_public: false,
+      is_complete: false,
+      is_edit: false,
+    },
   },
   reducers: {
     goalInputChange: (state, action) => {
