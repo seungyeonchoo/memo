@@ -1,14 +1,15 @@
-import { useMutation } from 'react-query';
+import { useMutation, useQueryClient } from 'react-query';
 import { useDispatch, useSelector } from 'react-redux';
 import Http from '../services/Http';
 import { goalInputChange } from '../store/slices/inputSlice';
-import { createGoalToggleChange } from '../store/slices/toggleSlice';
+import { createGoalToggleChange, editGoalToggleChange } from '../store/slices/toggleSlice';
 import { UserStorage } from '../utils/Storage';
 
 const useGoal = goal_id => {
   const dispatch = useDispatch();
   const user_id = Number(new UserStorage().getId());
   const { goalInput } = useSelector(state => state.input);
+  const queryClient = useQueryClient();
 
   // handle goal input
   const isValid = goalInput.due_date && goalInput.goal_name && goalInput.description;
@@ -27,6 +28,7 @@ const useGoal = goal_id => {
     create_goal(goalInput, {
       onSuccess: () => {
         dispatch(createGoalToggleChange());
+        queryClient.invalidateQueries('user');
       },
     });
   };
@@ -35,17 +37,48 @@ const useGoal = goal_id => {
   const patchIsComplete = new Http(`goals/${Number(goal_id)}`).patch;
   const { mutate: complete_goal } = useMutation(patchIsComplete);
   const handleIsComplete = () => {
-    complete_goal({ is_complete: true });
+    complete_goal(
+      { is_complete: true },
+      {
+        onSuccess: () => {
+          queryClient.invalidateQueries('user');
+        },
+      }
+    );
   };
 
   // 3. delete goals
   const deleteGoal = new Http(`goals/${Number(goal_id)}`).delete;
   const { mutate: removeGoal } = useMutation(deleteGoal);
   const handleDelete = () => {
-    removeGoal(Number(goal_id));
+    removeGoal(Number(goal_id), {
+      onSuccess: () => {
+        queryClient.invalidateQueries('user');
+      },
+    });
   };
 
-  return { isValid, handleCreateGoal, handleIsComplete, handleGoalInput, handleDelete };
+  // 4. update goals
+  const patchUpdates = new Http(`goals/${goalInput.id}`).patch;
+  const { mutate: update_goal } = useMutation(patchUpdates);
+  const handleUpdates = () => {
+    update_goal(goalInput, {
+      onSuccess: () => {
+        dispatch(editGoalToggleChange());
+        queryClient.invalidateQueries('user');
+      },
+    });
+  };
+
+  return {
+    goalInput,
+    isValid,
+    handleCreateGoal,
+    handleIsComplete,
+    handleGoalInput,
+    handleDelete,
+    handleUpdates,
+  };
 };
 
 export default useGoal;

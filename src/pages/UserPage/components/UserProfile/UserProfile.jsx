@@ -23,8 +23,11 @@ const ProfileBox = styled.section``;
 
 const Box = styled.section`
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-around;
   width: 300px;
   background-color: #cfcfcf;
+  border-radius: 30px;
   padding: 1.5rem;
 `;

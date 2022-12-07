@@ -6,4 +6,9 @@ const GoalTitle = ({ data }) => {
 
 export default GoalTitle;
 
-const TitleText = styled.h2``;
+const TitleText = styled.h1`
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0.5em 0 0 0;
+  text-align: left;
+`;

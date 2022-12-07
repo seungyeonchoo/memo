@@ -18,7 +18,7 @@ const AuthPage = () => {
     <Container>
       <AuthTitle />
       {authToggle ? <RegisterInput /> : <LoginInput />}
-      <Button text={buttonText} onClick={handleAuthEvent} disabled={!isValid} />
+      <Button size="lg" text={buttonText} onClick={handleAuthEvent} disabled={!isValid} />
       <AuthRegister handleToggle={handleAuthToggle} />
     </Container>
   );

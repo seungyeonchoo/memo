@@ -5,6 +5,7 @@ const toggleSlice = createSlice({
   initialState: {
     authToggle: false,
     createGoalToggle: false,
+    editGoalToggle: false,
   },
   reducers: {
     authToggleChange: state => {
@@ -13,8 +14,12 @@ const toggleSlice = createSlice({
     createGoalToggleChange: state => {
       state.createGoalToggle = !state.createGoalToggle;
     },
+    editGoalToggleChange: state => {
+      state.editGoalToggle = !state.editGoalToggle;
+    },
   },
 });
 
-export const { authToggleChange, createGoalToggleChange } = toggleSlice.actions;
+export const { authToggleChange, createGoalToggleChange, editGoalToggleChange } =
+  toggleSlice.actions;
 export default toggleSlice.reducer;

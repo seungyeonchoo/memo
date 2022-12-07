@@ -17,6 +17,7 @@ const ProfileSum = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
 `;
 const Text = styled.h1`
   && {
