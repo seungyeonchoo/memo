@@ -4,21 +4,29 @@ import useToggle from '../../../../hooks/useToggle';
 import useUser from '../../../../hooks/useUser';
 import { UserStorage } from '../../../../utils/Storage';
 import GoalInput from './components/GoalInput';
-import GoalItem from './components/GoalItem';
 import GoalTitle from './components/GoalTitle';
+import GoalBox from './components/GoalBox';
+import Button from '../../../../components/Common/Button';
 
 const UserGoal = () => {
   const user_id = new UserStorage().getId();
   const { userData } = useUser(user_id);
-  const { createNewGoal } = useGoal();
-  const { addGoal, handleAddGoal } = useToggle();
-  const handleCreateGoal = addGoal ? createNewGoal : handleAddGoal;
+  const { isValid, handleCreateGoal } = useGoal();
+  const { createGoalToggle, handleCreateGoalToggle } = useToggle();
+  const handleCreateBtn = createGoalToggle ? handleCreateGoal : handleCreateGoalToggle;
   return (
     <GoalContainer>
       <GoalTitle data={userData} />
-      {addGoal && <GoalInput />}
-      <CreateButton onClick={handleCreateGoal}>목표 추가하기</CreateButton>
-      <GoalItem data={userData} />
+      {!createGoalToggle ? (
+        <Button size="lg" text="목표 추가하기" onClick={handleCreateBtn} />
+      ) : (
+        <>
+          <GoalInput />
+          <Button size="md" text="목표 추가하기" onClick={handleCreateBtn} disabled={!isValid} />
+          <Button size="md" text="취소" onClick={handleCreateBtn} disabled={!isValid} />
+        </>
+      )}
+      <GoalBox data={userData} />
     </GoalContainer>
   );
 };

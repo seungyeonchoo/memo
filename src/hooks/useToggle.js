@@ -1,19 +1,21 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { addGoalChange, authToggleChange } from '../store/slices/toggleSlice';
+import { authToggleChange, createGoalToggleChange } from '../store/slices/toggleSlice';
 
 const useToggle = () => {
   const dispatch = useDispatch();
-  const { addGoal, authToggle } = useSelector(state => state.toggle);
+  const { createGoalToggle, authToggle } = useSelector(state => state.toggle);
 
+  // handle login and signup
   const handleAuthToggle = () => {
     dispatch(authToggleChange());
   };
 
-  const handleAddGoal = () => {
-    dispatch(addGoalChange());
+  // handle add goal toggle
+  const handleCreateGoalToggle = () => {
+    dispatch(createGoalToggleChange());
   };
 
-  return { addGoal, authToggle, handleAuthToggle, handleAddGoal };
+  return { createGoalToggle, authToggle, handleAuthToggle, handleCreateGoalToggle };
 };
 
 export default useToggle;
