@@ -4,12 +4,10 @@ const GoalFilters = () => {
   return (
     <Box>
       <div>
-        정렬
-        <span>등록일</span>
-        <span>마감일</span>
+        <span>등록일순</span>
+        <span>마감일순</span>
       </div>
       <div>
-        필터
         <span>공개여부</span>
         <span>완료여부</span>
       </div>

@@ -10,12 +10,13 @@ const useGoal = goal_id => {
   const user_id = Number(new UserStorage().getId());
   const { goalInput } = useSelector(state => state.input);
   const queryClient = useQueryClient();
+  const currDate = new Date();
 
   // handle goal input
   const isValid = goalInput.due_date && goalInput.goal_name && goalInput.description;
   const handleGoalInput = e => {
     const { name, value } = e.target;
-    dispatch(goalInputChange({ ...goalInput, [name]: value, userId: user_id }));
+    dispatch(goalInputChange({ ...goalInput, [name]: value, userId: user_id, date: currDate }));
   };
 
   // mutation server state

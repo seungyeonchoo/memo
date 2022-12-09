@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import useGoal from '../../../../../hooks/useGoal';
 import useToggle from '../../../../../hooks/useToggle';
+import { AiFillEdit, AiFillDelete } from 'react-icons/ai';
 
 const GoalItem = ({ goal }) => {
   const { handleEditGoalToggle, editGoalToggle, createGoalToggle } = useToggle(goal);
@@ -16,10 +17,12 @@ const GoalItem = ({ goal }) => {
         <Text>{goal.description}</Text>
       </TextWrapper>
       <ButtonWrapper>
-        <button onClick={handleEditGoalToggle} disabled={editGoalToggle || createGoalToggle}>
-          수정
-        </button>
-        <button onClick={handleDelete}>삭제</button>
+        <Button onClick={handleEditGoalToggle} disabled={editGoalToggle || createGoalToggle}>
+          <AiFillEdit />
+        </Button>
+        <Button onClick={handleDelete}>
+          <AiFillDelete />
+        </Button>
       </ButtonWrapper>
     </Item>
   );
@@ -50,6 +53,12 @@ const TextWrapper = styled.div`
 const ButtonWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 `;
 
 const Text = styled.p``;
+
+const Button = styled.button`
+  background-color: transparent;
+  border: none;
+`;

@@ -6,7 +6,10 @@
       "password_confirm": true,
       "name": "admin",
       "id": 1,
-      "interest": ["IT/Tech", "건강"]
+      "interest": [
+        "IT/Tech",
+        "건강"
+      ]
     }
   ],
   "goals": [
@@ -31,6 +34,61 @@
       "is_complete": false,
       "is_edit": false,
       "description": "리액트를 마스터한다."
+    },
+    {
+      "due_date": "2022-12-22",
+      "goal_name": "ㄴ",
+      "description": "ㄴ",
+      "userId": 1,
+      "date": "",
+      "is_public": false,
+      "is_complete": false,
+      "is_edit": false,
+      "id": 3
+    },
+    {
+      "due_date": "2022-12-24",
+      "goal_name": "ㅇ",
+      "description": "ㅇ",
+      "userId": 1,
+      "date": "",
+      "is_public": false,
+      "is_complete": false,
+      "is_edit": false,
+      "id": 4
+    },
+    {
+      "due_date": "2022-12-31",
+      "goal_name": "ㄴ",
+      "description": "ㅇ",
+      "userId": 1,
+      "date": "",
+      "is_public": false,
+      "is_complete": false,
+      "is_edit": false,
+      "id": 5
+    },
+    {
+      "due_date": "2022-12-30",
+      "goal_name": "ㄴ",
+      "description": "ㅇ",
+      "userId": 1,
+      "date": "",
+      "is_public": false,
+      "is_complete": false,
+      "is_edit": false,
+      "id": 6
+    },
+    {
+      "due_date": "2022-12-30",
+      "goal_name": "sda",
+      "description": "s",
+      "userId": 1,
+      "date": "2022-12-09T22:08:27.210Z",
+      "is_public": false,
+      "is_complete": false,
+      "is_edit": false,
+      "id": 7
     }
   ]
 }
