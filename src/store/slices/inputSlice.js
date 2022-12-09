@@ -1,20 +1,24 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+export const initialSignin = { email: '', password: '' };
+export const initialSignup = { email: '', password: '', password_confirm: '', name: '' };
+export const initialGoal = {
+  due_date: '',
+  goal_name: '',
+  description: '',
+  userId: '',
+  date: '',
+  is_public: false,
+  is_complete: false,
+  is_edit: false,
+};
+
 const inputSlice = createSlice({
   name: 'input',
   initialState: {
-    signin: { email: '', password: '' },
-    signup: { email: '', password: '', password_confirm: '', name: '' },
-    goalInput: {
-      due_date: '',
-      goal_name: '',
-      description: '',
-      userId: '',
-      date: '',
-      is_public: false,
-      is_complete: false,
-      is_edit: false,
-    },
+    signin: initialSignin,
+    signup: initialSignup,
+    goalInput: initialGoal,
   },
   reducers: {
     goalInputChange: (state, action) => {

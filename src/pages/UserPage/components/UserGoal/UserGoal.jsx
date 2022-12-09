@@ -6,19 +6,20 @@ import GoalInput from './components/GoalInput';
 import GoalTitle from './components/GoalTitle';
 import GoalBox from './components/GoalBox';
 import Button from '../../../../components/Common/Button';
+import GoalFilters from './components/GoalFilters';
 
 const UserGoal = () => {
   const user_id = new UserStorage().getId();
   const { userData } = useUser(user_id);
   const { editGoalToggle, createGoalToggle, handleCreateGoalToggle } = useToggle();
-  const openInput = createGoalToggle || editGoalToggle;
-  const closeInput = createGoalToggle && editGoalToggle;
+  const open = createGoalToggle || editGoalToggle;
 
   return (
     <GoalContainer>
       <GoalTitle data={userData} />
-      {openInput && <GoalInput />}
-      {!openInput && <Button size="lg" text="목표추가" onClick={handleCreateGoalToggle} />}
+      {open && <GoalInput />}
+      {!open && <Button size="lg" text="목표추가" onClick={handleCreateGoalToggle} />}
+      <GoalFilters />
       <GoalBox data={userData} />
     </GoalContainer>
   );
@@ -31,4 +32,5 @@ const GoalContainer = styled.section`
   flex-direction: column;
   align-items: center;
   width: 600px;
+  padding: 0 1em;
 `;

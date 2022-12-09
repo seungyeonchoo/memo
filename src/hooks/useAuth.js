@@ -2,7 +2,12 @@ import { useMutation } from 'react-query';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Http from '../services/Http';
-import { signinChange, signupChange } from '../store/slices/inputSlice';
+import {
+  initialSignin,
+  initialSignup,
+  signinChange,
+  signupChange,
+} from '../store/slices/inputSlice';
 import TokenStorage, { UserStorage } from '../utils/Storage';
 import useToggle from './useToggle';
 
@@ -17,9 +22,6 @@ const useAuth = () => {
   // handle Auth input change
 
   const { signin, signup } = useSelector(state => state.input);
-
-  const initialSignin = { email: '', password: '' };
-  const initialSignup = { email: '', password: '', password_confirm: '', name: '' };
 
   const handleAuthInput = e => {
     const { name, value } = e.target;

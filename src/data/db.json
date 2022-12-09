@@ -6,10 +6,7 @@
       "password_confirm": true,
       "name": "admin",
       "id": 1,
-      "interest": [
-        "IT/Tech",
-        "건강"
-      ]
+      "interest": ["IT/Tech", "건강"]
     }
   ],
   "goals": [
@@ -19,8 +16,8 @@
       "date": "2022-11-30",
       "due_date": "2022-12-25",
       "is_public": false,
-      "goal_name": "자바스크립트 마스터s",
-      "is_complete": true,
+      "goal_name": "자바스크립트 마스터",
+      "is_complete": false,
       "is_edit": false,
       "description": "자바스크립트를 마스터한다."
     },
@@ -30,7 +27,7 @@
       "date": "2022-11-30",
       "due_date": "2022-12-25",
       "is_public": false,
-      "goal_name": "리액트 마스터d",
+      "goal_name": "리액트 마스터",
       "is_complete": false,
       "is_edit": false,
       "description": "리액트를 마스터한다."

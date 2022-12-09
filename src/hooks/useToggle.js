@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { goalInputChange } from '../store/slices/inputSlice';
+import { goalInputChange, initialGoal } from '../store/slices/inputSlice';
 import {
   authToggleChange,
   createGoalToggleChange,
@@ -17,12 +17,13 @@ const useToggle = goal => {
 
   // handle add goal toggle
   const handleCreateGoalToggle = () => {
+    dispatch(goalInputChange(initialGoal));
     dispatch(createGoalToggleChange());
   };
 
   // handle edit goal toggle
   const handleEditGoalToggle = () => {
-    !editGoalToggle && dispatch(goalInputChange(goal));
+    !editGoalToggle ? dispatch(goalInputChange(goal)) : dispatch(goalInputChange(initialGoal));
     dispatch(editGoalToggleChange());
   };
   return {
