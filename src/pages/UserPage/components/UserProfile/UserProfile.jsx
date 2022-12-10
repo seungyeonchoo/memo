@@ -2,23 +2,31 @@ import styled from 'styled-components';
 import useUser from '../../../../hooks/useUser';
 import { UserStorage } from '../../../../utils/Storage';
 import BasicInfo from './components/BasicInfo';
+import ImminentGoals from './components/ImminentGoals';
 import ProfileImg from './components/ProfileImg';
 
 const UserProfile = () => {
   const user_id = new UserStorage().getId();
   const { userData } = useUser(user_id);
+
   return (
-    <ProfileBox>
-      <Box>
-        <ProfileImg data={userData} />
-        <BasicInfo data={userData} />
-      </Box>
-    </ProfileBox>
+    <Container>
+      <ProfileBox>
+        <Box>
+          <ProfileImg data={userData} />
+          <BasicInfo data={userData} />
+        </Box>
+      </ProfileBox>
+      <ImminentGoals user={userData} />
+    </Container>
   );
 };
 
 export default UserProfile;
-
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 const ProfileBox = styled.section``;
 
 const Box = styled.section`

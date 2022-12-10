@@ -7,9 +7,11 @@ import GoalTitle from './components/GoalTitle';
 import GoalBox from './components/GoalBox';
 import Button from '../../../../components/Common/Button';
 import GoalFilters from './components/GoalFilters';
+import useGoal from '../../../../hooks/useGoal';
 
 const UserGoal = () => {
   const user_id = new UserStorage().getId();
+  const { goalData } = useGoal();
   const { userData } = useUser(user_id);
   const { editGoalToggle, createGoalToggle, handleCreateGoalToggle } = useToggle();
   const open = createGoalToggle || editGoalToggle;
@@ -20,7 +22,7 @@ const UserGoal = () => {
       {open && <GoalInput />}
       {!open && <Button size="lg" text="목표추가" onClick={handleCreateGoalToggle} />}
       <GoalFilters />
-      <GoalBox data={userData} />
+      <GoalBox data={goalData} />
     </GoalContainer>
   );
 };

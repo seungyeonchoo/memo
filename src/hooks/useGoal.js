@@ -1,4 +1,4 @@
-import { useMutation, useQueryClient } from 'react-query';
+import { useMutation, useQuery, useQueryClient } from 'react-query';
 import { useDispatch, useSelector } from 'react-redux';
 import Http from '../services/Http';
 import { goalInputChange } from '../store/slices/inputSlice';
@@ -19,6 +19,10 @@ const useGoal = goal_id => {
     dispatch(goalInputChange({ ...goalInput, [name]: value, userId: user_id, date: currDate }));
   };
 
+  // fetch user goal data
+  const fetchUserGoals = new Http('goals');
+  const { data: goalData } = useQuery(['goals'], () => fetchUserGoals.get({ userId: user_id }));
+
   // mutation server state
 
   // 1. add new user goal
@@ -29,6 +33,7 @@ const useGoal = goal_id => {
     create_goal(goalInput, {
       onSuccess: () => {
         dispatch(createGoalToggleChange());
+        queryClient.invalidateQueries('goals');
         queryClient.invalidateQueries('user');
       },
     });
@@ -42,6 +47,7 @@ const useGoal = goal_id => {
       { is_complete: true },
       {
         onSuccess: () => {
+          queryClient.invalidateQueries('goals');
           queryClient.invalidateQueries('user');
         },
       }
@@ -54,6 +60,7 @@ const useGoal = goal_id => {
   const handleDelete = () => {
     removeGoal(Number(goal_id), {
       onSuccess: () => {
+        queryClient.invalidateQueries('goals');
         queryClient.invalidateQueries('user');
       },
     });
@@ -66,12 +73,14 @@ const useGoal = goal_id => {
     update_goal(goalInput, {
       onSuccess: () => {
         dispatch(editGoalToggleChange());
+        queryClient.invalidateQueries('goals');
         queryClient.invalidateQueries('user');
       },
     });
   };
 
   return {
+    goalData,
     goalInput,
     isValid,
     handleCreateGoal,

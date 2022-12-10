@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import useGoal from '../../../../../hooks/useGoal';
 import useToggle from '../../../../../hooks/useToggle';
 import { AiFillEdit, AiFillDelete } from 'react-icons/ai';
+import calcDiffDay from '../../../../../utils/calcDiffDay';
 
 const GoalItem = ({ goal }) => {
   const { handleEditGoalToggle, editGoalToggle, createGoalToggle } = useToggle(goal);
@@ -10,7 +11,9 @@ const GoalItem = ({ goal }) => {
 
   return (
     <Item key={goal.id} bg={color}>
-      <button onClick={handleIsComplete}>완료</button>
+      <button onClick={handleIsComplete}>
+        {goal.is_complete ? '완료' : `D-${calcDiffDay(goal.due_date)}`}
+      </button>
       <TextWrapper>
         <Text>{goal.due_date}까지</Text>
         <Text>{goal.goal_name}</Text>

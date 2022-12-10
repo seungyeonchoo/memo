@@ -4,7 +4,7 @@ import GoalItem from './GoalItem';
 const GoalBox = ({ data }) => {
   return (
     <ItemBox>
-      {data?.goals.map(goal => (
+      {data?.map(goal => (
         <GoalItem key={goal.id} goal={goal} />
       ))}
     </ItemBox>

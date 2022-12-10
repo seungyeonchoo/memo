@@ -20,7 +20,7 @@
       "due_date": "2022-12-25",
       "is_public": false,
       "goal_name": "자바스크립트 마스터",
-      "is_complete": false,
+      "is_complete": true,
       "is_edit": false,
       "description": "자바스크립트를 마스터한다."
     },
@@ -31,7 +31,7 @@
       "due_date": "2022-12-25",
       "is_public": false,
       "goal_name": "리액트 마스터",
-      "is_complete": false,
+      "is_complete": true,
       "is_edit": false,
       "description": "리액트를 마스터한다."
     },
@@ -42,7 +42,7 @@
       "userId": 1,
       "date": "",
       "is_public": false,
-      "is_complete": false,
+      "is_complete": true,
       "is_edit": false,
       "id": 3
     },
@@ -89,6 +89,39 @@
       "is_complete": false,
       "is_edit": false,
       "id": 7
+    },
+    {
+      "due_date": "2022-12-12",
+      "goal_name": "s",
+      "description": "d",
+      "userId": 1,
+      "date": "2022-12-10T18:19:44.939Z",
+      "is_public": false,
+      "is_complete": false,
+      "is_edit": false,
+      "id": 8
+    },
+    {
+      "due_date": "2022-12-11",
+      "goal_name": "s1",
+      "description": "da",
+      "userId": 1,
+      "date": "2022-12-10T18:24:44.485Z",
+      "is_public": false,
+      "is_complete": false,
+      "is_edit": false,
+      "id": 9
+    },
+    {
+      "due_date": "2022-12-11",
+      "goal_name": "s",
+      "description": "d",
+      "userId": 1,
+      "date": "2022-12-10T18:27:59.746Z",
+      "is_public": false,
+      "is_complete": false,
+      "is_edit": false,
+      "id": 10
     }
   ]
 }
