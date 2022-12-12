@@ -19,4 +19,8 @@ const ImminentGoals = ({ user }) => {
 
 export default ImminentGoals;
 
-const Box = styled.div``;
+const Box = styled.div`
+  margin-top: 0.5em;
+  border: 1px solid #e0e0e0;
+  height: 500px;
+`;

@@ -7,8 +7,11 @@ const ImminentTitle = () => {
 export default ImminentTitle;
 
 const TitleText = styled.h1`
-  font-size: 1rem;
-  font-weight: bold;
-  margin: 0.5em 0 0 0;
+  font-size: 0.8rem;
+  font-weight: lighter;
   text-align: left;
+  text-align: center;
+  background-color: #212121;
+  color: #ffffff;
+  padding: 0.5em 0;
 `;

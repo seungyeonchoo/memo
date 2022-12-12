@@ -59,6 +59,8 @@ const useAuth = () => {
     handleInputInit();
   };
 
+  // handle Logout
+
   return { authData, signin, signup, handleAuthInput, handleAuthEvent };
 };
 

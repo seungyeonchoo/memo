@@ -18,7 +18,7 @@ const UserGoal = () => {
 
   return (
     <GoalContainer>
-      <GoalTitle data={userData} />
+      {/* <GoalTitle data={userData} /> */}
       {open && <GoalInput />}
       {!open && <Button size="lg" text="목표추가" onClick={handleCreateGoalToggle} />}
       <GoalFilters />
@@ -33,6 +33,6 @@ const GoalContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 600px;
+  width: 35%;
   padding: 0 1em;
 `;

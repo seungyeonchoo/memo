@@ -10,7 +10,6 @@ export const initialGoal = {
   date: '',
   is_public: false,
   is_complete: false,
-  is_edit: false,
 };
 
 const inputSlice = createSlice({

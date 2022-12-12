@@ -11,12 +11,11 @@ const UserProfile = () => {
 
   return (
     <Container>
-      <ProfileBox>
-        <Box>
-          <ProfileImg data={userData} />
-          <BasicInfo data={userData} />
-        </Box>
-      </ProfileBox>
+      <Box>
+        {/* <ProfileImg data={userData} /> */}
+        <BasicInfo data={userData} />
+        <button>로그아웃</button>
+      </Box>
       <ImminentGoals user={userData} />
     </Container>
   );
@@ -26,16 +25,16 @@ export default UserProfile;
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  width: 30%;
+  margin: 0 2em;
 `;
-const ProfileBox = styled.section``;
 
 const Box = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  width: 300px;
-  background-color: #cfcfcf;
-  border-radius: 30px;
+  border: 1px solid #e0e0e0;
+  background-color: #eeeeee;
   padding: 1.5rem;
 `;

@@ -1,15 +1,15 @@
 import styled from 'styled-components';
+import { AiOutlineSortAscending } from 'react-icons/ai';
+import { AiFillFilter } from 'react-icons/ai';
 
 const GoalFilters = () => {
   return (
     <Box>
       <div>
-        <span>등록일순</span>
-        <span>마감일순</span>
+        <AiOutlineSortAscending />
       </div>
       <div>
-        <span>공개여부</span>
-        <span>완료여부</span>
+        <AiFillFilter />
       </div>
     </Box>
   );
@@ -18,6 +18,8 @@ const GoalFilters = () => {
 export default GoalFilters;
 
 const Box = styled.section`
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
+  margin: 0.5em 0;
 `;

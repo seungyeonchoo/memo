@@ -19,5 +19,4 @@ const ImgBox = styled.section`
 
 const Img = styled.img`
   width: 100px;
-  border-radius: 50%;
 `;

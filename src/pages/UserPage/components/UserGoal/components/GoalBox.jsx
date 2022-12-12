@@ -16,4 +16,6 @@ export default GoalBox;
 const ItemBox = styled.ul`
   display: flex;
   flex-direction: column;
+  height: 600px;
+  overflow: scroll;
 `;

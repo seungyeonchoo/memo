@@ -11,6 +11,7 @@ const GoalItem = ({ goal }) => {
 
   return (
     <Item key={goal.id} bg={color}>
+      <input type="checkbox" onChange={handleIsComplete} />
       <button onClick={handleIsComplete}>
         {goal.is_complete ? '완료' : `D-${calcDiffDay(goal.due_date)}`}
       </button>

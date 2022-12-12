@@ -6,8 +6,8 @@ const ImminentItem = ({ goal }) => {
     <ItemWrapper>
       <Date>D-{calcDiffDay(goal.due_date)}</Date>
       <div>
-        <div>{goal.due_date}까지</div>
-        <div>{goal.goal_name}</div>
+        <SubText>{goal.due_date}까지</SubText>
+        <Text>{goal.goal_name}</Text>
       </div>
     </ItemWrapper>
   );
@@ -18,11 +18,20 @@ export default ImminentItem;
 const ItemWrapper = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
+  margin: 0.5em;
+  padding: 1em;
 `;
 
 const Date = styled.div`
-  background-color: green;
   width: 10%;
   text-align: center;
-  padding: 1em;
+  font-weight: bold;
+  color: #b71c1c;
 `;
+
+const SubText = styled.p`
+  font-size: 0.8em;
+  color: #212121;
+`;
+const Text = styled.p``;
