@@ -6,7 +6,7 @@ import UserRecord from './components/UserRecord/UserRecord';
 const UserPage = () => {
   return (
     <UserContainer>
-      <UserProfile />
+      {/* <UserProfile /> */}
       <UserGoal />
       {/* <UserRecord /> */}
     </UserContainer>

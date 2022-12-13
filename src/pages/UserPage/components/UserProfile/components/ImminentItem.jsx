@@ -19,6 +19,8 @@ const ItemWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  border: 1px solid #e0e0e0;
+  width: 80%;
   margin: 0.5em;
   padding: 1em;
 `;

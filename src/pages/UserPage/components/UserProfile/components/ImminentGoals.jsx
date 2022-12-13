@@ -20,6 +20,9 @@ const ImminentGoals = ({ user }) => {
 export default ImminentGoals;
 
 const Box = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 0.5em;
   border: 1px solid #e0e0e0;
   height: 500px;

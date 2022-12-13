@@ -6,6 +6,8 @@ const toggleSlice = createSlice({
     authToggle: false,
     createGoalToggle: false,
     editGoalToggle: false,
+    sortToggle: false,
+    filterToggle: false,
   },
   reducers: {
     authToggleChange: state => {
@@ -17,9 +19,21 @@ const toggleSlice = createSlice({
     editGoalToggleChange: state => {
       state.editGoalToggle = !state.editGoalToggle;
     },
+    sortToggleChange: state => {
+      state.sortToggle = !state.sortToggle;
+    },
+    filterToggleChange: state => {
+      state.filterToggle = !state.filterToggle;
+    },
   },
 });
 
-export const { authToggleChange, createGoalToggleChange, editGoalToggleChange } =
-  toggleSlice.actions;
+export const {
+  authToggleChange,
+  createGoalToggleChange,
+  editGoalToggleChange,
+  sortToggleChange,
+  filterToggleChange,
+} = toggleSlice.actions;
+
 export default toggleSlice.reducer;

@@ -4,11 +4,15 @@ import {
   authToggleChange,
   createGoalToggleChange,
   editGoalToggleChange,
+  filterToggleChange,
+  sortToggleChange,
 } from '../store/slices/toggleSlice';
 
 const useToggle = goal => {
   const dispatch = useDispatch();
-  const { createGoalToggle, authToggle, editGoalToggle } = useSelector(state => state.toggle);
+  const { createGoalToggle, authToggle, editGoalToggle, sortToggle, filterToggle } = useSelector(
+    state => state.toggle
+  );
 
   // handle login and signup
   const handleAuthToggle = () => {
@@ -26,13 +30,28 @@ const useToggle = goal => {
     !editGoalToggle ? dispatch(goalInputChange(goal)) : dispatch(goalInputChange(initialGoal));
     dispatch(editGoalToggleChange());
   };
+
+  // handle sort and filter toggle
+
+  const handleSortToggle = () => {
+    dispatch(sortToggleChange());
+  };
+
+  const handleFilterToggle = () => {
+    dispatch(filterToggleChange());
+  };
+
   return {
     createGoalToggle,
     authToggle,
     editGoalToggle,
+    sortToggle,
+    filterToggle,
     handleAuthToggle,
     handleCreateGoalToggle,
     handleEditGoalToggle,
+    handleSortToggle,
+    handleFilterToggle,
   };
 };
 

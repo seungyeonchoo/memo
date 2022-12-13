@@ -18,5 +18,5 @@ const ImgBox = styled.section`
 `;
 
 const Img = styled.img`
-  width: 100px;
+  width: 60px;
 `;

@@ -33,6 +33,6 @@ const GoalContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 35%;
+  width: 100%;
   padding: 0 1em;
 `;

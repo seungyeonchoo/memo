@@ -1,16 +1,16 @@
 import styled from 'styled-components';
-import { AiOutlineSortAscending } from 'react-icons/ai';
-import { AiFillFilter } from 'react-icons/ai';
+import useToggle from '../../../../../hooks/useToggle';
+import FilterIcon from './FilterIcon';
+import FilterItem from './FilterItem';
+import SortItem from './SortItem';
 
 const GoalFilters = () => {
+  const { sortToggle, filterToggle } = useToggle();
   return (
     <Box>
-      <div>
-        <AiOutlineSortAscending />
-      </div>
-      <div>
-        <AiFillFilter />
-      </div>
+      <FilterIcon />
+      {sortToggle && <SortItem />}
+      {filterToggle && <FilterItem />}
     </Box>
   );
 };
@@ -18,8 +18,10 @@ const GoalFilters = () => {
 export default GoalFilters;
 
 const Box = styled.section`
-  width: 100%;
+  width: 410px;
   display: flex;
-  justify-content: end;
+  flex-direction: column;
+  align-items: flex-end;
   margin: 0.5em 0;
+  padding: 0 0.8em;
 `;

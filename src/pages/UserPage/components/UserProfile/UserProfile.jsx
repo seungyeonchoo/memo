@@ -12,7 +12,7 @@ const UserProfile = () => {
   return (
     <Container>
       <Box>
-        {/* <ProfileImg data={userData} /> */}
+        <ProfileImg data={userData} />
         <BasicInfo data={userData} />
         <button>로그아웃</button>
       </Box>
@@ -31,7 +31,6 @@ const Container = styled.div`
 
 const Box = styled.section`
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: space-around;
   border: 1px solid #e0e0e0;
