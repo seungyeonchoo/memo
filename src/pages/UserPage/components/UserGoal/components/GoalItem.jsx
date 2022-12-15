@@ -8,13 +8,15 @@ const GoalItem = ({ goal }) => {
   const { handleEditGoalToggle, editGoalToggle, createGoalToggle } = useToggle(goal);
   const { handleDelete, handleIsComplete } = useGoal(goal.id);
   const color = goal.is_complete ? '#cfd8dc' : '#eceff1';
+  const D_DAY =
+    calcDiffDay(goal.due_date) > -1
+      ? `D-${calcDiffDay(goal.due_date)}`
+      : `D+${calcDiffDay(goal.due_date) * -1}`;
 
   return (
     <Item key={goal.id} bg={color}>
       <input type="checkbox" onChange={handleIsComplete} />
-      <button onClick={handleIsComplete}>
-        {goal.is_complete ? '완료' : `D-${calcDiffDay(goal.due_date)}`}
-      </button>
+      <button onClick={handleIsComplete}>{goal.is_complete ? '완료' : D_DAY}</button>
       <TextWrapper>
         <Text>{goal.due_date}까지</Text>
         <Text>{goal.goal_name}</Text>

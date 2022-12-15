@@ -9,7 +9,7 @@ const useGoal = goal_id => {
   const dispatch = useDispatch();
   const user_id = Number(new UserStorage().getId());
   const { goalInput } = useSelector(state => state.input);
-  const { sortParam } = useSelector(state => state.param);
+  const { sortParams, filterParams } = useSelector(state => state.param);
   const queryClient = useQueryClient();
   const currDate = new Date();
 
@@ -22,8 +22,8 @@ const useGoal = goal_id => {
 
   // fetch user goal data
   const fetchUserGoals = new Http('goals');
-  const { data: goalData } = useQuery(['goals'], () =>
-    fetchUserGoals.get({ ...sortParam, userId: user_id })
+  const { data: goalData, refetch: refetchGoals } = useQuery(['goals'], () =>
+    fetchUserGoals.get({ ...sortParams, ...filterParams, userId: user_id })
   );
 
   // mutation server state
@@ -100,6 +100,7 @@ const useGoal = goal_id => {
     goalData,
     goalInput,
     isValid,
+    refetchGoals,
     handleCreateGoal,
     handleIsComplete,
     handleGoalInput,

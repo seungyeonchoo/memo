@@ -1,11 +1,17 @@
 import styled from 'styled-components';
+import useParam from '../../../../../hooks/useParam';
 import { FilterButton } from './SortItem';
 
 const FilterItem = () => {
+  const { handleFilterParam } = useParam();
   return (
     <ItemWrapper>
-      <FilterButton>완료여부</FilterButton>
-      <FilterButton>공개여부</FilterButton>
+      <FilterButton name="is_complete" onClick={handleFilterParam}>
+        완료여부
+      </FilterButton>
+      <FilterButton name="is_public" onClick={handleFilterParam}>
+        공개여부
+      </FilterButton>
     </ItemWrapper>
   );
 };
