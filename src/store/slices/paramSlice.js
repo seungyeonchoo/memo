@@ -3,8 +3,10 @@ import { createSlice } from '@reduxjs/toolkit';
 const paramSlice = createSlice({
   name: 'param',
   initialState: { sortParams: { _sort: 'date', _order: 'asc' }, filterParams: {} },
-  sortParamChange: (state, action) => {
-    state.sortParams = action.payload;
+  reducers: {
+    sortParamChange: (state, action) => {
+      state.sortParams = action.payload;
+    },
   },
 });
 
