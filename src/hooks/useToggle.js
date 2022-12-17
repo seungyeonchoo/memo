@@ -3,6 +3,7 @@ import { goalInputChange, initialGoal } from '../store/slices/inputSlice';
 import {
   authToggleChange,
   createGoalToggleChange,
+  detailToggleChange,
   editGoalToggleChange,
   filterToggleChange,
   sortToggleChange,
@@ -41,6 +42,12 @@ const useToggle = goal => {
     dispatch(filterToggleChange());
   };
 
+  // handle goal detail toggle
+
+  const handleDetailToggle = () => {
+    dispatch(detailToggleChange(goal));
+  };
+
   return {
     createGoalToggle,
     authToggle,
@@ -52,6 +59,7 @@ const useToggle = goal => {
     handleEditGoalToggle,
     handleSortToggle,
     handleFilterToggle,
+    handleDetailToggle,
   };
 };
 

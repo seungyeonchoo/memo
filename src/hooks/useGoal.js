@@ -17,13 +17,14 @@ const useGoal = goal_id => {
   const isValid = goalInput.due_date && goalInput.goal_name && goalInput.description;
   const handleGoalInput = e => {
     const { name, value } = e.target;
-    dispatch(goalInputChange({ ...goalInput, [name]: value, userId: user_id, date: currDate }));
+    const default_input = { ...goalInput, userId: user_id, date: currDate };
+    dispatch(goalInputChange({ ...default_input, [name]: value }));
   };
 
   // fetch user goal data
   const fetchUserGoals = new Http('goals');
   const { data: goalData, refetch: refetchGoals } = useQuery(['goals'], () =>
-    fetchUserGoals.get({ ...sortParams, ...filterParams, userId: user_id })
+    fetchUserGoals.get({ ...sortParams, ...filterParams, userId: user_id, _embed: 'todos' })
   );
 
   // mutation server state

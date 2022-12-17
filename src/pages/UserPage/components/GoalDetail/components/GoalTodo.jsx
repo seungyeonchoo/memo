@@ -1,6 +1,7 @@
-const UserTodo = () => {
+const GoalTodo = () => {
   return (
     <>
+      <div>단기 목표</div>
       <div>
         <input type="text" />
         <button>+</button>
@@ -9,4 +10,4 @@ const UserTodo = () => {
   );
 };
 
-export default UserTodo;
+export default GoalTodo;

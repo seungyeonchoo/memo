@@ -5,18 +5,17 @@ import { AiFillEdit, AiFillDelete } from 'react-icons/ai';
 import calcDiffDay from '../../../../../utils/calcDiffDay';
 
 const GoalItem = ({ goal }) => {
-  const { handleEditGoalToggle, editGoalToggle, createGoalToggle } = useToggle(goal);
+  const { handleDetailToggle, handleEditGoalToggle, editGoalToggle, createGoalToggle } =
+    useToggle(goal);
   const { handleDelete, handleIsComplete } = useGoal(goal.id);
   const color = goal.is_complete ? '#cfd8dc' : '#eceff1';
-  const D_DAY =
-    calcDiffDay(goal.due_date) > -1
-      ? `D-${calcDiffDay(goal.due_date)}`
-      : `D+${calcDiffDay(goal.due_date) * -1}`;
 
   return (
-    <Item key={goal.id} bg={color}>
+    <Item key={goal.id} bg={color} onClick={handleDetailToggle}>
       <input type="checkbox" onChange={handleIsComplete} />
-      <button onClick={handleIsComplete}>{goal.is_complete ? '완료' : D_DAY}</button>
+      <button onClick={handleIsComplete}>
+        {goal.is_complete ? '완료' : calcDiffDay(goal.due_date)}
+      </button>
       <TextWrapper>
         <Text>{goal.due_date}까지</Text>
         <Text>{goal.goal_name}</Text>

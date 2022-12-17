@@ -6,7 +6,6 @@ import useGoal from './useGoal';
 
 const useParam = () => {
   const dispatch = useDispatch();
-  const queryClient = useQueryClient();
   const { refetchGoals } = useGoal();
   const { sortParams, filterParams } = useSelector(state => state.param);
   const orderCondition = sortParams._order === 'asc' ? 'desc' : 'asc';

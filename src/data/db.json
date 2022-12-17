@@ -6,10 +6,7 @@
       "password_confirm": true,
       "name": "admin",
       "id": 1,
-      "interest": [
-        "IT/Tech",
-        "건강"
-      ]
+      "interest": ["IT/Tech", "건강"]
     }
   ],
   "goals": [
@@ -34,18 +31,14 @@
       "is_complete": false,
       "is_edit": false,
       "description": "리액트를 마스터한다."
-    },
-    {
-      "due_date": "2022-12-14",
-      "goal_name": "영어학원 매일 가기",
-      "description": "매일 영어학원을 갑니다.",
-      "userId": 1,
-      "date": "2022-12-12T23:15:35.234Z",
-      "is_public": false,
-      "is_complete": false,
-      "id": 3
     }
   ],
-  "todos": [],
+  "todos": [
+    {
+      "id": 1,
+      "goalId": 1,
+      "todo": "hi"
+    }
+  ],
   "memos": []
 }
