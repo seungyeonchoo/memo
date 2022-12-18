@@ -1,16 +1,25 @@
 import styled from 'styled-components';
+import Input from '../../../../../components/Common/Input';
 import useDetail from '../../../../../hooks/useDetail';
+import useToggle from '../../../../../hooks/useToggle';
 
 const GoalTodo = () => {
-  const { goal, input, handleTodoInput, handleCreateTodo } = useDetail();
+  const { detailToggle } = useToggle();
+  const { input, todoData, handleTodoInput, handleCreateTodo } = useDetail(detailToggle.goal);
   return (
     <TodoBox>
-      <div>단기 목표</div>
       <InputWrapper>
-        <input type="text" name="todo" value={input.todoInput.todo} onChange={handleTodoInput} />
+        <Input
+          label="단기 목표"
+          type="text"
+          name="todo"
+          value={input.todoInput.todo}
+          placeholder="할일을 입력해 주세요."
+          onChange={handleTodoInput}
+        />
         <button onClick={handleCreateTodo}>+</button>
       </InputWrapper>
-      <div>{goal?.todos.map(el => el.todo)}</div>
+      <div>{todoData?.map(el => el.todo)}</div>
     </TodoBox>
   );
 };

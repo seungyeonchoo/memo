@@ -3,14 +3,15 @@ import UserGoal from './components/UserGoal/UserGoal';
 import UserProfile from './components/UserProfile/UserProfile';
 import GoalDetail from './components/GoalDetail/GoalDetail';
 import useDetail from '../../hooks/useDetail';
+import useToggle from '../../hooks/useToggle';
 
 const UserPage = () => {
-  const { _toggle } = useDetail();
+  const { detailToggle } = useToggle();
   return (
     <UserContainer>
       {/* <UserProfile /> */}
       <UserGoal />
-      {_toggle && <GoalDetail />}
+      {detailToggle._toggle && <GoalDetail />}
     </UserContainer>
   );
 };

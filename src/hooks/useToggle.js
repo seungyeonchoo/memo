@@ -11,9 +11,8 @@ import {
 
 const useToggle = goal => {
   const dispatch = useDispatch();
-  const { createGoalToggle, authToggle, editGoalToggle, sortToggle, filterToggle } = useSelector(
-    state => state.toggle
-  );
+  const { createGoalToggle, authToggle, editGoalToggle, sortToggle, filterToggle, detailToggle } =
+    useSelector(state => state.toggle);
 
   // handle login and signup
   const handleAuthToggle = () => {
@@ -45,10 +44,11 @@ const useToggle = goal => {
   // handle goal detail toggle
 
   const handleDetailToggle = () => {
-    dispatch(detailToggleChange(goal));
+    dispatch(detailToggleChange(goal.id));
   };
 
   return {
+    detailToggle,
     createGoalToggle,
     authToggle,
     editGoalToggle,

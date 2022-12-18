@@ -38,17 +38,18 @@
   ],
   "todos": [
     {
-      "todo": "sdasd",
+      "todo": "qwe",
       "goalId": 1,
       "is_complete": false,
       "id": 1
-    },
-    {
-      "todo": "dsasd",
-      "goalId": 1,
-      "is_complete": false,
-      "id": 2
     }
   ],
-  "memos": []
+  "memos": [
+    {
+      "memo": "qweqe",
+      "goalId": 1,
+      "date": "2022-12-18T23:19:48.793Z",
+      "id": 1
+    }
+  ]
 }

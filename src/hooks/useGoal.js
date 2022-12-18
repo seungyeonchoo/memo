@@ -23,8 +23,9 @@ const useGoal = goal_id => {
 
   // fetch user goal data
   const fetchUserGoals = new Http('goals');
+  const default_param = { userId: user_id, _embed: 'todos' };
   const { data: goalData, refetch: refetchGoals } = useQuery(['goals'], () =>
-    fetchUserGoals.get({ ...sortParams, ...filterParams, userId: user_id, _embed: 'todos' })
+    fetchUserGoals.get({ ...sortParams, ...filterParams, ...default_param })
   );
 
   // mutation server state
