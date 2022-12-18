@@ -6,7 +6,10 @@
       "password_confirm": true,
       "name": "admin",
       "id": 1,
-      "interest": ["IT/Tech", "건강"]
+      "interest": [
+        "IT/Tech",
+        "건강"
+      ]
     }
   ],
   "goals": [
@@ -35,9 +38,16 @@
   ],
   "todos": [
     {
-      "id": 1,
+      "todo": "sdasd",
       "goalId": 1,
-      "todo": "hi"
+      "is_complete": false,
+      "id": 1
+    },
+    {
+      "todo": "dsasd",
+      "goalId": 1,
+      "is_complete": false,
+      "id": 2
     }
   ],
   "memos": []

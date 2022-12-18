@@ -8,7 +8,7 @@ const toggleSlice = createSlice({
     editGoalToggle: false,
     sortToggle: false,
     filterToggle: false,
-    detailToggle: { toggle: false, goal: null },
+    detailToggle: { _toggle: false, goal: null },
   },
   reducers: {
     authToggleChange: state => {
@@ -27,12 +27,11 @@ const toggleSlice = createSlice({
       state.filterToggle = !state.filterToggle;
     },
     detailToggleChange: (state, action) => {
-      if (!state.detailToggle.toggle && !state.detailToggle.goal) {
-        state.detailToggle.toggle = !state.detail.toggle;
+      if (state.detailToggle._toggle) state.detailToggle.goal = action.payload;
+      else {
+        state.detailToggle._toggle = !state.detailToggle._toggle;
         state.detailToggle.goal = action.payload;
       }
-
-      if (state.detailToggle.toggle) state.detailToggle.goal = action.payload;
     },
   },
 });

@@ -1,14 +1,16 @@
 import styled from 'styled-components';
 import UserGoal from './components/UserGoal/UserGoal';
 import UserProfile from './components/UserProfile/UserProfile';
-import UserRecord from './components/GoalDetail/GoalDetail';
+import GoalDetail from './components/GoalDetail/GoalDetail';
+import useDetail from '../../hooks/useDetail';
 
 const UserPage = () => {
+  const { _toggle } = useDetail();
   return (
     <UserContainer>
       {/* <UserProfile /> */}
       <UserGoal />
-      <UserRecord />
+      {_toggle && <GoalDetail />}
     </UserContainer>
   );
 };

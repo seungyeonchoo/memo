@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 export const initialSignin = { email: '', password: '' };
 export const initialSignup = { email: '', password: '', password_confirm: '', name: '' };
+export const initialTodo = { todo: '' };
 export const initialGoal = {
   due_date: '',
   goal_name: '',
@@ -18,6 +19,7 @@ const inputSlice = createSlice({
     signin: initialSignin,
     signup: initialSignup,
     goalInput: initialGoal,
+    todoInput: initialTodo,
   },
   reducers: {
     goalInputChange: (state, action) => {
@@ -29,8 +31,11 @@ const inputSlice = createSlice({
     signupChange: (state, action) => {
       state.signup = action.payload;
     },
+    todoInputChange: (state, action) => {
+      state.todoInput = action.payload;
+    },
   },
 });
 
-export const { goalInputChange, signinChange, signupChange } = inputSlice.actions;
+export const { goalInputChange, signinChange, signupChange, todoInputChange } = inputSlice.actions;
 export default inputSlice.reducer;
