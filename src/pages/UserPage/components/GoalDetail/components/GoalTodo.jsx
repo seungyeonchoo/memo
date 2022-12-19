@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Input from '../../../../../components/Common/Input';
 import useDetail from '../../../../../hooks/useDetail';
 import useToggle from '../../../../../hooks/useToggle';
+import TodoItem from './TodoItem';
 
 const GoalTodo = () => {
   const { detailToggle } = useToggle();
@@ -19,7 +20,11 @@ const GoalTodo = () => {
         />
         <button onClick={handleCreateTodo}>+</button>
       </InputWrapper>
-      <div>{todoData?.map(el => el.todo)}</div>
+      <ul>
+        {todoData?.map(el => (
+          <TodoItem key={el.id} todo={el} />
+        ))}
+      </ul>
     </TodoBox>
   );
 };
@@ -29,6 +34,7 @@ export default GoalTodo;
 const TodoBox = styled.section`
   display: flex;
   flex-direction: column;
+  height: 300px;
 `;
 
 const InputWrapper = styled.div`
