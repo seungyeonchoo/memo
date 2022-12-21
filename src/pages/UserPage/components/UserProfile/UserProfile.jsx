@@ -1,22 +1,20 @@
 import styled from 'styled-components';
-import useUser from '../../../../hooks/useUser';
-import { UserStorage } from '../../../../utils/Storage';
+import useFetch from '../../../../hooks/useFetch';
 import BasicInfo from './components/BasicInfo';
 import ImminentGoals from './components/ImminentGoals';
 import ProfileImg from './components/ProfileImg';
 
 const UserProfile = () => {
-  const user_id = new UserStorage().getId();
-  const { userData } = useUser(user_id);
+  const { data: user } = useFetch('users');
 
   return (
     <Container>
       <Box>
-        <ProfileImg data={userData} />
-        <BasicInfo data={userData} />
+        <ProfileImg user={user} />
+        <BasicInfo user={user} />
         <button>로그아웃</button>
       </Box>
-      <ImminentGoals user={userData} />
+      <ImminentGoals user={user} />
     </Container>
   );
 };
@@ -25,8 +23,7 @@ export default UserProfile;
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 30%;
-  margin: 0 2em;
+  width: 350px;
 `;
 
 const Box = styled.section`

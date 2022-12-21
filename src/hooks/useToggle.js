@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { goalInputChange, initialGoal } from '../store/slices/inputSlice';
+import { goalInputChange } from '../store/slices/inputSlice';
 import {
   authToggleChange,
   createGoalToggleChange,
@@ -8,58 +8,54 @@ import {
   filterToggleChange,
   sortToggleChange,
 } from '../store/slices/toggleSlice';
+import { initialGoal } from '../utils/initialInputs';
 
-const useToggle = goal => {
+const useToggle = (item, goal) => {
   const dispatch = useDispatch();
   const { createGoalToggle, authToggle, editGoalToggle, sortToggle, filterToggle, detailToggle } =
     useSelector(state => state.toggle);
 
-  // handle login and signup
-  const handleAuthToggle = () => {
-    dispatch(authToggleChange());
+  const Items = {
+    auth: authToggleChange,
+    goals: createGoalToggleChange,
+    sort: sortToggleChange,
+    edit: editGoalToggleChange,
+    filter: filterToggleChange,
+    detail: detailToggleChange,
   };
 
-  // handle add goal toggle
-  const handleCreateGoalToggle = () => {
-    dispatch(goalInputChange(initialGoal));
-    dispatch(createGoalToggleChange());
-  };
+  const curr_item = Items[item];
 
-  // handle edit goal toggle
-  const handleEditGoalToggle = () => {
-    !editGoalToggle ? dispatch(goalInputChange(goal)) : dispatch(goalInputChange(initialGoal));
-    dispatch(editGoalToggleChange());
-  };
+  const handleToggle = () => {
+    switch (item) {
+      case 'goals':
+        dispatch(goalInputChange(initialGoal));
+        dispatch(curr_item());
+        break;
 
-  // handle sort and filter toggle
+      case 'edit':
+        !editGoalToggle ? dispatch(goalInputChange(goal)) : dispatch(goalInputChange(initialGoal));
+        dispatch(curr_item());
+        break;
 
-  const handleSortToggle = () => {
-    dispatch(sortToggleChange());
-  };
+      case 'detail':
+        dispatch(curr_item(goal.id));
+        break;
 
-  const handleFilterToggle = () => {
-    dispatch(filterToggleChange());
-  };
-
-  // handle goal detail toggle
-
-  const handleDetailToggle = () => {
-    dispatch(detailToggleChange(goal.id));
+      default:
+        dispatch(curr_item());
+        break;
+    }
   };
 
   return {
-    detailToggle,
     createGoalToggle,
     authToggle,
     editGoalToggle,
     sortToggle,
     filterToggle,
-    handleAuthToggle,
-    handleCreateGoalToggle,
-    handleEditGoalToggle,
-    handleSortToggle,
-    handleFilterToggle,
-    handleDetailToggle,
+    detailToggle,
+    handleToggle,
   };
 };
 

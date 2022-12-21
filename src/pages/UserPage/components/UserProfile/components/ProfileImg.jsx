@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { DEFAULT_PROFILE_IMG } from '../../../../../utils/constant';
 
-const ProfileImg = ({ data }) => {
+const ProfileImg = ({ user }) => {
   return (
     <ImgBox>
-      <Img src={data?.img || DEFAULT_PROFILE_IMG} alt="user" />
+      <Img src={user?.img || DEFAULT_PROFILE_IMG} alt="user" />
     </ImgBox>
   );
 };

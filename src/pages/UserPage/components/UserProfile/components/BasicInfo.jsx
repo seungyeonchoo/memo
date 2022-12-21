@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import Interest from '../../../../../components/Interest/Interest';
 
-const BasicInfo = ({ data }) => {
+const BasicInfo = ({ user }) => {
   return (
     <ProfileSum>
-      <Text bold="bold">{data?.name}</Text>
-      <Text size="0.8em">{data?.email}</Text>
+      <Text bold="bold">{user?.name}</Text>
+      <Text size="0.8em">{user?.email}</Text>
       {/* <Interest interest={data?.interest} /> */}
     </ProfileSum>
   );

@@ -1,14 +1,19 @@
 import styled from 'styled-components';
 import Button from '../../../../../components/Common/Button';
 import Input from '../../../../../components/Common/Input';
-import useGoal from '../../../../../hooks/useGoal';
+import useCreate from '../../../../../hooks/useCreate';
+import useInput from '../../../../../hooks/useInput';
+import usePatch from '../../../../../hooks/usePatch';
 import useToggle from '../../../../../hooks/useToggle';
 
 const GoalInput = () => {
-  const { goalInput, isValid, handleGoalInput, handleCreateGoal, handleUpdates } = useGoal();
-  const { handleCreateGoalToggle, handleEditGoalToggle, createGoalToggle } = useToggle();
-  const clickSave = createGoalToggle ? handleCreateGoal : handleUpdates;
-  const clickCancel = createGoalToggle ? handleCreateGoalToggle : handleEditGoalToggle;
+  const { handleCreate } = useCreate('goals');
+  const { handleUpdates } = usePatch('goals');
+  const { handleInput, goalInput, isValid } = useInput('goals');
+  const { handleToggle: handleCreateGoalToggle, createGoalToggle } = useToggle('goals');
+  const { handleToggle: handleEditToggle } = useToggle('edit');
+  const clickSave = createGoalToggle ? handleCreate : handleUpdates;
+  const clickCancel = createGoalToggle ? handleCreateGoalToggle : handleEditToggle;
 
   return (
     <InputBox>
@@ -17,21 +22,21 @@ const GoalInput = () => {
         type="date"
         value={goalInput.due_date}
         name="due_date"
-        onChange={handleGoalInput}
+        onChange={handleInput}
       />
       <Input
         label="목표명"
         type="text"
         value={goalInput.goal_name}
         name="goal_name"
-        onChange={handleGoalInput}
+        onChange={handleInput}
       />
       <Input
         label="상세목표"
         type="textarea"
         value={goalInput.description}
         name="description"
-        onChange={handleGoalInput}
+        onChange={handleInput}
       />
       <ButtonWrapper>
         <Button size="md" text="저장" onClick={clickSave} disabled={!isValid} />

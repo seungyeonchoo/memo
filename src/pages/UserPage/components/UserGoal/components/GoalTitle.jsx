@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-const GoalTitle = ({ data }) => {
-  return <TitleText>{data?.name}님의 목표</TitleText>;
+const GoalTitle = ({ user }) => {
+  return <TitleText>{user?.name}님의 목표</TitleText>;
 };
 
 export default GoalTitle;

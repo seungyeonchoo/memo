@@ -1,18 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { initialGoal, initialMemo, initialTodo } from '../../utils/initialInputs';
 
 export const initialSignin = { email: '', password: '' };
 export const initialSignup = { email: '', password: '', password_confirm: '', name: '' };
-export const initialTodo = { todo: '' };
-export const initialMemo = { memo: '' };
-export const initialGoal = {
-  due_date: '',
-  goal_name: '',
-  description: '',
-  userId: '',
-  date: '',
-  is_public: false,
-  is_complete: false,
-};
 
 const inputSlice = createSlice({
   name: 'input',

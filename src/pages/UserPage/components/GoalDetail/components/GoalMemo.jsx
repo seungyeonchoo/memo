@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 import Input from '../../../../../components/Common/Input';
-import useDetail from '../../../../../hooks/useDetail';
-import useToggle from '../../../../../hooks/useToggle';
+import useCreate from '../../../../../hooks/useCreate';
+import useFetch from '../../../../../hooks/useFetch';
+import useInput from '../../../../../hooks/useInput';
 import MemoItem from './MemoItem';
 
 const GoalMemo = () => {
-  const { detailToggle } = useToggle();
-  const { input, memoData, handleMemoInput, handleCreateMemo } = useDetail(detailToggle.goal);
+  const { data: memos } = useFetch('memos');
+  const { handleCreate } = useCreate('memos');
+  const { handleInput, memoInput } = useInput('memos');
   return (
     <MemoBox>
       <InputWrapper>
@@ -14,14 +16,14 @@ const GoalMemo = () => {
           label="메모"
           type="textarea"
           name="memo"
-          value={input.memoInput.memo}
+          value={memoInput.memo}
           placeholder="할일을 입력해 주세요."
-          onChange={handleMemoInput}
+          onChange={handleInput}
         />
-        <button onClick={handleCreateMemo}>+</button>
+        <button onClick={handleCreate}>+</button>
       </InputWrapper>
       <ul>
-        {memoData?.map(el => (
+        {memos?.map(el => (
           <MemoItem key={el.id} memo={el} />
         ))}
       </ul>

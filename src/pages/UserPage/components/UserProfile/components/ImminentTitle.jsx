@@ -14,5 +14,5 @@ const TitleText = styled.h1`
   background-color: #212121;
   color: #ffffff;
   padding: 0.5em 0;
-  width: 100%;
+  width: 350px;
 `;

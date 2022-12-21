@@ -5,32 +5,78 @@
       "password": "$2a$10$W.7Rtf9ld5BpCLYt966QjO6wmeeJKVx39aFrJx4igcMDEj95KPxty",
       "password_confirm": true,
       "name": "admin",
-      "id": 1,
-      "interest": ["IT/Tech", "건강"]
+      "id": 1
     }
   ],
   "goals": [
     {
       "id": 1,
       "userId": 1,
-      "date": "2022-11-30",
+      "date": "2022-12-20T22:46:12.396Z",
       "due_date": "2022-12-25",
       "is_public": false,
-      "goal_name": "자바스크립트 마스터",
+      "goal_name": "a자바스크립트 마스터dd",
       "is_complete": false,
       "is_edit": false,
-      "description": "자바스크립트를 마스터한다."
+      "description": "자바스크립트를 마스터한다.",
+      "todos": [
+        {
+          "todo": "qwe",
+          "goalId": 1,
+          "is_complete": false,
+          "id": 1
+        },
+        {
+          "todo": "sdsd",
+          "is_complete": false,
+          "goalId": 1,
+          "id": 2
+        }
+      ]
     },
     {
       "id": 2,
       "userId": 1,
-      "date": "2022-11-30",
+      "date": "2022-12-20T22:43:35.163Z",
       "due_date": "2022-12-25",
       "is_public": false,
-      "goal_name": "리액트 마스터",
+      "goal_name": "리액트 마스",
       "is_complete": false,
       "is_edit": false,
-      "description": "리액트를 마스터한다."
+      "description": "리액트를 마스터한다.",
+      "todos": []
+    },
+    {
+      "due_date": "2022-12-28",
+      "goal_name": "12ssda",
+      "description": "123",
+      "userId": 1,
+      "date": "2022-12-20T22:41:57.091Z",
+      "is_public": false,
+      "is_complete": false,
+      "id": 3,
+      "todos": []
+    },
+    {
+      "due_date": "2022-12-30",
+      "goal_name": "tests",
+      "description": "test1",
+      "userId": 1,
+      "date": "2022-12-20T22:44:02.054Z",
+      "is_public": false,
+      "is_complete": false,
+      "id": 4,
+      "todos": []
+    },
+    {
+      "due_date": "2022-12-10",
+      "goal_name": "sdasd",
+      "description": "asdasd",
+      "userId": 1,
+      "date": "2022-12-20T23:55:32.014Z",
+      "is_public": false,
+      "is_complete": false,
+      "id": 5
     }
   ],
   "todos": [
@@ -39,6 +85,18 @@
       "goalId": 1,
       "is_complete": false,
       "id": 1
+    },
+    {
+      "todo": "sdsd",
+      "is_complete": false,
+      "goalId": 1,
+      "id": 2
+    },
+    {
+      "todo": "sd",
+      "is_complete": false,
+      "goalId": 4,
+      "id": 3
     }
   ],
   "memos": [
@@ -47,6 +105,12 @@
       "goalId": 1,
       "date": "2022-12-18T23:19:48.793Z",
       "id": 1
+    },
+    {
+      "memo": "sdasd",
+      "date": "2022-12-20T22:28:03.058Z",
+      "goalId": 1,
+      "id": 2
     }
   ]
 }

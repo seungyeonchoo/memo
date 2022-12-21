@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 import Input from '../../../../../components/Common/Input';
-import useDetail from '../../../../../hooks/useDetail';
-import useToggle from '../../../../../hooks/useToggle';
+import useCreate from '../../../../../hooks/useCreate';
+import useFetch from '../../../../../hooks/useFetch';
+import useInput from '../../../../../hooks/useInput';
 import TodoItem from './TodoItem';
 
 const GoalTodo = () => {
-  const { detailToggle } = useToggle();
-  const { input, todoData, handleTodoInput, handleCreateTodo } = useDetail(detailToggle.goal);
+  const { data: todos } = useFetch('todos');
+  const { handleCreate } = useCreate('todos');
+  const { handleInput, todoInput } = useInput('todos');
   return (
     <TodoBox>
       <InputWrapper>
@@ -14,14 +16,14 @@ const GoalTodo = () => {
           label="단기 목표"
           type="text"
           name="todo"
-          value={input.todoInput.todo}
+          value={todoInput.todo}
           placeholder="할일을 입력해 주세요."
-          onChange={handleTodoInput}
+          onChange={handleInput}
         />
-        <button onClick={handleCreateTodo}>+</button>
+        <button onClick={handleCreate}>+</button>
       </InputWrapper>
       <ul>
-        {todoData?.map(el => (
+        {todos?.map(el => (
           <TodoItem key={el.id} todo={el} />
         ))}
       </ul>

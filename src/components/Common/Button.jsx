@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Button = ({ text, onClick, disabled, size, margin }) => {
   const btn_size = size === 'lg' ? '436px' : '218px';
-  const btn_margin = margin === 'auth' ? '2rem 0' : '0';
+  const btn_margin = margin === 'auth' ? '2rem 0' : '1rem 0 0 0';
   return (
     <StyledButton onClick={onClick} disabled={disabled} size={btn_size} mg={btn_margin}>
       {text}

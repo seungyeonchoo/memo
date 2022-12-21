@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import GoalItem from './GoalItem';
 
-const GoalBox = ({ data }) => {
+const GoalBox = ({ goals }) => {
   return (
     <ItemBox>
-      {data?.map(goal => (
+      {goals?.map(goal => (
         <GoalItem key={goal.id} goal={goal} />
       ))}
     </ItemBox>
