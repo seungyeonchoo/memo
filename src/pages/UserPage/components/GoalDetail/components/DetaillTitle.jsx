@@ -8,7 +8,12 @@ const DetailTitle = () => {
 
   const currGoal = goals.filter(el => el.id === detailToggle.goal)[0];
 
-  return <TitleText>목표 [{currGoal?.goal_name}]의 진행현황</TitleText>;
+  return (
+    <>
+      <TitleText>목표 [{currGoal?.goal_name}]의 진행현황</TitleText>
+      <p>{currGoal?.description}</p>
+    </>
+  );
 };
 
 export default DetailTitle;

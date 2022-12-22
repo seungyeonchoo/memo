@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import Input from '../../../components/Common/Input';
-import useAuth from '../../../hooks/useAuth';
+import useInput from '../../../hooks/useInput';
 
 const RegisterInput = () => {
-  const { signup, handleAuthInput } = useAuth();
+  const { signup, handleInput } = useInput('auth');
   return (
     <Box>
       <Input
@@ -12,7 +12,7 @@ const RegisterInput = () => {
         name="email"
         value={signup.email}
         placeholder="이메일을 입력해주세요"
-        onChange={handleAuthInput}
+        onChange={handleInput}
       />
       <Input
         label="비밀번호"
@@ -20,7 +20,7 @@ const RegisterInput = () => {
         name="password"
         value={signup.password}
         placeholder="비밀번호를 입력해주세요"
-        onChange={handleAuthInput}
+        onChange={handleInput}
       />
       <Input
         label="비밀번호 확인"
@@ -28,7 +28,7 @@ const RegisterInput = () => {
         name="password_confirm"
         value={signup.password_confirm}
         placeholder="비밀번호를 다시 한 번 입력해주세요"
-        onChange={handleAuthInput}
+        onChange={handleInput}
       />
       <Input
         label="이름"
@@ -36,7 +36,7 @@ const RegisterInput = () => {
         name="name"
         value={signup.name}
         placeholder="이름을 입력해주세요"
-        onChange={handleAuthInput}
+        onChange={handleInput}
       />
     </Box>
   );

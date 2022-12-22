@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import Input from '../../../components/Common/Input';
-import useAuth from '../../../hooks/useAuth';
+import useInput from '../../../hooks/useInput';
 
 const LoginInput = () => {
-  const { signin, handleAuthInput } = useAuth();
+  const { signin, handleInput } = useInput('auth');
   return (
     <Box>
       <Input
@@ -12,7 +12,7 @@ const LoginInput = () => {
         name="email"
         value={signin.email}
         placeholder="이메일을 입력해주세요"
-        onChange={handleAuthInput}
+        onChange={handleInput}
       />
       <Input
         label="비밀번호"
@@ -20,7 +20,7 @@ const LoginInput = () => {
         name="password"
         value={signin.password}
         placeholder="비밀번호를 입력해주세요"
-        onChange={handleAuthInput}
+        onChange={handleInput}
       />
     </Box>
   );

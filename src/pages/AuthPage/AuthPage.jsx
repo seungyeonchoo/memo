@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Button from '../../components/Common/Button';
 import useAuth from '../../hooks/useAuth';
+import useInput from '../../hooks/useInput';
 import useToggle from '../../hooks/useToggle';
 import { checkLoginInput, checkSignupInput } from '../../utils/checkIsValid';
 import AuthRegister from './components/AuthRegister';

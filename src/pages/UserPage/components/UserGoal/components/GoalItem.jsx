@@ -4,8 +4,10 @@ import calcDiffDay from '../../../../../utils/calcDiffDay';
 import useToggles from '../../../../../hooks/useToggle';
 import useDelete from '../../../../../hooks/useDelete';
 import useCheck from '../../../../../hooks/useCheck';
+import useFetch from '../../../../../hooks/useFetch';
 
 const GoalItem = ({ goal }) => {
+  const { refetch } = useFetch('todos');
   const { handleToggle: handleDetailToggle } = useToggles('detail', goal);
   const { handleDelete } = useDelete('goals', goal.id);
   const { handleIsComplete } = useCheck('goals', goal.id);
@@ -19,14 +21,13 @@ const GoalItem = ({ goal }) => {
 
   return (
     <Item key={goal.id} bg={color} onClick={handleDetailToggle}>
-      <input type="checkbox" onChange={handleIsComplete} />
+      <input type="checkbox" onChange={handleIsComplete} checked={goal?.is_complete} />
       <button onClick={handleIsComplete}>
         {goal.is_complete ? '완료' : calcDiffDay(goal.due_date)}
       </button>
       <TextWrapper>
         <Text>{goal.due_date}까지</Text>
         <Text>{goal.goal_name}</Text>
-        <Text>{goal.description}</Text>
       </TextWrapper>
       <ButtonWrapper>
         <Button onClick={handleEditToggle} disabled={editGoalToggle || createGoalToggle}>

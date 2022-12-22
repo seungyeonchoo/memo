@@ -30,4 +30,6 @@ export class UserStorage {
   };
 }
 
+export const user_id = new UserStorage().getId();
+
 export default TokenStorage;

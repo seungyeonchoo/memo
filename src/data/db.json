@@ -10,106 +10,140 @@
   ],
   "goals": [
     {
-      "id": 1,
-      "userId": 1,
-      "date": "2022-12-20T22:46:12.396Z",
-      "due_date": "2022-12-25",
-      "is_public": false,
-      "goal_name": "a자바스크립트 마스터",
-      "is_complete": false,
-      "is_edit": false,
-      "description": "자바스크립트를 마스터한다.",
-      "todos": [
-        {
-          "todo": "qwe",
-          "goalId": 1,
-          "is_complete": false,
-          "id": 1
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "userId": 1,
-      "date": "2022-12-20T22:43:35.163Z",
-      "due_date": "2022-12-25",
-      "is_public": false,
-      "goal_name": "리액트 마스터",
-      "is_complete": false,
-      "is_edit": false,
-      "description": "리액트를 마스터한다.",
-      "todos": []
-    },
-    {
-      "due_date": "2022-12-29",
+      "due_date": "2022-12-31",
       "goal_name": "수정사항",
-      "description": "1. 삭제/수정 버튼 클릭시 detail 토글 변화하는 것 수정 필요\n2. 아이템 클릭시 디테일 토글은 변화하는데 refetch되지 않는 문제 \n",
+      "description": "프로젝트 진행 중 수정이 필요한 내용들",
       "userId": 1,
       "date": "2022-12-21T00:47:15.189Z",
       "is_public": false,
       "is_complete": false,
       "id": 3,
-      "todos": []
-    },
-    {
-      "due_date": "2022-12-17",
-      "goal_name": "asd",
-      "description": "asd",
-      "userId": 1,
-      "date": "2022-12-21T00:47:15.189Z",
-      "is_public": false,
-      "is_complete": false,
-      "id": 4
+      "todos": [
+        {
+          "todo": "삭제/수정 버튼 클릭시 detail 토글 변화하는 것 수정 ",
+          "is_complete": false,
+          "goalId": 3,
+          "id": 4
+        },
+        {
+          "todo": "아이템 클릭시 & 목표 필터 및 정렬 버튼 클릭 시 디테일 토글은 변화하는데 refetch되지 않는 문제",
+          "is_complete": false,
+          "goalId": 3,
+          "id": 5
+        },
+        {
+          "todo": "목표 상세는 디테일에 설명 형식으로 볼수 있게 수정",
+          "is_complete": false,
+          "goalId": 3,
+          "id": 6
+        },
+        {
+          "todo": "useAuth 및 useParam 리팩토링",
+          "is_complete": false,
+          "goalId": 3,
+          "id": 7
+        }
+      ]
     },
     {
       "due_date": "2023-01-05",
       "goal_name": "추가",
-      "description": "1. 작성일 변환 함수\n2. ",
+      "description": "프로젝트 진행중 기능 추가가 필요한 내용들",
       "userId": 1,
       "date": "2022-12-22T00:36:09.220Z",
       "is_public": false,
       "is_complete": false,
-      "id": 5
+      "id": 5,
+      "todos": [
+        {
+          "todo": "작성일 변환 함수",
+          "is_complete": true,
+          "goalId": 5,
+          "id": 8
+        },
+        {
+          "todo": "프로필 토글 (알림, 기한임박, 쪽지)",
+          "is_complete": false,
+          "goalId": 5,
+          "id": 9
+        },
+        {
+          "todo": "로그아웃 (로컬 토큰 삭제 및 세션 id 삭제) ",
+          "is_complete": false,
+          "goalId": 5,
+          "id": 10
+        },
+        {
+          "todo": "투두 및 메모 작성 및 완료시 작성자 / 완료자 추가 (인풋 수정 필요)",
+          "is_complete": false,
+          "goalId": 5,
+          "id": 11
+        }
+      ]
     }
   ],
   "todos": [
     {
-      "todo": "qwe",
-      "goalId": 1,
-      "is_complete": false,
-      "id": 1
-    },
-    {
-      "todo": "sdasd",
+      "todo": "삭제/수정 버튼 클릭시 detail 토글 변화하는 것 수정 ",
       "is_complete": true,
       "goalId": 3,
-      "id": 2
+      "id": 4
     },
     {
-      "todo": "ssd",
+      "todo": "아이템 클릭시 & 목표 필터 및 정렬 버튼 클릭 시 디테일 토글은 변화하는데 refetch되지 않는 문제",
       "is_complete": false,
       "goalId": 3,
-      "id": 3
+      "id": 5
+    },
+    {
+      "todo": "목표 상세는 디테일에 설명 형식으로 볼수 있게 수정",
+      "is_complete": true,
+      "goalId": 3,
+      "id": 6
+    },
+    {
+      "todo": "useAuth 및 useParam 리팩토링",
+      "is_complete": false,
+      "goalId": 3,
+      "id": 7
+    },
+    {
+      "todo": "작성일 변환 함수",
+      "is_complete": false,
+      "goalId": 5,
+      "id": 8
+    },
+    {
+      "todo": "프로필 토글 (알림, 기한임박, 쪽지)",
+      "is_complete": false,
+      "goalId": 5,
+      "id": 9
+    },
+    {
+      "todo": "로그아웃 (로컬 토큰 삭제 및 세션 id 삭제) ",
+      "is_complete": false,
+      "goalId": 5,
+      "id": 10
+    },
+    {
+      "todo": "투두 및 메모 작성 및 완료시 작성자 / 완료자 추가 (인풋 수정 필요)",
+      "is_complete": false,
+      "goalId": 5,
+      "id": 11
     }
   ],
   "memos": [
     {
-      "memo": "qweqe",
-      "goalId": 1,
-      "date": "2022-12-18T23:19:48.793Z",
+      "memo": "x",
+      "date": "2022-12-22T15:06:01.537Z",
+      "goalId": 3,
       "id": 1
     },
     {
-      "memo": "asdasd",
-      "date": "2022-12-22T00:36:09.220Z",
-      "goalId": 3,
+      "memo": "dasd",
+      "date": "2022-12-22T15:06:26.756Z",
+      "goalId": 5,
       "id": 2
-    },
-    {
-      "memo": "asdasda",
-      "date": "2022-12-22T00:36:09.220Z",
-      "goalId": 3,
-      "id": 3
     }
   ]
 }

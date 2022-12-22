@@ -7,7 +7,7 @@ const TodoItem = ({ todo }) => {
   const { handleIsComplete } = useCheck('todos', todo.id);
   return (
     <Item>
-      <input type="checkbox" onChange={handleIsComplete} />
+      <input type="checkbox" onChange={handleIsComplete} checked={todo?.is_complete} />
       <div>{todo.todo}</div>
       <button onClick={handleDelete}>삭제</button>
     </Item>

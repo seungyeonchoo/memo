@@ -7,7 +7,8 @@ const useDelete = (item, id) => {
   const deleteGoal = new Http(`${item}/${Number(id)}`).delete;
   const { mutate } = useMutation(deleteGoal);
 
-  const handleDelete = () => {
+  const handleDelete = e => {
+    e.stopPropagation();
     mutate(Number(id), {
       onSuccess: () => {
         queryClient.invalidateQueries(item);

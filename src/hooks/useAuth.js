@@ -19,15 +19,7 @@ const useAuth = () => {
   const tokenStorage = new TokenStorage();
   const setUserId = new UserStorage().setId;
 
-  // handle Auth input change
-
   const { signin, signup } = useSelector(state => state.input);
-
-  const handleAuthInput = e => {
-    const { name, value } = e.target;
-    if (authToggle) dispatch(signupChange({ ...signup, [name]: value }));
-    else dispatch(signinChange({ ...signin, [name]: value }));
-  };
 
   const handleInputInit = () => {
     if (authToggle) dispatch(signupChange(initialSignup));
@@ -61,7 +53,7 @@ const useAuth = () => {
 
   // handle Logout
 
-  return { authData, signin, signup, handleAuthInput, handleAuthEvent };
+  return { authData, handleAuthEvent };
 };
 
 export default useAuth;
