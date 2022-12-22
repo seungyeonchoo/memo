@@ -24,7 +24,7 @@ const usePatch = item => {
       onSuccess: () => {
         dispatch(curr_item.init());
         queryClient.invalidateQueries(item);
-        queryClient.invalidateQueries('user');
+        // queryClient.invalidateQueries('user');
       },
     });
   };

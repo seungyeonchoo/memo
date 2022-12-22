@@ -27,25 +27,9 @@ const useToggle = (item, goal) => {
   const curr_item = Items[item];
 
   const handleToggle = () => {
-    switch (item) {
-      case 'goals':
-        dispatch(goalInputChange(initialGoal));
-        dispatch(curr_item());
-        break;
-
-      case 'edit':
-        !editGoalToggle ? dispatch(goalInputChange(goal)) : dispatch(goalInputChange(initialGoal));
-        dispatch(curr_item());
-        break;
-
-      case 'detail':
-        dispatch(curr_item(goal.id));
-        break;
-
-      default:
-        dispatch(curr_item());
-        break;
-    }
+    if (item === 'goals') dispatch(goalInputChange(initialGoal));
+    if (item === 'edit') dispatch(goalInputChange(!editGoalToggle ? goal : initialGoal));
+    dispatch(curr_item(item === 'detail' ? goal.id : null));
   };
 
   return {

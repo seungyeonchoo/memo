@@ -29,7 +29,7 @@ const toggleSlice = createSlice({
     detailToggleChange: (state, action) => {
       if (state.detailToggle._toggle && state.detailToggle.goal === action.payload) {
         state.detailToggle._toggle = !state.detailToggle._toggle;
-      } else if (state.detailToggle._toggle) {
+      } else if (state.detailToggle._toggle && state.detailToggle.goal !== action.payload) {
         state.detailToggle.goal = action.payload;
       } else {
         state.detailToggle._toggle = !state.detailToggle._toggle;

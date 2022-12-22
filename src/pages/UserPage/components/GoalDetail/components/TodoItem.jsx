@@ -1,11 +1,15 @@
 import styled from 'styled-components';
+import useCheck from '../../../../../hooks/useCheck';
+import useDelete from '../../../../../hooks/useDelete';
 
 const TodoItem = ({ todo }) => {
+  const { handleDelete } = useDelete('todos', todo.id);
+  const { handleIsComplete } = useCheck('todos', todo.id);
   return (
     <Item>
-      <input type="checkbox" />
+      <input type="checkbox" onChange={handleIsComplete} />
       <div>{todo.todo}</div>
-      <button>삭제</button>
+      <button onClick={handleDelete}>삭제</button>
     </Item>
   );
 };

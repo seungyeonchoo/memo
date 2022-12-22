@@ -15,7 +15,7 @@
       "date": "2022-12-20T22:46:12.396Z",
       "due_date": "2022-12-25",
       "is_public": false,
-      "goal_name": "a자바스크립트 마스터dd",
+      "goal_name": "a자바스크립트 마스터",
       "is_complete": false,
       "is_edit": false,
       "description": "자바스크립트를 마스터한다.",
@@ -25,12 +25,6 @@
           "goalId": 1,
           "is_complete": false,
           "id": 1
-        },
-        {
-          "todo": "sdsd",
-          "is_complete": false,
-          "goalId": 1,
-          "id": 2
         }
       ]
     },
@@ -40,40 +34,39 @@
       "date": "2022-12-20T22:43:35.163Z",
       "due_date": "2022-12-25",
       "is_public": false,
-      "goal_name": "리액트 마스",
+      "goal_name": "리액트 마스터",
       "is_complete": false,
       "is_edit": false,
       "description": "리액트를 마스터한다.",
       "todos": []
     },
     {
-      "due_date": "2022-12-28",
-      "goal_name": "12ssda",
-      "description": "123",
+      "due_date": "2022-12-29",
+      "goal_name": "수정사항",
+      "description": "1. 삭제/수정 버튼 클릭시 detail 토글 변화하는 것 수정 필요\n2. 아이템 클릭시 디테일 토글은 변화하는데 refetch되지 않는 문제 \n",
       "userId": 1,
-      "date": "2022-12-20T22:41:57.091Z",
+      "date": "2022-12-21T00:47:15.189Z",
       "is_public": false,
       "is_complete": false,
       "id": 3,
       "todos": []
     },
     {
-      "due_date": "2022-12-30",
-      "goal_name": "tests",
-      "description": "test1",
+      "due_date": "2022-12-17",
+      "goal_name": "asd",
+      "description": "asd",
       "userId": 1,
-      "date": "2022-12-20T22:44:02.054Z",
+      "date": "2022-12-21T00:47:15.189Z",
       "is_public": false,
       "is_complete": false,
-      "id": 4,
-      "todos": []
+      "id": 4
     },
     {
-      "due_date": "2022-12-10",
-      "goal_name": "sdasd",
-      "description": "asdasd",
+      "due_date": "2023-01-05",
+      "goal_name": "추가",
+      "description": "1. 작성일 변환 함수\n2. ",
       "userId": 1,
-      "date": "2022-12-20T23:55:32.014Z",
+      "date": "2022-12-22T00:36:09.220Z",
       "is_public": false,
       "is_complete": false,
       "id": 5
@@ -87,15 +80,15 @@
       "id": 1
     },
     {
-      "todo": "sdsd",
-      "is_complete": false,
-      "goalId": 1,
+      "todo": "sdasd",
+      "is_complete": true,
+      "goalId": 3,
       "id": 2
     },
     {
-      "todo": "sd",
+      "todo": "ssd",
       "is_complete": false,
-      "goalId": 4,
+      "goalId": 3,
       "id": 3
     }
   ],
@@ -107,10 +100,16 @@
       "id": 1
     },
     {
-      "memo": "sdasd",
-      "date": "2022-12-20T22:28:03.058Z",
-      "goalId": 1,
+      "memo": "asdasd",
+      "date": "2022-12-22T00:36:09.220Z",
+      "goalId": 3,
       "id": 2
+    },
+    {
+      "memo": "asdasda",
+      "date": "2022-12-22T00:36:09.220Z",
+      "goalId": 3,
+      "id": 3
     }
   ]
 }

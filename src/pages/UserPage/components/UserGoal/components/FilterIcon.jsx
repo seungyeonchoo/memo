@@ -4,7 +4,9 @@ import styled from 'styled-components';
 import useToggle from '../../../../../hooks/useToggle';
 
 const FilterIcon = () => {
-  const { handleSortToggle, handleFilterToggle } = useToggle();
+  const { handleToggle: handleSortToggle } = useToggle('sort');
+  const { handleToggle: handleFilterToggle } = useToggle('filter');
+
   return (
     <IconWrapper>
       <IconButton onClick={handleSortToggle}>

@@ -25,9 +25,9 @@ const useFetch = item => {
   const curr_item = Items[item];
 
   const fetchItem = new Http(item === 'users' ? `${item}/${user_id}` : item);
-  const { data } = useQuery([item], () => fetchItem.get(curr_item.params));
+  const { data, refetch } = useQuery([item], () => fetchItem.get(curr_item.params));
 
-  return { data };
+  return { data, refetch };
 };
 
 export default useFetch;

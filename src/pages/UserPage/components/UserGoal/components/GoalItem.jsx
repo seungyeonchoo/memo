@@ -1,17 +1,20 @@
 import styled from 'styled-components';
-import useGoal from '../../../../../hooks/useGoal';
 import { AiFillEdit, AiFillDelete } from 'react-icons/ai';
 import calcDiffDay from '../../../../../utils/calcDiffDay';
 import useToggles from '../../../../../hooks/useToggle';
+import useDelete from '../../../../../hooks/useDelete';
+import useCheck from '../../../../../hooks/useCheck';
 
 const GoalItem = ({ goal }) => {
-  const { handleDelete, handleIsComplete } = useGoal(goal.id);
   const { handleToggle: handleDetailToggle } = useToggles('detail', goal);
+  const { handleDelete } = useDelete('goals', goal.id);
+  const { handleIsComplete } = useCheck('goals', goal.id);
   const {
     handleToggle: handleEditToggle,
     editGoalToggle,
     createGoalToggle,
   } = useToggles('edit', goal);
+
   const color = goal.is_complete ? '#cfd8dc' : '#eceff1';
 
   return (
