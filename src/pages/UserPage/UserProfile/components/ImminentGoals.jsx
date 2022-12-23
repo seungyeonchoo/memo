@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import calcDiffDay from '../../../../../utils/calcDiffDay';
+import calcDiffDay from '../../../../utils/calcDiffDay';
 import ImminentItem from './ImminentItem';
 import ImminentTitle from './ImminentTitle';
 

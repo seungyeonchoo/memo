@@ -14,6 +14,7 @@ const useCheck = (item, id) => {
     mutate(isComplete, {
       onSuccess: () => {
         queryClient.invalidateQueries(item);
+        if (item === 'todos') queryClient.invalidateQueries('goals');
       },
     });
   };

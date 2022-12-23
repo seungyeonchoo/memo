@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import Input from '../../../../../components/Common/Input';
-import useCreate from '../../../../../hooks/useCreate';
-import useFetch from '../../../../../hooks/useFetch';
-import useInput from '../../../../../hooks/useInput';
+import useCreate from '../../../hooks/useCreate';
+import useFetch from '../../../hooks/useFetch';
+import useInput from '../../../hooks/useInput';
+import Input from '../../Common/Input';
 import TodoItem from './TodoItem';
 
-const GoalTodo = () => {
+const DetailTodo = () => {
   const { data: todos } = useFetch('todos');
   const { handleCreate } = useCreate('todos');
   const { handleInput, todoInput } = useInput('todos');
@@ -31,7 +31,7 @@ const GoalTodo = () => {
   );
 };
 
-export default GoalTodo;
+export default DetailTodo;
 
 const TodoBox = styled.section`
   display: flex;

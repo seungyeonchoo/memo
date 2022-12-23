@@ -6,12 +6,13 @@ import {
   detailToggleChange,
   editGoalToggleChange,
   filterToggleChange,
+  profileToggleChange,
   sortToggleChange,
 } from '../store/slices/toggleSlice';
 import { initialGoal } from '../utils/initialInputs';
 import useFetch from './useFetch';
 
-const useToggle = (item, goal) => {
+const useToggle = (item, goal, profile) => {
   const dispatch = useDispatch();
   const { refetch } = useFetch('todos');
   const { createGoalToggle, authToggle, editGoalToggle, sortToggle, filterToggle, detailToggle } =
@@ -24,6 +25,7 @@ const useToggle = (item, goal) => {
     edit: editGoalToggleChange,
     filter: filterToggleChange,
     detail: detailToggleChange,
+    profile: profileToggleChange,
   };
 
   const curr_item = Items[item];
@@ -32,7 +34,7 @@ const useToggle = (item, goal) => {
     e.stopPropagation();
     if (item === 'goals') dispatch(goalInputChange(initialGoal));
     if (item === 'edit') dispatch(goalInputChange(!editGoalToggle ? goal : initialGoal));
-    dispatch(curr_item(item === 'detail' ? goal.id : null));
+    dispatch(curr_item(item === 'detail' ? goal.id : profile || null));
     // if (item === 'detail') refetch();
   };
 
@@ -48,3 +50,7 @@ const useToggle = (item, goal) => {
 };
 
 export default useToggle;
+
+// profileToggleChange: (state, action) => {
+//   state.profileToggle = { ...initialProfileToggle, ...action.payload };
+// },

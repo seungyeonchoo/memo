@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Interest from '../../../../../components/Interest/Interest';
+import Interest from '../../../../components/Interest/Interest';
 
 const BasicInfo = ({ user }) => {
   return (

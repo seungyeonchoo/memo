@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { DEFAULT_PROFILE_IMG } from '../../../../../utils/constant';
+import { DEFAULT_PROFILE_IMG } from '../../../../utils/constant';
 
 const ProfileImg = ({ user }) => {
   return (

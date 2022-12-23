@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import useFetch from '../../../../../hooks/useFetch';
-import useToggle from '../../../../../hooks/useToggle';
+import useFetch from '../../../hooks/useFetch';
+import useToggle from '../../../hooks/useToggle';
 
 const DetailTitle = () => {
   const { data: goals } = useFetch('goals');
   const { detailToggle } = useToggle();
 
-  const currGoal = goals.filter(el => el.id === detailToggle.goal)[0];
+  const currGoal = { ...goals.filter(el => el.id === detailToggle.goal) };
 
   return (
     <>

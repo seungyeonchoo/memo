@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import useFetch from '../../../../hooks/useFetch';
-import { user_id } from '../../../../utils/Storage';
+import useFetch from '../../../hooks/useFetch';
+import { user_id } from '../../../utils/Storage';
 import BasicInfo from './components/BasicInfo';
 import ImminentGoals from './components/ImminentGoals';
 import ProfileButton from './components/ProfileButton';

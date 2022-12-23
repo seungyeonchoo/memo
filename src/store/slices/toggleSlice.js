@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+export const initialProfileToggle = { notice: false, message: false, imminent: false };
+
 const toggleSlice = createSlice({
   name: 'toggle',
   initialState: {
@@ -9,6 +11,7 @@ const toggleSlice = createSlice({
     sortToggle: false,
     filterToggle: false,
     detailToggle: { _toggle: false, goal: null },
+    profileToggle: initialProfileToggle,
   },
   reducers: {
     authToggleChange: state => {
@@ -25,6 +28,9 @@ const toggleSlice = createSlice({
     },
     filterToggleChange: state => {
       state.filterToggle = !state.filterToggle;
+    },
+    profileToggleChange: (state, action) => {
+      state.profileToggle = { ...initialProfileToggle, ...action.payload };
     },
     detailToggleChange: (state, action) => {
       if (state.detailToggle._toggle && state.detailToggle.goal === action.payload) {
@@ -46,6 +52,7 @@ export const {
   sortToggleChange,
   filterToggleChange,
   detailToggleChange,
+  profileToggleChange,
 } = toggleSlice.actions;
 
 export default toggleSlice.reducer;
