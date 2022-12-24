@@ -40,6 +40,8 @@ const useCreate = item => {
           item === 'goals' && dispatch(createGoalToggleChange());
           dispatch(curr_item.init(curr_item.initial));
           queryClient.invalidateQueries(item);
+          queryClient.invalidateQueries('users');
+          if (item === 'todos' || item === 'memos') queryClient.invalidateQueries('goals');
         },
       });
     }

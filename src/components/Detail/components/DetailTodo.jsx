@@ -1,14 +1,18 @@
 import styled from 'styled-components';
+import useCheck from '../../../hooks/useCheck';
 import useCreate from '../../../hooks/useCreate';
 import useFetch from '../../../hooks/useFetch';
 import useInput from '../../../hooks/useInput';
+import checkIsCompleted from '../../../utils/checkIsCompleted';
+import Button from '../../Common/Button';
 import Input from '../../Common/Input';
 import TodoItem from './TodoItem';
 
-const DetailTodo = () => {
-  const { data: todos } = useFetch('todos');
+const DetailTodo = ({ goal }) => {
   const { handleCreate } = useCreate('todos');
   const { handleInput, todoInput } = useInput('todos');
+  const { handleIsComplete } = useCheck('goals', goal?.id);
+
   return (
     <TodoBox>
       <InputWrapper>
@@ -22,11 +26,14 @@ const DetailTodo = () => {
         />
         <button onClick={handleCreate}>+</button>
       </InputWrapper>
-      <ul>
-        {todos?.map(el => (
+      <TodoWrapper>
+        {goal?.todos.map(el => (
           <TodoItem key={el.id} todo={el} />
         ))}
-      </ul>
+      </TodoWrapper>
+      <Button text="완료" onClick={handleIsComplete} disabled={!checkIsCompleted(goal)} />
+      {/* button is disabled if every todos aren't completed yet */}
+      {/* onClick -> goal.is_complete = true(patch) */}
     </TodoBox>
   );
 };
@@ -36,9 +43,15 @@ export default DetailTodo;
 const TodoBox = styled.section`
   display: flex;
   flex-direction: column;
-  height: 300px;
+  align-items: center;
+  height: 400px;
 `;
 
 const InputWrapper = styled.div`
   display: flex;
+  align-items: flex-end;
+`;
+
+const TodoWrapper = styled.ul`
+  overflow: scroll;
 `;

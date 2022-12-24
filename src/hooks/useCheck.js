@@ -9,7 +9,8 @@ const useCheck = (item, id) => {
 
   const handleIsComplete = e => {
     const { checked } = e.target;
-    const isComplete = { is_complete: checked };
+
+    const isComplete = { is_complete: checked === undefined ? true : checked };
 
     mutate(isComplete, {
       onSuccess: () => {

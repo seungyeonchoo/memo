@@ -12,6 +12,7 @@ const useDelete = (item, id) => {
     mutate(Number(id), {
       onSuccess: () => {
         queryClient.invalidateQueries(item);
+        if (item === 'todos' || item === 'memos') queryClient.invalidateQueries('goals');
       },
     });
   };

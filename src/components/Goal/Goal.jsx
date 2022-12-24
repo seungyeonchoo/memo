@@ -38,7 +38,7 @@ const GoalContainer = styled.section`
 const ItemBox = styled.ul`
   display: flex;
   flex-direction: column;
-  height: 600px;
+  height: 400px;
   overflow: scroll;
 `;
 

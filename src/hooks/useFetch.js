@@ -13,10 +13,15 @@ const useFetch = (item, id, type) => {
       params: { _embed: 'goals' },
     },
     goals: {
-      params: { ...sortParams, ...filterParams, userId: user_id, _embed: 'todos' },
+      params: {
+        ...sortParams,
+        ...filterParams,
+        userId: user_id,
+        _embed: 'todos',
+      },
     },
     todos: {
-      params: { goalId: toggle.detailToggle.goal },
+      params: { goalId: id },
     },
     memos: {
       params: { goalId: toggle.detailToggle.goal },
@@ -25,9 +30,10 @@ const useFetch = (item, id, type) => {
 
   const curr_item = Items[item];
   const fetch_url = id ? `${item}/${id}` : item;
+  const query_key = id ? [item, { id: id }] : [item];
 
   const fetchItem = new Http(fetch_url);
-  const { data, refetch } = useQuery([item], () => fetchItem.get(curr_item.params));
+  const { data, refetch } = useQuery(query_key, () => fetchItem.get(curr_item.params));
   return { data, refetch };
 };
 

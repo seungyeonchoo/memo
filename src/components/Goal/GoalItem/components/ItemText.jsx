@@ -12,7 +12,6 @@ const ItemText = ({ item }) => {
 export default ItemText;
 
 const TextWrapper = styled.div`
-  width: 65%;
   display: flex;
   flex-direction: column;
   justify-content: baseline;

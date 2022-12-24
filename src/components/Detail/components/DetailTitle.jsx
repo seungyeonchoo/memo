@@ -2,16 +2,11 @@ import styled from 'styled-components';
 import useFetch from '../../../hooks/useFetch';
 import useToggle from '../../../hooks/useToggle';
 
-const DetailTitle = () => {
-  const { data: goals } = useFetch('goals');
-  const { detailToggle } = useToggle();
-
-  const currGoal = { ...goals.filter(el => el.id === detailToggle.goal) };
-
+const DetailTitle = ({ goal }) => {
   return (
     <>
-      <TitleText>목표 [{currGoal?.goal_name}]의 진행현황</TitleText>
-      <p>{currGoal?.description}</p>
+      <TitleText>목표 [{goal?.goal_name}]의 진행현황</TitleText>
+      <p>{goal?.description}</p>
     </>
   );
 };

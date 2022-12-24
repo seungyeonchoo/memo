@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 import useCreate from '../../../hooks/useCreate';
-import useFetch from '../../../hooks/useFetch';
 import useInput from '../../../hooks/useInput';
 import Input from '../../Common/Input';
 
 import MemoItem from './MemoItem';
 
-const DetailMemo = () => {
-  const { data: memos } = useFetch('memos');
+const DetailMemo = ({ memos }) => {
   const { handleCreate } = useCreate('memos');
   const { handleInput, memoInput } = useInput('memos');
   return (

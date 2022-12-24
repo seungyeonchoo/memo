@@ -17,33 +17,7 @@
       "date": "2022-12-21T00:47:15.189Z",
       "is_public": false,
       "is_complete": false,
-      "id": 3,
-      "todos": [
-        {
-          "todo": "삭제/수정 버튼 클릭시 detail 토글 변화하는 것 수정 ",
-          "is_complete": false,
-          "goalId": 3,
-          "id": 4
-        },
-        {
-          "todo": "아이템 클릭시 & 목표 필터 및 정렬 버튼 클릭 시 디테일 토글은 변화하는데 refetch되지 않는 문제",
-          "is_complete": false,
-          "goalId": 3,
-          "id": 5
-        },
-        {
-          "todo": "목표 상세는 디테일에 설명 형식으로 볼수 있게 수정",
-          "is_complete": false,
-          "goalId": 3,
-          "id": 6
-        },
-        {
-          "todo": "useAuth 및 useParam 리팩토링",
-          "is_complete": false,
-          "goalId": 3,
-          "id": 7
-        }
-      ]
+      "id": 3
     },
     {
       "due_date": "2023-01-05",
@@ -53,33 +27,27 @@
       "date": "2022-12-22T00:36:09.220Z",
       "is_public": false,
       "is_complete": false,
-      "id": 5,
-      "todos": [
-        {
-          "todo": "작성일 변환 함수",
-          "is_complete": true,
-          "goalId": 5,
-          "id": 8
-        },
-        {
-          "todo": "프로필 토글 (알림, 기한임박, 쪽지)",
-          "is_complete": false,
-          "goalId": 5,
-          "id": 9
-        },
-        {
-          "todo": "로그아웃 (로컬 토큰 삭제 및 세션 id 삭제) ",
-          "is_complete": false,
-          "goalId": 5,
-          "id": 10
-        },
-        {
-          "todo": "투두 및 메모 작성 및 완료시 작성자 / 완료자 추가 (인풋 수정 필요)",
-          "is_complete": false,
-          "goalId": 5,
-          "id": 11
-        }
-      ]
+      "id": 5
+    },
+    {
+      "due_date": "2022-12-26",
+      "goal_name": "1",
+      "description": "123",
+      "userId": 1,
+      "date": "2022-12-24T21:21:38.640Z",
+      "is_public": false,
+      "is_complete": false,
+      "id": 6
+    },
+    {
+      "due_date": "2022-12-25",
+      "goal_name": "1",
+      "description": "23",
+      "userId": 1,
+      "date": "2022-12-24T21:30:03.629Z",
+      "is_public": false,
+      "is_complete": false,
+      "id": 7
     }
   ],
   "todos": [
@@ -121,7 +89,7 @@
     },
     {
       "todo": "로그아웃 (로컬 토큰 삭제 및 세션 id 삭제) ",
-      "is_complete": false,
+      "is_complete": true,
       "goalId": 5,
       "id": 10
     },

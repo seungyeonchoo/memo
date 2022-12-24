@@ -16,12 +16,13 @@ const useParam = () => {
 
   // handle filter param
   const handleFilterParam = e => {
-    const { name } = e.target;
-    const value =
-      name === 'is_complete'
-        ? handleFilterCondition(filterParams.is_complete)
-        : handleFilterCondition(filterParams.is_public);
-    const newParam = { ...filterParams, [name]: value };
+    const { name, checked } = e.target;
+    console.log(checked);
+    // const value =
+    //   name === 'is_complete'
+    //     ? handleFilterCondition(filterParams.is_complete)
+    //     : handleFilterCondition(filterParams.is_public);
+    const newParam = { ...filterParams, [name]: checked };
     dispatch(filterParamChange(newParam));
   };
 
