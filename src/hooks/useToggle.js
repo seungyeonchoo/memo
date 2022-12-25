@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { goalInputChange } from '../store/slices/inputSlice';
 import {
   authToggleChange,
+  commentToggleChange,
   createGoalToggleChange,
   detailToggleChange,
   editGoalToggleChange,
@@ -15,8 +16,15 @@ import useFetch from './useFetch';
 const useToggle = (item, goal, profile) => {
   const dispatch = useDispatch();
   const { refetch } = useFetch('todos');
-  const { createGoalToggle, authToggle, editGoalToggle, sortToggle, filterToggle, detailToggle } =
-    useSelector(state => state.toggle);
+  const {
+    createGoalToggle,
+    authToggle,
+    editGoalToggle,
+    sortToggle,
+    filterToggle,
+    detailToggle,
+    commentToggle,
+  } = useSelector(state => state.toggle);
 
   const Items = {
     auth: authToggleChange,
@@ -26,6 +34,7 @@ const useToggle = (item, goal, profile) => {
     filter: filterToggleChange,
     detail: detailToggleChange,
     profile: profileToggleChange,
+    comments: commentToggleChange,
   };
 
   const curr_item = Items[item];
@@ -46,6 +55,7 @@ const useToggle = (item, goal, profile) => {
     filterToggle,
     detailToggle,
     handleToggle,
+    commentToggle,
   };
 };
 

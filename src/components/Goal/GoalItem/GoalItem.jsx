@@ -25,9 +25,10 @@ export default GoalItem;
 const Item = styled.li`
   display: flex;
   justify-content: space-between;
-  width: 410px;
-  padding: 10px;
-  border: 1px solid black;
+  align-items: center;
+  width: 350px;
+  padding: 0.5em 2em;
+  font-size: 0.8em;
   background-color: ${props => props.bg};
   && {
     margin-bottom: 0.5em;

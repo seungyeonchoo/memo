@@ -13,4 +13,7 @@ const GoalInput = () => {
 
 export default GoalInput;
 
-const InputBox = styled.div``;
+const InputBox = styled.div`
+  z-index: 50;
+  position: relative;
+`;

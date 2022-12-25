@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { initialGoal, initialMemo, initialTodo } from '../../utils/initialInputs';
+import { initialComment, initialGoal, initialTodo } from '../../utils/initialInputs';
 
 export const initialSignin = { email: '', password: '' };
 export const initialSignup = { email: '', password: '', password_confirm: '', name: '' };
@@ -11,7 +11,7 @@ const inputSlice = createSlice({
     signup: initialSignup,
     goalInput: initialGoal,
     todoInput: initialTodo,
-    memoInput: initialMemo,
+    commentInput: initialComment,
   },
   reducers: {
     goalInputChange: (state, action) => {
@@ -26,12 +26,12 @@ const inputSlice = createSlice({
     todoInputChange: (state, action) => {
       state.todoInput = action.payload;
     },
-    memoInputChange: (state, action) => {
-      state.memoInput = action.payload;
+    commentInputChange: (state, action) => {
+      state.commentInput = action.payload;
     },
   },
 });
 
-export const { goalInputChange, signinChange, signupChange, todoInputChange, memoInputChange } =
+export const { goalInputChange, signinChange, signupChange, todoInputChange, commentInputChange } =
   inputSlice.actions;
 export default inputSlice.reducer;

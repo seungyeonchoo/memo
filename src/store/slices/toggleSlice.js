@@ -10,6 +10,7 @@ const toggleSlice = createSlice({
     editGoalToggle: false,
     sortToggle: false,
     filterToggle: false,
+    commentToggle: false,
     detailToggle: { _toggle: false, goal: null },
     profileToggle: initialProfileToggle,
   },
@@ -32,6 +33,9 @@ const toggleSlice = createSlice({
     profileToggleChange: (state, action) => {
       state.profileToggle = { ...initialProfileToggle, ...action.payload };
     },
+    commentToggleChange: state => {
+      state.commentToggle = !state.commentToggle;
+    },
     detailToggleChange: (state, action) => {
       if (state.detailToggle._toggle && state.detailToggle.goal === action.payload) {
         state.detailToggle._toggle = !state.detailToggle._toggle;
@@ -53,6 +57,7 @@ export const {
   filterToggleChange,
   detailToggleChange,
   profileToggleChange,
+  commentToggleChange,
 } = toggleSlice.actions;
 
 export default toggleSlice.reducer;

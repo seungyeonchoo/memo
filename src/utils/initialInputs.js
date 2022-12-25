@@ -1,14 +1,16 @@
-import { UserStorage } from './Storage';
+import { UserStorage, user_id } from './Storage';
 
 export const initialTodo = {
   todo: '',
   is_complete: false,
   goalId: '',
+  comment_toggle: false,
 };
-export const initialMemo = {
-  memo: '',
+export const initialComment = {
+  comment: '',
+  //   userId: user_id,
   date: new Date(),
-  goalId: '',
+  todoId: '',
 };
 export const initialGoal = {
   due_date: '',

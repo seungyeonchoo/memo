@@ -1,15 +1,15 @@
 import { useMutation, useQueryClient } from 'react-query';
 import { useDispatch, useSelector } from 'react-redux';
 import Http from '../services/Http';
-import { goalInputChange, memoInputChange, todoInputChange } from '../store/slices/inputSlice';
+import { goalInputChange, todoInputChange } from '../store/slices/inputSlice';
 import { createGoalToggleChange } from '../store/slices/toggleSlice';
-import { initialGoal, initialMemo, initialTodo } from '../utils/initialInputs';
+import { initialGoal, initialTodo } from '../utils/initialInputs';
 
 const useCreate = item => {
   const dispatch = useDispatch();
   const queryClient = useQueryClient();
   const { input, toggle } = useSelector(state => state);
-  const { goalInput, todoInput, memoInput } = input;
+  const { goalInput, todoInput } = input;
 
   const Items = {
     goals: {
@@ -22,11 +22,11 @@ const useCreate = item => {
       init: todoInputChange,
       initial: initialTodo,
     },
-    memos: {
-      input: { ...memoInput, goalId: toggle.detailToggle.goal },
-      init: memoInputChange,
-      initial: initialMemo,
-    },
+    // memos: {
+    //   input: { ...memoInput, goalId: toggle.detailToggle.goal },
+    //   init: memoInputChange,
+    //   initial: initialMemo,
+    // },
   };
 
   const curr_item = Items[item];

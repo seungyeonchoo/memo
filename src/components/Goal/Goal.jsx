@@ -8,7 +8,7 @@ import GoalItem from './GoalItem/GoalItem';
 
 const Goal = ({ user }) => {
   const { data: goals } = useFetch('goals');
-  const { handleToggle, editGoalToggle, createGoalToggle } = useToggle('goals');
+  const { handleToggle, editGoalToggle, createGoalToggle, detailToggle } = useToggle('goals');
   const open = createGoalToggle || editGoalToggle;
 
   return (
@@ -31,14 +31,16 @@ const GoalContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 440px;
+  width: 500px;
+  margin-bottom: 1em;
   padding: 0 1em;
+  position: relative;
 `;
 
 const ItemBox = styled.ul`
   display: flex;
   flex-direction: column;
-  height: 400px;
+  height: 600px;
   overflow: scroll;
 `;
 

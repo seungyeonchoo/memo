@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const paramSlice = createSlice({
   name: 'param',
   initialState: {
-    sortParams: { _sort: 'date', _order: 'asc' },
+    sortParams: { _sort: 'due_date', _order: 'asc' },
     filterParams: { is_complete: null, is_public: null },
   },
   reducers: {

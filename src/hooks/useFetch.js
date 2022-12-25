@@ -21,11 +21,11 @@ const useFetch = (item, id, type) => {
       },
     },
     todos: {
-      params: { goalId: id },
+      params: { _embed: 'comments' },
     },
-    memos: {
-      params: { goalId: toggle.detailToggle.goal },
-    },
+    // memos: {
+    //   params: { goalId: toggle.detailToggle.goal },
+    // },
   };
 
   const curr_item = Items[item];

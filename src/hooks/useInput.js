@@ -1,16 +1,15 @@
 import { useDispatch, useSelector } from 'react-redux';
 import {
   goalInputChange,
-  memoInputChange,
   signinChange,
   signupChange,
   todoInputChange,
 } from '../store/slices/inputSlice';
 
-const useInput = item => {
+const useInput = (item, id) => {
   const dispatch = useDispatch();
   const { toggle, input } = useSelector(state => state);
-  const { signin, signup, goalInput, todoInput, memoInput } = input;
+  const { signin, signup, goalInput, todoInput, commentInput } = input;
   const isValid = goalInput.due_date && goalInput.goal_name && goalInput.description;
 
   const Items = {
@@ -26,10 +25,14 @@ const useInput = item => {
       input: { ...todoInput, goalId: toggle.detailToggle.goal },
       action: todoInputChange,
     },
-    memos: {
-      input: { ...memoInput, goalId: toggle.detailToggle.goal },
-      action: memoInputChange,
+    comments: {
+      input: { ...commentInput, todoId: id },
+      action: todoInputChange,
     },
+    // memos: {
+    //   input: { ...memoInput, goalId: toggle.detailToggle.goal },
+    //   action: memoInputChange,
+    // },
   };
 
   const curr_item = Items[item];
@@ -39,7 +42,7 @@ const useInput = item => {
     dispatch(curr_item.action({ ...curr_item.input, [name]: value }));
   };
 
-  return { signin, signup, goalInput, todoInput, memoInput, isValid, handleInput };
+  return { signin, signup, goalInput, todoInput, commentInput, isValid, handleInput };
 };
 
 export default useInput;

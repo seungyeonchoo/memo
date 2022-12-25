@@ -24,5 +24,5 @@ export default Detail;
 const DetailContainer = styled.section`
   display: flex;
   flex-direction: column;
-  width: 440px;
+  width: 500px;
 `;
