@@ -1,7 +1,8 @@
+import styled from 'styled-components';
 import useCreate from '../../../hooks/useCreate';
 import useFetch from '../../../hooks/useFetch';
 import useInput from '../../../hooks/useInput';
-import Button from '../../Common/Button';
+import { AddButton, Button } from '../../Common/Button';
 import Input from '../../Common/Input';
 
 const TodoComments = ({ id }) => {
@@ -9,8 +10,8 @@ const TodoComments = ({ id }) => {
   const { handleCreate } = useCreate('comments', id);
   const { handleInput, commentInput } = useInput('comments');
   return (
-    <>
-      <div>
+    <CommentBox>
+      <InputWrapper>
         <Input
           type="text"
           size="medium"
@@ -18,11 +19,26 @@ const TodoComments = ({ id }) => {
           onChange={handleInput}
           value={commentInput.comment}
         />
-        <Button text="+" size="small" onClick={handleCreate} />
-      </div>
-      <div>{data?.comments.map(el => el.comment)}</div>
-    </>
+        <AddButton text="+" size="small" onClick={handleCreate} />
+      </InputWrapper>
+      <ul>
+        {data?.comments.map(el => (
+          <li>{el.comment}</li>
+        ))}
+      </ul>
+    </CommentBox>
   );
 };
 
 export default TodoComments;
+
+const CommentBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const InputWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;

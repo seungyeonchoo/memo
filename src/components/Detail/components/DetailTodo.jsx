@@ -4,7 +4,7 @@ import useCreate from '../../../hooks/useCreate';
 import useFetch from '../../../hooks/useFetch';
 import useInput from '../../../hooks/useInput';
 import checkIsCompleted from '../../../utils/checkIsCompleted';
-import Button from '../../Common/Button';
+import { Button } from '../../Common/Button';
 import Input from '../../Common/Input';
 import TodoItem from './TodoItem';
 

@@ -107,7 +107,7 @@
       "todo": "asdad",
       "is_complete": false,
       "goalId": 6,
-      "comment_toggle": false,
+      "comment_toggle": true,
       "id": 12
     },
     {

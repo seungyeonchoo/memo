@@ -46,18 +46,19 @@ const sizeStyles = css`
     css`
       height: 2rem;
       width: 20rem;
+      margin: 1rem 0;
     `}
   ${props =>
     props.size === 'medium' &&
     css`
       height: 1.2rem;
       width: 15rem;
+      margin: 0.5rem 0;
     `}
 `;
 
 const StyledInput = styled.input`
   ${sizeStyles}
-  margin: 1rem 0;
   padding: 0.1rem 1rem;
   &:focus {
     outline: 0;

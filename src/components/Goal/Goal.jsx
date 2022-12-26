@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import useFetch from '../../hooks/useFetch';
 import useToggle from '../../hooks/useToggle';
-import Button from '../Common/Button';
+import { Button } from '../Common/Button';
 import GoalFilter from './GoalFilter/GoalFilter';
 import GoalInput from './GoalInput/GoalInput';
 import GoalItem from './GoalItem/GoalItem';

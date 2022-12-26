@@ -3,7 +3,7 @@ import useCreate from '../../../../hooks/useCreate';
 import useInput from '../../../../hooks/useInput';
 import usePatch from '../../../../hooks/usePatch';
 import useToggle from '../../../../hooks/useToggle';
-import Button from '../../../Common/Button';
+import { Button } from '../../../Common/Button';
 
 const InputButton = () => {
   const { handleCreate } = useCreate('goals');
