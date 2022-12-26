@@ -17,12 +17,15 @@ const InputButton = () => {
 
   return (
     <ButtonWrapper>
-      <Button size="md" text="저장" onClick={clickSave} disabled={!isValid} />
-      <Button size="md" text="취소" onClick={clickCancel} />
+      <Button size="medium" text="저장" onClick={clickSave} disabled={!isValid} />
+      <Button size="medium" text="취소" onClick={clickCancel} />
     </ButtonWrapper>
   );
 };
 
 export default InputButton;
 
-const ButtonWrapper = styled.div``;
+const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+`;

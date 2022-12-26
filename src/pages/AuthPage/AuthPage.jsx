@@ -10,7 +10,7 @@ import LoginInput from './components/LoginInput';
 import RegisterInput from './components/RegisterInput';
 
 const AuthPage = () => {
-  const { authToggle, handleAuthToggle } = useToggle();
+  const { authToggle } = useToggle();
   const { signin, signup, handleAuthEvent } = useAuth();
   const buttonText = authToggle ? '회원가입' : '로그인';
   const isValid = authToggle ? checkSignupInput(signup) : checkLoginInput(signin);
@@ -20,13 +20,13 @@ const AuthPage = () => {
       <AuthTitle />
       {authToggle ? <RegisterInput /> : <LoginInput />}
       <Button
-        size="lg"
+        size="large"
         text={buttonText}
         onClick={handleAuthEvent}
         disabled={!isValid}
         margin="auth"
       />
-      <AuthRegister handleToggle={handleAuthToggle} />
+      <AuthRegister />
     </Container>
   );
 };

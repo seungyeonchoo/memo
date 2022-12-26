@@ -17,23 +17,26 @@ const DetailTodo = ({ goal }) => {
     <TodoBox>
       <InputWrapper>
         <Input
-          label="단기 목표"
           type="text"
           name="todo"
-          value={todoInput.todo}
+          size="large"
           placeholder="할일을 입력해 주세요."
+          value={todoInput.todo}
           onChange={handleInput}
         />
-        <button onClick={handleCreate}>+</button>
+        <Button text="+" size="small" onClick={handleCreate} disabled={!todoInput.todo} />
       </InputWrapper>
       <TodoWrapper>
         {goal?.todos.map(el => (
           <TodoItem key={el.id} todo={el} />
         ))}
       </TodoWrapper>
-      <Button text="완료" onClick={handleIsComplete} disabled={!checkIsCompleted(goal)} />
-      {/* button is disabled if every todos aren't completed yet */}
-      {/* onClick -> goal.is_complete = true(patch) */}
+      <Button
+        text="완료"
+        size="large"
+        onClick={handleIsComplete}
+        disabled={!checkIsCompleted(goal)}
+      />
     </TodoBox>
   );
 };
@@ -44,14 +47,16 @@ const TodoBox = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 400px;
+  /* height: 400px; */
 `;
 
 const InputWrapper = styled.div`
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: center;
 `;
 
 const TodoWrapper = styled.ul`
   overflow: scroll;
+  height: 400px;
 `;

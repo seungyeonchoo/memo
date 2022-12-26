@@ -27,8 +27,9 @@ const usePatch = (item, todo) => {
   const handleUpdates = () => {
     mutate(curr_item.input, {
       onSuccess: () => {
-        dispatch(curr_item.init());
+        if (item === 'goals') dispatch(curr_item.init());
         queryClient.invalidateQueries(item);
+        if (item === 'todos') queryClient.invalidateQueries('goals');
       },
     });
   };

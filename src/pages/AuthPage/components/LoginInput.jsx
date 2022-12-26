@@ -10,6 +10,7 @@ const LoginInput = () => {
         label="이메일"
         type="email"
         name="email"
+        size="large"
         value={signin.email}
         placeholder="이메일을 입력해주세요"
         onChange={handleInput}
@@ -18,6 +19,7 @@ const LoginInput = () => {
         label="비밀번호"
         type="password"
         name="password"
+        size="large"
         value={signin.password}
         placeholder="비밀번호를 입력해주세요"
         onChange={handleInput}

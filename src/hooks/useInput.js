@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import {
+  commentInputChange,
   goalInputChange,
   signinChange,
   signupChange,
@@ -27,7 +28,7 @@ const useInput = (item, id) => {
     },
     comments: {
       input: { ...commentInput, todoId: id },
-      action: todoInputChange,
+      action: commentInputChange,
     },
     // memos: {
     //   input: { ...memoInput, goalId: toggle.detailToggle.goal },

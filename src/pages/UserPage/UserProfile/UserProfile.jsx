@@ -8,7 +8,6 @@ import ProfileImg from './components/ProfileImg';
 
 const UserProfile = () => {
   const { data: user } = useFetch('users', user_id);
-  console.log(user);
   return (
     <Container>
       <Box>

@@ -14,6 +14,7 @@ const GoalInput = () => {
 export default GoalInput;
 
 const InputBox = styled.div`
-  z-index: 50;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;

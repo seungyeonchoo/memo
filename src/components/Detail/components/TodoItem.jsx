@@ -11,14 +11,15 @@ const TodoItem = ({ todo }) => {
   const { handleUpdates } = usePatch('todos', todo);
   //   const { handleToggle, commentToggle } = useToggle('comments');
   return (
-    <Item>
-      <CheckBox type="checkbox" onChange={handleIsComplete} checked={todo?.is_complete} />
-      <ItemText>{todo.todo}</ItemText>
-      <Button onClick={handleUpdates}>코멘트</Button>
-      {/* 버튼 클릭하면 메모 토글 => todo의 메모 불러오기 */}
-      <Button onClick={handleDelete}>삭제</Button>
-      {todo?.comment_toggle && <TodoComments />}
-    </Item>
+    <>
+      <Item>
+        <CheckBox type="checkbox" onChange={handleIsComplete} checked={todo?.is_complete} />
+        <ItemText>{todo.todo}</ItemText>
+        <Button onClick={handleUpdates}>코멘트</Button>
+        <Button onClick={handleDelete}>삭제</Button>
+      </Item>
+      {todo?.comment_toggle && <TodoComments id={todo.id} />}
+    </>
   );
 };
 
@@ -26,12 +27,12 @@ export default TodoItem;
 
 const Item = styled.li`
   display: flex;
-  width: 380px;
+  width: 20rem;
   height: 50px;
   justify-content: space-between;
   align-items: center;
   background-color: aliceblue;
-  margin: 1em;
+  margin: 0.5em 0;
   padding: 0 1em;
   cursor: pointer;
 `;
