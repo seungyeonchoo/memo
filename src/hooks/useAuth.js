@@ -1,4 +1,5 @@
-import { useMutation } from 'react-query';
+import { useEffect } from 'react';
+import { useMutation, useQueryClient } from 'react-query';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Http from '../services/Http';
@@ -8,16 +9,17 @@ import {
   signinChange,
   signupChange,
 } from '../store/slices/inputSlice';
-import TokenStorage, { UserStorage } from '../utils/Storage';
+import TokenStorage, { UserStorage, user_id } from '../utils/Storage';
 import useToggle from './useToggle';
 
 const useAuth = () => {
   const nav = useNavigate();
   const dispatch = useDispatch();
-  const { authToggle, handleAuthToggle } = useToggle();
+  const queryClient = useQueryClient();
+  const { authToggle, handleToggle: handleAuthToggle } = useToggle('auth');
   const authService = new Http(authToggle ? 'signup' : 'signin');
   const tokenStorage = new TokenStorage();
-  const setUserId = new UserStorage().setId;
+  const userStorage = new UserStorage();
 
   const { signin, signup } = useSelector(state => state.input);
 
@@ -25,6 +27,12 @@ const useAuth = () => {
     if (authToggle) dispatch(signupChange(initialSignup));
     else dispatch(signinChange(initialSignin));
   };
+
+  //
+
+  //   useEffect(() => {
+  //     tokenStorage.getToken() && nav(`users/${user_id}`);
+  //   }, []);
 
   // handle login / signup
 
@@ -43,8 +51,8 @@ const useAuth = () => {
       handleAuth(signin, {
         onSuccess: data => {
           tokenStorage.setToken(data.accessToken);
-          setUserId(data.user.id);
-          nav(`user/${data.user.id}`);
+          userStorage.setId(data.user.id);
+          nav(`users/${data.user.id}`);
         },
       });
     }
@@ -53,7 +61,14 @@ const useAuth = () => {
 
   // handle Logout
 
-  return { authData, handleAuthEvent };
+  const handleLogOut = () => {
+    queryClient.invalidateQueries();
+    tokenStorage.removeToken();
+    userStorage.removeId();
+    nav('/');
+  };
+
+  return { authData, handleAuthEvent, handleLogOut };
 };
 
 export default useAuth;

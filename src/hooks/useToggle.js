@@ -1,5 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { goalInputChange } from '../store/slices/inputSlice';
+import {
+  goalInputChange,
+  initialSignin,
+  initialSignup,
+  signinChange,
+  signupChange,
+} from '../store/slices/inputSlice';
 import {
   authToggleChange,
   commentToggleChange,
@@ -15,7 +21,6 @@ import useFetch from './useFetch';
 
 const useToggle = (item, goal, profile) => {
   const dispatch = useDispatch();
-  const { refetch } = useFetch('todos');
   const {
     createGoalToggle,
     authToggle,
@@ -43,6 +48,10 @@ const useToggle = (item, goal, profile) => {
     e.stopPropagation();
     if (item === 'goals') dispatch(goalInputChange(initialGoal));
     if (item === 'edit') dispatch(goalInputChange(!editGoalToggle ? goal : initialGoal));
+    if (item === 'auth') {
+      dispatch(signinChange(initialSignin));
+      dispatch(signupChange(initialSignup));
+    }
     dispatch(curr_item(item === 'detail' ? goal.id : profile || null));
     // if (item === 'detail') refetch();
   };

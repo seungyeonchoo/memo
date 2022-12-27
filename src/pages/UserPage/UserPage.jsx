@@ -22,6 +22,7 @@ export default UserPage;
 
 const UserContainer = styled.section`
   display: flex;
+  justify-content: center;
 `;
 
 const Box = styled.div`

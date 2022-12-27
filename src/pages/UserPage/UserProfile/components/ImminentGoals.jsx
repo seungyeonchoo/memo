@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import calcDiffDay from '../../../../utils/calcDiffDay';
+import calcDiffDay, { calcDifferent } from '../../../../utils/calcDiffDay';
 import ImminentItem from './ImminentItem';
 import ImminentTitle from './ImminentTitle';
 
@@ -8,8 +8,8 @@ const ImminentGoals = ({ user }) => {
     <Box>
       <ImminentTitle />
       {user?.goals
-        .filter(el => calcDiffDay(el.due_date) < 3 && el.is_complete === false)
-        .sort((a, b) => calcDiffDay(a.due_date) - calcDiffDay(b.due_date))
+        .filter(el => calcDifferent(el.due_date) < 3 && el.is_complete === false)
+        .sort((a, b) => calcDifferent(a.due_date) - calcDifferent(b.due_date))
         .map(el => (
           <ImminentItem key={el.id} goal={el} />
         ))}
@@ -25,5 +25,6 @@ const Box = styled.div`
   align-items: center;
   margin-top: 0.5em;
   border: 1px solid #e0e0e0;
-  height: 500px;
+  border-radius: 5px;
+  height: 440px;
 `;

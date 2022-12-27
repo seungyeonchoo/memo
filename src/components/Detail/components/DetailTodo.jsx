@@ -4,7 +4,7 @@ import useCreate from '../../../hooks/useCreate';
 import useFetch from '../../../hooks/useFetch';
 import useInput from '../../../hooks/useInput';
 import checkIsCompleted from '../../../utils/checkIsCompleted';
-import { Button } from '../../Common/Button';
+import { AddButton, Button } from '../../Common/Button';
 import Input from '../../Common/Input';
 import TodoItem from './TodoItem';
 
@@ -24,7 +24,7 @@ const DetailTodo = ({ goal }) => {
           value={todoInput.todo}
           onChange={handleInput}
         />
-        <Button text="+" size="small" onClick={handleCreate} disabled={!todoInput.todo} />
+        <AddButton text="+" size="small" onClick={handleCreate} disabled={!todoInput.todo} />
       </InputWrapper>
       <TodoWrapper>
         {goal?.todos.map(el => (

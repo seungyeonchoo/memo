@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import useFetch from '../../../hooks/useFetch';
-import useToggle from '../../../hooks/useToggle';
 
 const DetailTitle = ({ goal }) => {
   return (

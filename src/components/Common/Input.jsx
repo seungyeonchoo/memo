@@ -37,7 +37,7 @@ const Label = styled.label`
   font-size: 0.8rem;
   display: flex;
   flex-direction: column;
-  margin: 1rem 0;
+  /* margin: 1rem 0; */
 `;
 
 const sizeStyles = css`

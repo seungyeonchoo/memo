@@ -28,6 +28,9 @@ export class UserStorage {
   getName = () => {
     return USER_STORAGE.getItem('user_name');
   };
+  removeId = () => {
+    USER_STORAGE.removeItem('user_id');
+  };
 }
 
 export const user_id = new UserStorage().getId();

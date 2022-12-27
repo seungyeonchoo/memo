@@ -4,7 +4,7 @@ import calcDiffDay from '../../../../utils/calcDiffDay';
 const ImminentItem = ({ goal }) => {
   return (
     <ItemWrapper>
-      <Date>D-{calcDiffDay(goal.due_date)}</Date>
+      <Date>{calcDiffDay(goal.due_date)}</Date>
       <div>
         <SubText>{goal.due_date}까지</SubText>
         <Text>{goal.goal_name}</Text>
@@ -25,8 +25,7 @@ const ItemWrapper = styled.div`
   padding: 1em;
 `;
 
-const Date = styled.div`
-  width: 10%;
+export const Date = styled.div`
   text-align: center;
   font-weight: bold;
   color: #b71c1c;

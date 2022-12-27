@@ -7,3 +7,9 @@ const calcDiffDay = due_date => {
 };
 
 export default calcDiffDay;
+
+export const calcDifferent = due_date => {
+  const dueDate = new Date(due_date);
+  const currDate = new Date();
+  return Math.ceil((dueDate - currDate) / (1000 * 60 * 60 * 24));
+};

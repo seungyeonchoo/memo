@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { Button } from '../../../components/Common/Button';
+import useAuth from '../../../hooks/useAuth';
 import useFetch from '../../../hooks/useFetch';
 import { user_id } from '../../../utils/Storage';
 import BasicInfo from './components/BasicInfo';
@@ -8,15 +10,16 @@ import ProfileImg from './components/ProfileImg';
 
 const UserProfile = () => {
   const { data: user } = useFetch('users', user_id);
+  const { handleLogOut } = useAuth();
   return (
     <Container>
       <Box>
         <ProfileWrapper>
           <ProfileImg user={user} />
           <BasicInfo user={user} />
-          <button>로그아웃</button>
+          <Button text="로그아웃" onClick={handleLogOut} />
         </ProfileWrapper>
-        <ProfileButton />
+        {/* <ProfileButton /> */}
       </Box>
       <ImminentGoals user={user} />
     </Container>
@@ -28,6 +31,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 350px;
+  padding: 0 2rem;
 `;
 
 const Box = styled.section`
@@ -36,7 +40,8 @@ const Box = styled.section`
   align-items: center;
   justify-content: space-around;
   border: 1px solid #e0e0e0;
-  background-color: #eeeeee;
+  /* background-color: #eeeeee; */
+  border-radius: 5px;
   padding: 1.5rem;
 `;
 

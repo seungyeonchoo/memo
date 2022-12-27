@@ -15,7 +15,7 @@ const Goal = ({ user }) => {
     <GoalContainer>
       <TitleText>{user?.name}님의 목표</TitleText>
       {open ? <GoalInput /> : <Button size="large" text="목표추가" onClick={handleToggle} />}
-      <GoalFilter />
+      {/* <GoalFilter /> */}
       <ItemBox>
         {goals?.map(el => (
           <GoalItem key={el.id} item={el} />
