@@ -6,6 +6,7 @@ const token = new TokenStorage().getToken();
 
 const axiosConfig = {
   baseURL: BASE_URL,
+  timeout: 1000,
   headers: {
     'Content-Type': 'application/json',
   },

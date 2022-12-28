@@ -31,22 +31,18 @@ const GoalContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 500px;
-  margin-bottom: 1em;
-  padding: 0 1em;
-  position: relative;
+  /* min-height: 70vh; */
 `;
 
 const ItemBox = styled.ul`
   display: flex;
   flex-direction: column;
-  height: 600px;
   overflow: scroll;
 `;
 
 const TitleText = styled.h1`
   font-size: 1rem;
   font-weight: bold;
-  margin: 0.5em 0 0 0;
   text-align: left;
+  margin-top: 1em;
 `;

@@ -7,11 +7,13 @@ import Detail from '../../components/Detail/Detail';
 import { user_id } from '../../utils/Storage';
 
 const UserPage = () => {
-  const { data: user } = useFetch('users', user_id);
+  const { data: user, isLoading } = useFetch('users', user_id);
   const { detailToggle } = useToggle();
+
+  if (isLoading) return <div>loading...</div>;
   return (
     <UserContainer>
-      <UserProfile />
+      {/* <UserProfile /> */}
       <Goal user={user} />
       {detailToggle._toggle && <Detail />}
     </UserContainer>
@@ -20,12 +22,10 @@ const UserPage = () => {
 
 export default UserPage;
 
-const UserContainer = styled.section`
+const UserContainer = styled.main`
   display: flex;
-  justify-content: center;
-`;
-
-const Box = styled.div`
-  display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  min-height: 68vh;
+  margin: 3em 0;
 `;

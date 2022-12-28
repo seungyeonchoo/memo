@@ -47,16 +47,14 @@ const TodoBox = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* height: 400px; */
 `;
 
 const InputWrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
 `;
 
 const TodoWrapper = styled.ul`
+  height: 45vh;
   overflow: scroll;
-  height: 400px;
 `;

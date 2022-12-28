@@ -27,6 +27,7 @@ const Item = styled.li`
   width: 20rem;
   padding: 0.5em 2em;
   font-size: 0.8em;
+  cursor: pointer;
   background-color: ${props => props.bg};
   && {
     margin-bottom: 0.5em;

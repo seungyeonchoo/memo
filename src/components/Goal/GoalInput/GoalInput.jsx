@@ -16,5 +16,10 @@ export default GoalInput;
 const InputBox = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  min-height: 40vh;
+  justify-content: space-between;
+  position: absolute;
+  padding: 2em;
+  z-index: 100;
+  background-color: #e0e0e0;
 `;

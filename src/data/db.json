@@ -17,34 +17,90 @@
   ],
   "goals": [
     {
-      "due_date": "2022-12-31",
+      "due_date": "2023-01-31",
       "goal_name": "수정사항",
       "description": "프로젝트 진행 중 수정이 필요한 내용들",
       "userId": 1,
       "date": "2022-12-21T00:47:15.189Z",
       "is_public": false,
       "is_complete": false,
-      "id": 3
+      "id": 3,
+      "todos": [
+        {
+          "todo": "삭제/수정 버튼 클릭시 detail 토글 변화하는 것 수정 ",
+          "is_complete": true,
+          "goalId": 3,
+          "id": 4,
+          "comment_toggle": false
+        },
+        {
+          "todo": "아이템 클릭시 & 목표 필터 및 정렬 버튼 클릭 시 디테일 토글은 변화하는데 refetch되지 않는 문제",
+          "is_complete": false,
+          "goalId": 3,
+          "id": 5,
+          "comment_toggle": false
+        },
+        {
+          "todo": "목표 상세는 디테일에 설명 형식으로 볼수 있게 수정",
+          "is_complete": true,
+          "goalId": 3,
+          "id": 6,
+          "comment_toggle": false
+        },
+        {
+          "todo": "useAuth 및 useParam 리팩토링",
+          "is_complete": false,
+          "goalId": 3,
+          "id": 7,
+          "comment_toggle": false
+        },
+        {
+          "todo": "로그아웃했을 때 캐시데이터 삭제하기",
+          "is_complete": false,
+          "goalId": 3,
+          "comment_toggle": false,
+          "id": 12
+        }
+      ]
     },
     {
-      "due_date": "2023-01-05",
+      "due_date": "2023-01-31",
       "goal_name": "추가",
       "description": "프로젝트 진행중 기능 추가가 필요한 내용들",
       "userId": 1,
       "date": "2022-12-22T00:36:09.220Z",
       "is_public": false,
       "is_complete": false,
-      "id": 5
-    },
-    {
-      "due_date": "2022-12-29",
-      "goal_name": "1",
-      "description": "123",
-      "userId": 1,
-      "date": "2022-12-27T14:05:22.459Z",
-      "is_public": false,
-      "is_complete": false,
-      "id": 6
+      "id": 5,
+      "todos": [
+        {
+          "todo": "작성일 변환 함수",
+          "is_complete": false,
+          "goalId": 5,
+          "id": 8,
+          "comment_toggle": false
+        },
+        {
+          "todo": "프로필 토글 (알림, 기한임박, 쪽지)",
+          "is_complete": false,
+          "goalId": 5,
+          "id": 9,
+          "comment_toggle": false
+        },
+        {
+          "todo": "로그아웃 (로컬 토큰 삭제 및 세션 id 삭제) ",
+          "is_complete": true,
+          "goalId": 5,
+          "id": 10,
+          "comment_toggle": false
+        },
+        {
+          "todo": "투두 및 메모 작성 및 완료시 작성자 / 완료자 추가 (인풋 수정 필요)",
+          "is_complete": false,
+          "goalId": 5,
+          "id": 11
+        }
+      ]
     }
   ],
   "todos": [
@@ -77,13 +133,6 @@
       "comment_toggle": false
     },
     {
-      "todo": "작성일 변환 함수",
-      "is_complete": false,
-      "goalId": 5,
-      "id": 8,
-      "comment_toggle": false
-    },
-    {
       "todo": "프로필 토글 (알림, 기한임박, 쪽지)",
       "is_complete": false,
       "goalId": 5,
@@ -101,7 +150,8 @@
       "todo": "투두 및 메모 작성 및 완료시 작성자 / 완료자 추가 (인풋 수정 필요)",
       "is_complete": false,
       "goalId": 5,
-      "id": 11
+      "id": 11,
+      "comment_toggle": false
     },
     {
       "todo": "로그아웃했을 때 캐시데이터 삭제하기",
@@ -109,21 +159,23 @@
       "goalId": 3,
       "comment_toggle": false,
       "id": 12
+    },
+    {
+      "todo": "로그인시 주소 이상함",
+      "is_complete": false,
+      "goalId": 3,
+      "comment_toggle": false,
+      "id": 13
+    },
+    {
+      "todo": "엔터키 사용하여 버튼 클릭하기",
+      "is_complete": false,
+      "goalId": 5,
+      "comment_toggle": false,
+      "id": 14
     }
   ],
   "comments": [
-    {
-      "comment": "adasd",
-      "date": "2022-12-26T17:50:36.629Z",
-      "todoId": 13,
-      "id": 6
-    },
-    {
-      "comment": "asd",
-      "date": "2022-12-26T17:50:36.629Z",
-      "todoId": 13,
-      "id": 7
-    },
     {
       "comment": "ㄴㅇ",
       "date": "2022-12-27T14:00:37.562Z",
@@ -143,10 +195,22 @@
       "id": 10
     },
     {
-      "comment": "코멘트 길이 테스트1123213131231312313123213123213131",
-      "date": "2022-12-27T21:42:02.844Z",
-      "todoId": 8,
+      "comment": "프로필 사이드로 이동",
+      "date": "2022-12-28T21:54:33.025Z",
+      "todoId": 9,
       "id": 11
+    },
+    {
+      "comment": "로그인시 세션 스토리지에 유저네임 저장 후 사용",
+      "date": "2022-12-28T21:54:33.025Z",
+      "todoId": 11,
+      "id": 12
+    },
+    {
+      "comment": "ㄴㅇㄴ",
+      "date": "2022-12-28T21:54:33.025Z",
+      "todoId": 11,
+      "id": 13
     }
   ]
 }

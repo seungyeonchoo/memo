@@ -37,6 +37,9 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50vw;
-  margin: auto;
+  justify-content: center;
+  width: 70vw;
+  padding: 2em 0;
+  border-radius: 5px;
+  background-color: #e0e0e0;
 `;
