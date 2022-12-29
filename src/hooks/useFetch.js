@@ -14,10 +14,6 @@ const useFetch = (item, id, type) => {
   const tokenStorage = new TokenStorage();
   const queryClient = useQueryClient();
 
-  useEffect(() => {
-    !tokenStorage.getToken() && nav(`/`);
-  }, []);
-
   //   const goal_type = type === 'personal' ? { userId: user_id } : { groupId: id };
   const Items = {
     users: {

@@ -1,4 +1,4 @@
-import CalcDate from '../../../utils/CalcDate';
+import CalcDate from '../../../../utils/CalcDate';
 
 const CommentItem = ({ comment }) => {
   return (

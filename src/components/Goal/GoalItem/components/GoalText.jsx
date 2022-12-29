@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 
-const ItemText = ({ item }) => {
+const GoalText = ({ goal }) => {
   return (
     <TextWrapper>
-      <Text>Due to {item.due_date}</Text>
-      <Text>{item.goal_name}</Text>
+      <Text>Due to {goal.due_date}</Text>
+      <Text>{goal.goal_name}</Text>
     </TextWrapper>
   );
 };
 
-export default ItemText;
+export default GoalText;
 
 const TextWrapper = styled.div`
   display: flex;

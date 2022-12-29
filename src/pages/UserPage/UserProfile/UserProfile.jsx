@@ -8,8 +8,9 @@ import ImminentGoals from './components/ImminentGoals';
 import ProfileButton from './components/ProfileButton';
 import ProfileImg from './components/ProfileImg';
 
-const UserProfile = ({ user }) => {
+const UserProfile = () => {
   const { handleLogOut } = useAuth();
+  const { data: user } = useFetch('users', user_id);
   return (
     <Container>
       <Box>

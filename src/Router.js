@@ -8,8 +8,11 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<AuthPage />} />
-        <Route path="/*" element={<AppRouter />} />
+        <Route
+          path="/"
+          element={!token ? <AuthPage /> : <Navigate replace to={`/users/${user_id}`} />}
+        />
+        <Route path="/*" element={token ? <AppRouter /> : <Navigate replace to="/" />} />
       </Routes>
     </BrowserRouter>
   );

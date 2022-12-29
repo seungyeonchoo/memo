@@ -2,10 +2,11 @@ import { AiFillDelete, AiFillEdit } from 'react-icons/ai';
 import styled from 'styled-components';
 import useDelete from '../../../../hooks/useDelete';
 import useToggle from '../../../../hooks/useToggle';
+import { createGoalToggleChange } from '../../../../store/slices/toggleSlice';
 
-const ItemButton = ({ item }) => {
-  const { handleToggle, editGoalToggle, createGoalToggle } = useToggle('edit', item);
-  const { handleDelete } = useDelete('goals', item.id);
+const ItemButton = ({ goal }) => {
+  const { handleToggle, editGoalToggle, createGoalToggle } = useToggle('edit', goal);
+  const { handleDelete } = useDelete('goals', createGoalToggleChange.id);
 
   return (
     <ButtonWrapper>

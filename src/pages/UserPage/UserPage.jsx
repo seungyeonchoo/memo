@@ -4,7 +4,6 @@ import useToggle from '../../hooks/useToggle';
 import Goal from '../../components/Goal/Goal';
 import useFetch from '../../hooks/useFetch';
 import Detail from '../../components/Detail/Detail';
-import { user_id } from '../../utils/Storage';
 import { useParams } from 'react-router-dom';
 
 const UserPage = () => {
@@ -15,7 +14,7 @@ const UserPage = () => {
   if (isLoading) return <div>loading...</div>;
   return (
     <UserContainer>
-      {/* <UserProfile user={user} /> */}
+      <UserProfile user={user} />
       <Goal user={user} />
       {detailToggle._toggle && <Detail />}
     </UserContainer>

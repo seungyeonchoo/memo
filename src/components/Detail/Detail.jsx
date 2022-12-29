@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 import useFetch from '../../hooks/useFetch';
 import useToggle from '../../hooks/useToggle';
-import { Button } from '../Common/Button';
-import DetailTitle from './components/DetailTitle';
-import DetailTodo from './components/DetailTodo';
+import TodoTitle from './DetailTodo/components/TodoTitle';
+import DetailTodo from './DetailTodo/DetailTodo';
 
 const Detail = () => {
   const { detailToggle } = useToggle();
@@ -11,7 +10,7 @@ const Detail = () => {
 
   return (
     <DetailContainer>
-      <DetailTitle goal={goal} />
+      <TodoTitle goal={goal} />
       <DetailTodo goal={goal} />
     </DetailContainer>
   );
@@ -23,7 +22,7 @@ const DetailContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: red;
+  background-color: #e0e0e0;
   position: absolute;
-  padding: 1em 0;
+  padding: 2em;
 `;

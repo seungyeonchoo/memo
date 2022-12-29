@@ -28,12 +28,6 @@ const useAuth = () => {
     else dispatch(signinChange(initialSignin));
   };
 
-  //
-
-  //   useEffect(() => {
-  //     tokenStorage.getToken() && nav(`users/${user_id}`);
-  //   }, []);
-
   // handle login / signup
 
   const { mutate: handleAuth, data: authData } = useMutation(authService.post);

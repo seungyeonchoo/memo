@@ -2,18 +2,18 @@ import styled from 'styled-components';
 import { Date } from '../../../../pages/UserPage/UserProfile/components/ImminentItem';
 import calcDiffDay from '../../../../utils/calcDiffDay';
 
-const ItemStatus = ({ item }) => {
+const GoalStatus = ({ goal }) => {
   return (
     <StatusBox>
-      <Date>{item?.is_complete ? 'Clear' : calcDiffDay(item.due_date)}</Date>
+      <Date>{goal?.is_complete ? 'Clear' : calcDiffDay(goal.due_date)}</Date>
       <div>
-        {item?.todos.filter(el => el.is_complete === true).length} of {item.todos.length}
+        {goal?.todos.filter(el => el.is_complete === true).length} of {goal.todos.length}
       </div>
     </StatusBox>
   );
 };
 
-export default ItemStatus;
+export default GoalStatus;
 
 const StatusBox = styled.div`
   display: flex;
