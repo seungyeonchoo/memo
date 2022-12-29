@@ -37,14 +37,19 @@ const toggleSlice = createSlice({
       state.commentToggle = !state.commentToggle;
     },
     detailToggleChange: (state, action) => {
-      if (state.detailToggle._toggle && state.detailToggle.goal === action.payload) {
-        state.detailToggle._toggle = !state.detailToggle._toggle;
-      } else if (state.detailToggle._toggle && state.detailToggle.goal !== action.payload) {
-        state.detailToggle.goal = action.payload;
-      } else {
+      if (!action) state.detailToggle._toggle = !state.detailToggle._toggle;
+      else {
         state.detailToggle._toggle = !state.detailToggle._toggle;
         state.detailToggle.goal = action.payload;
       }
+      //   if (state.detailToggle._toggle && state.detailToggle.goal === action.payload) {
+      //     state.detailToggle._toggle = !state.detailToggle._toggle;
+      //   } else if (state.detailToggle._toggle && state.detailToggle.goal !== action.payload) {
+      //     state.detailToggle.goal = action.payload;
+      //   } else {
+      //     state.detailToggle._toggle = !state.detailToggle._toggle;
+      //     state.detailToggle.goal = action.payload;
+      //   }
     },
   },
 });

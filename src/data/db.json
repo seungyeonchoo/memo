@@ -101,6 +101,16 @@
           "id": 11
         }
       ]
+    },
+    {
+      "due_date": "2023-01-04",
+      "goal_name": "1231",
+      "description": "1231",
+      "userId": 2,
+      "date": "2022-12-29T16:39:27.004Z",
+      "is_public": false,
+      "is_complete": false,
+      "id": 7
     }
   ],
   "todos": [

@@ -16,8 +16,8 @@ export default GoalInput;
 const InputBox = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 40vh;
-  justify-content: space-between;
+  min-height: 60vh;
+  justify-content: space-around;
   position: absolute;
   padding: 2em;
   z-index: 100;

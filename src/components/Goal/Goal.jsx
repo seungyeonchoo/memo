@@ -1,13 +1,16 @@
+import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import useFetch from '../../hooks/useFetch';
 import useToggle from '../../hooks/useToggle';
+import { user_id } from '../../utils/Storage';
 import { Button } from '../Common/Button';
 import GoalFilter from './GoalFilter/GoalFilter';
 import GoalInput from './GoalInput/GoalInput';
 import GoalItem from './GoalItem/GoalItem';
 
 const Goal = ({ user }) => {
-  const { data: goals } = useFetch('goals');
+  const { id } = useParams();
+  const { data: goals, isError } = useFetch('goals');
   const { handleToggle, editGoalToggle, createGoalToggle, detailToggle } = useToggle('goals');
   const open = createGoalToggle || editGoalToggle;
 
@@ -16,6 +19,7 @@ const Goal = ({ user }) => {
       <TitleText>{user?.name}님의 목표</TitleText>
       {open ? <GoalInput /> : <Button size="large" text="목표추가" onClick={handleToggle} />}
       {/* <GoalFilter /> */}
+      {goals?.length === 0 && <div>아직 등록된 목표가 없습니다.</div>}
       <ItemBox>
         {goals?.map(el => (
           <GoalItem key={el.id} item={el} />

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import useFetch from '../../hooks/useFetch';
 import useToggle from '../../hooks/useToggle';
+import { Button } from '../Common/Button';
 import DetailTitle from './components/DetailTitle';
 import DetailTodo from './components/DetailTodo';
 
@@ -22,4 +23,7 @@ const DetailContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: red;
+  position: absolute;
+  padding: 1em 0;
 `;

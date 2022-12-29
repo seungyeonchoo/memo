@@ -52,7 +52,7 @@ const useToggle = (item, goal, profile) => {
       dispatch(signinChange(initialSignin));
       dispatch(signupChange(initialSignup));
     }
-    dispatch(curr_item(item === 'detail' ? goal.id : profile || null));
+    dispatch(curr_item(goal ? goal.id : profile || null));
     // if (item === 'detail') refetch();
   };
 

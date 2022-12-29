@@ -1,7 +1,7 @@
 import AuthPage from './pages/AuthPage/AuthPage';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import AppRouter from './AppRouter';
-import TokenStorage from './utils/Storage';
+import TokenStorage, { user_id } from './utils/Storage';
 
 const Router = () => {
   const token = new TokenStorage().getToken();

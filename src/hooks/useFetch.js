@@ -1,16 +1,18 @@
 import { useEffect } from 'react';
-import { useQuery } from 'react-query';
+import { useQuery, useQueryClient } from 'react-query';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Http from '../services/Http';
 import TokenStorage, { user_id } from '../utils/Storage';
 
 // goal 데이터를 fetch할때 그룹 목표와 개인 목표의 구분이 필요할 듯
 const useFetch = (item, id, type) => {
   const nav = useNavigate();
+  const { id: idx } = useParams();
   const { toggle, param } = useSelector(state => state);
   const { sortParams, filterParams } = param;
   const tokenStorage = new TokenStorage();
+  const queryClient = useQueryClient();
 
   useEffect(() => {
     !tokenStorage.getToken() && nav(`/`);
@@ -25,16 +27,13 @@ const useFetch = (item, id, type) => {
       params: {
         ...sortParams,
         ...filterParams,
-        userId: user_id,
+        userId: idx,
         _embed: 'todos',
       },
     },
     todos: {
       params: { _embed: 'comments' },
     },
-    // memos: {
-    //   params: { goalId: toggle.detailToggle.goal },
-    // },
   };
 
   const curr_item = Items[item];
@@ -42,8 +41,10 @@ const useFetch = (item, id, type) => {
   const query_key = id ? [item, { id: id }] : [item];
 
   const fetchItem = new Http(fetch_url);
-  const { data, refetch } = useQuery(query_key, () => fetchItem.get(curr_item.params));
-  return { data, refetch };
+  const { isLoading, isError, data, refetch } = useQuery(query_key, () =>
+    fetchItem.get(curr_item.params)
+  );
+  return { isLoading, isError, data, refetch };
 };
 
 export default useFetch;

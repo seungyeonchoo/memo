@@ -38,7 +38,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 70vw;
+  min-width: 30vw;
   padding: 2em 0;
   border-radius: 5px;
   background-color: #e0e0e0;

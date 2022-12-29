@@ -3,6 +3,7 @@ import useCheck from '../../../hooks/useCheck';
 import useCreate from '../../../hooks/useCreate';
 import useFetch from '../../../hooks/useFetch';
 import useInput from '../../../hooks/useInput';
+import useToggle from '../../../hooks/useToggle';
 import checkIsCompleted from '../../../utils/checkIsCompleted';
 import { AddButton, Button } from '../../Common/Button';
 import Input from '../../Common/Input';
@@ -10,12 +11,13 @@ import TodoItem from './TodoItem';
 
 const DetailTodo = ({ goal }) => {
   const { handleCreate } = useCreate('todos');
+  const { handleToggle } = useToggle('detail');
   const { handleInput, todoInput } = useInput('todos');
   const { handleIsComplete } = useCheck('goals', goal?.id);
 
   return (
     <TodoBox>
-      <InputWrapper>
+      <Wrapper>
         <Input
           type="text"
           name="todo"
@@ -25,18 +27,21 @@ const DetailTodo = ({ goal }) => {
           onChange={handleInput}
         />
         <AddButton text="+" size="small" onClick={handleCreate} disabled={!todoInput.todo} />
-      </InputWrapper>
+      </Wrapper>
       <TodoWrapper>
         {goal?.todos.map(el => (
           <TodoItem key={el.id} todo={el} />
         ))}
       </TodoWrapper>
-      <Button
-        text="완료"
-        size="large"
-        onClick={handleIsComplete}
-        disabled={!checkIsCompleted(goal)}
-      />
+      <Wrapper>
+        <Button
+          text="완료"
+          size="medium"
+          onClick={handleIsComplete}
+          disabled={!checkIsCompleted(goal)}
+        />
+        <Button text="닫기" size="medium" onClick={handleToggle} />
+      </Wrapper>
     </TodoBox>
   );
 };
@@ -49,12 +54,12 @@ const TodoBox = styled.section`
   align-items: center;
 `;
 
-const InputWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   align-items: center;
 `;
 
 const TodoWrapper = styled.ul`
-  height: 45vh;
+  height: 30vh;
   overflow: scroll;
 `;
