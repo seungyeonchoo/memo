@@ -1,17 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { initialComment, initialGoal, initialTodo } from '../../utils/initialInputs';
-
-export const initialSignin = { email: '', password: '' };
-export const initialSignup = { email: '', password: '', password_confirm: '', name: '' };
+import InputUtils from '../../utils/InputUtils';
 
 const inputSlice = createSlice({
   name: 'input',
   initialState: {
-    signin: initialSignin,
-    signup: initialSignup,
-    goalInput: initialGoal,
-    todoInput: initialTodo,
-    commentInput: initialComment,
+    signin: InputUtils.initialSignin,
+    signup: InputUtils.initialSignup,
+    goalInput: InputUtils.initialGoal,
+    todoInput: InputUtils.initialTodo,
+    commentInput: InputUtils.initialComment,
   },
   reducers: {
     goalInputChange: (state, action) => {

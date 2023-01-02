@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useMutation, useQueryClient } from 'react-query';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -9,7 +8,8 @@ import {
   signinChange,
   signupChange,
 } from '../store/slices/inputSlice';
-import TokenStorage, { UserStorage, user_id } from '../utils/Storage';
+import InputUtils from '../utils/InputUtils';
+import TokenStorage, { UserStorage } from '../utils/Storage';
 import useToggle from './useToggle';
 
 const useAuth = () => {
@@ -24,8 +24,8 @@ const useAuth = () => {
   const { signin, signup } = useSelector(state => state.input);
 
   const handleInputInit = () => {
-    if (authToggle) dispatch(signupChange(initialSignup));
-    else dispatch(signinChange(initialSignin));
+    if (authToggle) dispatch(signupChange(InputUtils.initialSignup));
+    else dispatch(signinChange(InputUtils.initialSignin));
   };
 
   // handle login / signup

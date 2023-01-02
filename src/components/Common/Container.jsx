@@ -16,6 +16,6 @@ const StyledContainer = styled.section`
   z-index: ${props => props.z_index || 0};
   border-radius: 10px;
   min-height: 70vh;
-  min-width: 60vh;
+  min-width: 50vh;
   padding: 2em;
 `;

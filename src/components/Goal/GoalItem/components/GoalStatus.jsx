@@ -1,11 +1,12 @@
 import styled from 'styled-components';
-import { Date } from '../../../../pages/UserPage/UserProfile/components/ImminentItem';
-import calcDiffDay from '../../../../utils/calcDiffDay';
+
+import DateUtils from '../../../../utils/DateUtils';
+import { Date } from '../../../Approaching/components/ApproachingGoal';
 
 const GoalStatus = ({ goal }) => {
   return (
     <StatusBox>
-      <Date>{goal?.is_complete ? 'Clear' : calcDiffDay(goal.due_date)}</Date>
+      <Date>{goal?.is_complete ? 'Clear' : DateUtils.diffDate(goal.due_date)}</Date>
       <div>
         {goal?.todos.filter(el => el.is_complete === true).length} of {goal.todos.length}
       </div>

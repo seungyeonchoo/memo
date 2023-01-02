@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import calcDiffDay from '../../../../utils/calcDiffDay';
+import DateUtils from '../../../utils/DateUtils';
 
-const ImminentItem = ({ goal }) => {
+const ApproachingGoal = ({ goal }) => {
   return (
     <ItemWrapper>
-      <Date>{calcDiffDay(goal.due_date)}</Date>
+      <Date>{DateUtils.diffDate(goal.due_date)}</Date>
       <div>
         <SubText>{goal.due_date}까지</SubText>
         <Text>{goal.goal_name}</Text>
@@ -13,7 +13,7 @@ const ImminentItem = ({ goal }) => {
   );
 };
 
-export default ImminentItem;
+export default ApproachingGoal;
 
 const ItemWrapper = styled.div`
   display: flex;

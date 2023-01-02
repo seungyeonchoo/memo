@@ -1,9 +1,9 @@
-import CalcDate from '../../../../utils/CalcDate';
+import DateUtils from '../../../../utils/DateUtils';
 
 const CommentItem = ({ comment }) => {
   return (
     <li>
-      <div>{CalcDate.convert(comment.date)}</div>
+      <div>{DateUtils.convert(comment.date)}</div>
       <div>{comment.comment}</div>
     </li>
   );

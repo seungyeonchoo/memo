@@ -1,4 +1,4 @@
-class CalcDate {
+class DateUtils {
   static diffDate = due_date => {
     const diffDate = Math.ceil((new Date(due_date) - new Date()) / (1000 * 60 * 60 * 24));
     return diffDate === 0 ? `D-Day` : diffDate > 0 ? `D-${diffDate}` : `D+${diffDate * -1}`;
@@ -18,4 +18,4 @@ class CalcDate {
   };
 }
 
-export default CalcDate;
+export default DateUtils;

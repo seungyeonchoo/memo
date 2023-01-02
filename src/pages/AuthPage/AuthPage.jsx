@@ -3,7 +3,7 @@ import { Button } from '../../components/Common/Button';
 import useAuth from '../../hooks/useAuth';
 import useInput from '../../hooks/useInput';
 import useToggle from '../../hooks/useToggle';
-import { checkLoginInput, checkSignupInput } from '../../utils/checkIsValid';
+import InputUtils from '../../utils/InputUtils';
 import AuthRegister from './components/AuthRegister';
 import AuthTitle from './components/AuthTitle';
 import LoginInput from './components/LoginInput';
@@ -13,7 +13,7 @@ const AuthPage = () => {
   const { authToggle } = useToggle();
   const { handleAuthEvent } = useAuth();
   const { signin, signup } = useInput();
-  const isValid = authToggle ? checkSignupInput(signup) : checkLoginInput(signin);
+  const isValid = authToggle ? InputUtils.signUp(signup) : InputUtils.signIn(signin);
 
   return (
     <Container>

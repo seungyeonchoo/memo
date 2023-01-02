@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-const ImminentTitle = () => {
-  return <TitleText>기한이 임박한 목표들..</TitleText>;
+const ApproachingTitle = () => {
+  return <TitleText>Goals near deadline..</TitleText>;
 };
 
-export default ImminentTitle;
+export default ApproachingTitle;
 
 const TitleText = styled.h1`
   font-size: 0.8rem;

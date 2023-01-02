@@ -14,6 +14,6 @@ const TodoList = ({ goal }) => {
 export default TodoList;
 
 const TodoWrapper = styled.ul`
-  height: 30vh;
+  height: 37vh;
   overflow: scroll;
 `;

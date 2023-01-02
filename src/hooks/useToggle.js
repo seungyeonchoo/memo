@@ -17,8 +17,7 @@ import {
   sideToggleChange,
   sortToggleChange,
 } from '../store/slices/toggleSlice';
-import { initialGoal } from '../utils/initialInputs';
-import useFetch from './useFetch';
+import InputUtils from '../utils/InputUtils';
 
 const useToggle = (item, goal, profile) => {
   const dispatch = useDispatch();
@@ -49,11 +48,11 @@ const useToggle = (item, goal, profile) => {
 
   const handleToggle = e => {
     e.stopPropagation();
-    if (item === 'goals') dispatch(goalInputChange(initialGoal));
-    if (item === 'edit') dispatch(goalInputChange(!editGoalToggle ? goal : initialGoal));
+    if (item === 'goals') dispatch(goalInputChange(InputUtils.initialGoal));
+    if (item === 'edit') dispatch(goalInputChange(!editGoalToggle ? goal : InputUtils.initialGoal));
     if (item === 'auth') {
-      dispatch(signinChange(initialSignin));
-      dispatch(signupChange(initialSignup));
+      dispatch(signinChange(InputUtils.initialSignin));
+      dispatch(signupChange(InputUtils.initialSignup));
     }
     dispatch(curr_item(goal ? goal.id : profile || null));
     // if (item === 'detail') refetch();

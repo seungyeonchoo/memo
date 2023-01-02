@@ -46,6 +46,6 @@ const InputWrapper = styled.div`
   justify-content: space-around;
   align-items: center;
   background-color: #fff;
-  padding: 1.5em;
+  padding: 1em 0;
   border-radius: 10px;
 `;

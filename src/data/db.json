@@ -111,6 +111,26 @@
       "is_public": false,
       "is_complete": false,
       "id": 7
+    },
+    {
+      "due_date": "2023-01-25",
+      "goal_name": "text",
+      "description": "text",
+      "userId": 1,
+      "date": "2023-01-02T21:19:41.833Z",
+      "is_public": false,
+      "is_complete": false,
+      "id": 8
+    },
+    {
+      "due_date": "2023-01-04",
+      "goal_name": "as",
+      "description": "asda",
+      "userId": 1,
+      "date": "2023-01-02T21:28:27.578Z",
+      "is_public": false,
+      "is_complete": false,
+      "id": 9
     }
   ],
   "todos": [
@@ -119,7 +139,7 @@
       "is_complete": true,
       "goalId": 3,
       "id": 4,
-      "comment_toggle": false
+      "comment_toggle": true
     },
     {
       "todo": "아이템 클릭시 & 목표 필터 및 정렬 버튼 클릭 시 디테일 토글은 변화하는데 refetch되지 않는 문제",
@@ -172,7 +192,7 @@
     },
     {
       "todo": "로그인시 주소 이상함",
-      "is_complete": true,
+      "is_complete": false,
       "goalId": 3,
       "comment_toggle": false,
       "id": 13
@@ -204,6 +224,13 @@
       "goalId": 3,
       "comment_toggle": false,
       "id": 17
+    },
+    {
+      "todo": "햄버거버튼 클릭시 X로 변경",
+      "is_complete": false,
+      "goalId": 5,
+      "comment_toggle": false,
+      "id": 18
     }
   ],
   "comments": [

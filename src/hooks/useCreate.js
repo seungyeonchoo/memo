@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Http from '../services/Http';
 import { commentInputChange, goalInputChange, todoInputChange } from '../store/slices/inputSlice';
 import { createGoalToggleChange } from '../store/slices/toggleSlice';
-import { initialComment, initialGoal, initialTodo } from '../utils/initialInputs';
+import InputUtils from '../utils/InputUtils';
 
 const useCreate = (item, id) => {
   const dispatch = useDispatch();
@@ -15,17 +15,17 @@ const useCreate = (item, id) => {
     goals: {
       input: goalInput,
       init: goalInputChange,
-      initial: initialGoal,
+      initial: InputUtils.initialGoal,
     },
     todos: {
       input: { ...todoInput, goalId: toggle.detailToggle.goal },
       init: todoInputChange,
-      initial: initialTodo,
+      initial: InputUtils.initialTodo,
     },
     comments: {
       input: { ...commentInput, todoId: id },
       init: commentInputChange,
-      initial: initialComment,
+      initial: InputUtils.initialComment,
     },
   };
 

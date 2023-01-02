@@ -1,11 +1,11 @@
 import styled from 'styled-components';
+import Approaching from '../../../components/Approaching/Approaching';
 import { Button } from '../../../components/Common/Button';
 import Container from '../../../components/Common/Container';
 import useAuth from '../../../hooks/useAuth';
 import useFetch from '../../../hooks/useFetch';
 import { user_id } from '../../../utils/Storage';
 import BasicInfo from './components/BasicInfo';
-import ImminentGoals from './components/ImminentGoals';
 import ProfileButton from './components/ProfileButton';
 import ProfileImg from './components/ProfileImg';
 
@@ -22,7 +22,7 @@ const UserProfile = () => {
         </ProfileWrapper>
         {/* <ProfileButton /> */}
       </Box>
-      <ImminentGoals user={user} />
+      <Approaching user={user} />
     </Container>
   );
 };
