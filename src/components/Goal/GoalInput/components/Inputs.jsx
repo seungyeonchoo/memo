@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import useInput from '../../../../hooks/useInput';
 import Input, { AreaInput } from '../../../Common/Input';
+import InputButton from './InputButtons';
 
 const Inputs = () => {
   const { goalInput, handleInput } = useInput('goals');
@@ -31,6 +32,7 @@ const Inputs = () => {
         value={goalInput.description}
         onChange={handleInput}
       />
+      <InputButton />
     </InputWrapper>
   );
 };
@@ -40,6 +42,10 @@ export default Inputs;
 const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  min-height: 50vh;
   justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+  padding: 1.5em;
+  border-radius: 10px;
 `;

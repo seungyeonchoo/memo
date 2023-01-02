@@ -20,5 +20,11 @@ export default GoalList;
 const ListWrapper = styled.ul`
   display: flex;
   flex-direction: column;
+  align-items: center;
   overflow: scroll;
+  background-color: #fff;
+  padding: 1em;
+  min-width: 87%;
+  min-height: 45vh;
+  border-radius: 10px;
 `;

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Button } from '../../../components/Common/Button';
+import Container from '../../../components/Common/Container';
 import useAuth from '../../../hooks/useAuth';
 import useFetch from '../../../hooks/useFetch';
 import { user_id } from '../../../utils/Storage';
@@ -12,7 +13,7 @@ const UserProfile = () => {
   const { handleLogOut } = useAuth();
   const { data: user } = useFetch('users', user_id);
   return (
-    <Container>
+    <Container z_index={1}>
       <Box>
         <ProfileWrapper>
           <ProfileImg user={user} />
@@ -27,12 +28,16 @@ const UserProfile = () => {
 };
 
 export default UserProfile;
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 350px;
-  padding: 0 2rem;
-`;
+// const Container = styled.div`
+//   display: flex;
+//   position: absolute;
+//   z-index: 1;
+//   flex-direction: column;
+//   height: 70vh;
+//   padding: 4rem;
+//   /* background-color: #e0e0e0; */
+//   background-color: #8e8e8e;
+// `;
 
 const Box = styled.section`
   display: flex;
@@ -40,7 +45,7 @@ const Box = styled.section`
   align-items: center;
   justify-content: space-around;
   border: 1px solid #e0e0e0;
-  /* background-color: #eeeeee; */
+  background-color: #fff;
   border-radius: 5px;
   padding: 1.5rem;
 `;

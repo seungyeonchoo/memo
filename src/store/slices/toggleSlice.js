@@ -12,6 +12,7 @@ const toggleSlice = createSlice({
     filterToggle: false,
     commentToggle: false,
     detailToggle: { _toggle: false, goal: null },
+    sideToggle: false,
     profileToggle: initialProfileToggle,
   },
   reducers: {
@@ -36,20 +37,15 @@ const toggleSlice = createSlice({
     commentToggleChange: state => {
       state.commentToggle = !state.commentToggle;
     },
+    sideToggleChange: state => {
+      state.sideToggle = !state.sideToggle;
+    },
     detailToggleChange: (state, action) => {
       if (!action) state.detailToggle._toggle = !state.detailToggle._toggle;
       else {
         state.detailToggle._toggle = !state.detailToggle._toggle;
         state.detailToggle.goal = action.payload;
       }
-      //   if (state.detailToggle._toggle && state.detailToggle.goal === action.payload) {
-      //     state.detailToggle._toggle = !state.detailToggle._toggle;
-      //   } else if (state.detailToggle._toggle && state.detailToggle.goal !== action.payload) {
-      //     state.detailToggle.goal = action.payload;
-      //   } else {
-      //     state.detailToggle._toggle = !state.detailToggle._toggle;
-      //     state.detailToggle.goal = action.payload;
-      //   }
     },
   },
 });
@@ -63,6 +59,7 @@ export const {
   detailToggleChange,
   profileToggleChange,
   commentToggleChange,
+  sideToggleChange,
 } = toggleSlice.actions;
 
 export default toggleSlice.reducer;

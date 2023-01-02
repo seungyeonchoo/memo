@@ -14,6 +14,7 @@ import {
   editGoalToggleChange,
   filterToggleChange,
   profileToggleChange,
+  sideToggleChange,
   sortToggleChange,
 } from '../store/slices/toggleSlice';
 import { initialGoal } from '../utils/initialInputs';
@@ -29,6 +30,7 @@ const useToggle = (item, goal, profile) => {
     filterToggle,
     detailToggle,
     commentToggle,
+    sideToggle,
   } = useSelector(state => state.toggle);
 
   const Items = {
@@ -40,6 +42,7 @@ const useToggle = (item, goal, profile) => {
     detail: detailToggleChange,
     profile: profileToggleChange,
     comments: commentToggleChange,
+    side: sideToggleChange,
   };
 
   const curr_item = Items[item];
@@ -65,6 +68,7 @@ const useToggle = (item, goal, profile) => {
     detailToggle,
     handleToggle,
     commentToggle,
+    sideToggle,
   };
 };
 
