@@ -4,6 +4,7 @@ class InputUtils {
   // initialInputs
   static initialSignin = { email: '', password: '' };
   static initialSignup = { email: '', password: '', password_confirm: '', name: '' };
+  static initailGroup = { name: '', description: '', is_public: true };
   static initialTodo = {
     todo: '',
     is_complete: false,
@@ -12,7 +13,6 @@ class InputUtils {
   };
   static initialComment = {
     comment: '',
-    //   userId: user_id,
     date: new Date(),
     todoId: '',
   };

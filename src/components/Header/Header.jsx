@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import NavBar from './components/NavBar';
 import { ImMenu } from 'react-icons/im';
 import useToggle from '../../hooks/useToggle';
+import Search from '../Search/Search';
 
 const Header = () => {
   const { handleToggle } = useToggle('side');
@@ -10,6 +11,7 @@ const Header = () => {
       <div onClick={handleToggle}>
         <ImMenu />
       </div>
+      <Search />
       <NavBar />
     </HeaderContainer>
   );

@@ -26,7 +26,6 @@ export default UserPage;
 const UserContainer = styled.main`
   display: flex;
   justify-content: space-evenly;
-  flex-grow: 1;
   min-height: 70vh;
   margin: 3em 0;
 `;

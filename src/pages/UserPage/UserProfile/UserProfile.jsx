@@ -20,9 +20,9 @@ const UserProfile = () => {
           <BasicInfo user={user} />
           <Button text="로그아웃" onClick={handleLogOut} />
         </ProfileWrapper>
-        {/* <ProfileButton /> */}
       </Box>
-      <Approaching user={user} />
+      <ProfileButton />
+      {/* <Approaching user={user} /> */}
     </Container>
   );
 };

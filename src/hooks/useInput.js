@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   commentInputChange,
   goalInputChange,
+  groupInputChange,
   signinChange,
   signupChange,
   todoInputChange,
@@ -10,7 +11,7 @@ import {
 const useInput = (item, id) => {
   const dispatch = useDispatch();
   const { toggle, input } = useSelector(state => state);
-  const { signin, signup, goalInput, todoInput, commentInput } = input;
+  const { signin, signup, goalInput, todoInput, commentInput, groupInput } = input;
   const isValid = goalInput.due_date && goalInput.goal_name && goalInput.description;
 
   const Items = {
@@ -30,10 +31,10 @@ const useInput = (item, id) => {
       input: { ...commentInput, todoId: id },
       action: commentInputChange,
     },
-    // memos: {
-    //   input: { ...memoInput, goalId: toggle.detailToggle.goal },
-    //   action: memoInputChange,
-    // },
+    groups: {
+      input: groupInput,
+      action: groupInputChange,
+    },
   };
 
   const curr_item = Items[item];
@@ -43,7 +44,7 @@ const useInput = (item, id) => {
     dispatch(curr_item.action({ ...curr_item.input, [name]: value }));
   };
 
-  return { signin, signup, goalInput, todoInput, commentInput, isValid, handleInput };
+  return { signin, signup, goalInput, todoInput, commentInput, isValid, handleInput, groupInput };
 };
 
 export default useInput;

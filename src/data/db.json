@@ -139,7 +139,7 @@
       "is_complete": true,
       "goalId": 3,
       "id": 4,
-      "comment_toggle": true
+      "comment_toggle": false
     },
     {
       "todo": "아이템 클릭시 & 목표 필터 및 정렬 버튼 클릭 시 디테일 토글은 변화하는데 refetch되지 않는 문제",
@@ -269,6 +269,27 @@
       "date": "2022-12-28T21:54:33.025Z",
       "todoId": 11,
       "id": 13
+    }
+  ],
+  "groups": [
+    {
+      "name": "asdad",
+      "description": "asdad",
+      "is_public": true,
+      "id": 1
+    },
+    {
+      "name": "테스트그룹1",
+      "description": "테스트그룹 생성",
+      "is_public": true,
+      "id": 2
+    },
+    {
+      "name": "1",
+      "description": "1",
+      "is_public": true,
+      "users": ["1"],
+      "id": 3
     }
   ]
 }

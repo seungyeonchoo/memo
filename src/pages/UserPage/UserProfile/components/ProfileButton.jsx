@@ -5,7 +5,7 @@ const ProfileButton = () => {
     <ButtonWrapper>
       <button>알림</button>
       <button>쪽지</button>
-      <button>임박</button>
+      <button>친구</button>
     </ButtonWrapper>
   );
 };

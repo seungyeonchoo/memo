@@ -1,15 +1,21 @@
 import { useMutation, useQueryClient } from 'react-query';
 import { useDispatch, useSelector } from 'react-redux';
 import Http from '../services/Http';
-import { commentInputChange, goalInputChange, todoInputChange } from '../store/slices/inputSlice';
+import {
+  commentInputChange,
+  goalInputChange,
+  groupInputChange,
+  todoInputChange,
+} from '../store/slices/inputSlice';
 import { createGoalToggleChange } from '../store/slices/toggleSlice';
 import InputUtils from '../utils/InputUtils';
+import { user_id } from '../utils/Storage';
 
 const useCreate = (item, id) => {
   const dispatch = useDispatch();
   const queryClient = useQueryClient();
   const { input, toggle } = useSelector(state => state);
-  const { goalInput, todoInput, commentInput } = input;
+  const { groupInput, goalInput, todoInput, commentInput } = input;
 
   const Items = {
     goals: {
@@ -27,12 +33,17 @@ const useCreate = (item, id) => {
       init: commentInputChange,
       initial: InputUtils.initialComment,
     },
+    groups: {
+      input: { ...groupInput, user: [user_id] },
+      init: groupInputChange,
+      initial: InputUtils.initailGroup,
+    },
   };
 
   const curr_item = Items[item];
 
   const post_item = new Http(item).post;
-  const { mutate } = useMutation(post_item);
+  const { mutate, data } = useMutation(post_item);
   const handleCreate = () => {
     mutate(curr_item.input, {
       onSuccess: () => {
@@ -50,3 +61,6 @@ const useCreate = (item, id) => {
 };
 
 export default useCreate;
+
+// 아이템이 그룹이면 user.groups에 patch로 새로운 그룹 아이디 추가
+// group.user에는
