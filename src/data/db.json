@@ -231,6 +231,30 @@
       "goalId": 5,
       "comment_toggle": false,
       "id": 18
+    },
+    {
+      "todo": "a123",
+      "is_complete": false,
+      "comment_toggle": false,
+      "id": 22
+    },
+    {
+      "todo": "asd",
+      "is_complete": false,
+      "comment_toggle": false,
+      "id": 23
+    },
+    {
+      "todo": "asda",
+      "is_complete": false,
+      "comment_toggle": false,
+      "id": 27
+    },
+    {
+      "todo": "asdsada",
+      "is_complete": false,
+      "comment_toggle": false,
+      "id": 30
     }
   ],
   "comments": [
@@ -288,7 +312,9 @@
       "name": "1",
       "description": "1",
       "is_public": true,
-      "users": ["1"],
+      "users": [
+        "1"
+      ],
       "id": 3
     }
   ]

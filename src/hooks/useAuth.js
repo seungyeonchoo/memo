@@ -2,12 +2,7 @@ import { useMutation, useQueryClient } from 'react-query';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Http from '../services/Http';
-import {
-  initialSignin,
-  initialSignup,
-  signinChange,
-  signupChange,
-} from '../store/slices/inputSlice';
+import { signinChange, signupChange } from '../store/slices/inputSlice';
 import InputUtils from '../utils/InputUtils';
 import TokenStorage, { UserStorage } from '../utils/Storage';
 import useToggle from './useToggle';

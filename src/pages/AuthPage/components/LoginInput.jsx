@@ -1,9 +1,15 @@
 import styled from 'styled-components';
+import { Button } from '../../../components/Common/Button';
 import Input from '../../../components/Common/Input';
 import useInput from '../../../hooks/useInput';
+import useInput2 from '../../../hooks/useInput2';
+import InputUtils from '../../../utils/InputUtils';
+import TokenStorage from '../../../utils/Storage';
 
 const LoginInput = () => {
+  //   const initialInput = InputUtils.initialSignin;
   const { signin, handleInput } = useInput('auth');
+  //   const { inputValue, handleInput, handleMutation } = useInput2(initialInput, 'signin', 'post');
   return (
     <Box>
       <Input
@@ -24,6 +30,13 @@ const LoginInput = () => {
         placeholder="비밀번호를 입력해주세요"
         onChange={handleInput}
       />
+      {/* <Button
+        size="large"
+        text="SIGN IN"
+        onClick={handleMutation}
+        // disabled={!isValid}
+        margin="auth"
+      /> */}
     </Box>
   );
 };

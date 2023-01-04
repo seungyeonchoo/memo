@@ -1,18 +1,14 @@
-import { useEffect } from 'react';
-import { useQuery, useQueryClient } from 'react-query';
+import { useQuery } from 'react-query';
 import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import Http from '../services/Http';
-import TokenStorage, { user_id } from '../utils/Storage';
 
 // goal 데이터를 fetch할때 그룹 목표와 개인 목표의 구분이 필요할 듯
 const useFetch = (item, id, type) => {
   const nav = useNavigate();
   const { id: idx } = useParams();
-  const { toggle, param } = useSelector(state => state);
+  const { param } = useSelector(state => state);
   const { sortParams, filterParams } = param;
-  const tokenStorage = new TokenStorage();
-  const queryClient = useQueryClient();
 
   //   const goal_type = type === 'personal' ? { userId: user_id } : { groupId: id };
   const Items = {

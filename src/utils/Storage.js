@@ -1,6 +1,6 @@
 import { TOKEN_KEY } from './constant';
 
-const TOKEN_STORAGE = localStorage;
+const TOKEN_STORAGE = sessionStorage;
 const USER_STORAGE = sessionStorage;
 
 class TokenStorage {
