@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Button } from '../../components/Common/Button';
 import useAuth from '../../hooks/useAuth';
-import useInput from '../../hooks/useInput';
 import useToggle from '../../hooks/useToggle';
 import InputUtils from '../../utils/InputUtils';
 import AuthRegister from './components/AuthRegister';
@@ -12,8 +11,7 @@ import RegisterInput from './components/RegisterInput';
 const AuthPage = () => {
   const { authToggle } = useToggle();
   const { handleAuthEvent } = useAuth();
-  const { signin, signup } = useInput();
-  const isValid = authToggle ? InputUtils.signUp(signup) : InputUtils.signIn(signin);
+  //   const isValid = authToggle ? InputUtils.signUp(signup) : InputUtils.signIn(signin);
 
   return (
     <Container>
@@ -23,7 +21,7 @@ const AuthPage = () => {
         size="large"
         text={authToggle ? '회원가입' : '로그인'}
         onClick={handleAuthEvent}
-        disabled={!isValid}
+        // disabled={!isValid}
         margin="auth"
       />
       <AuthRegister />

@@ -1,15 +1,17 @@
 import styled from 'styled-components';
 import { Button } from '../../../components/Common/Button';
 import Input from '../../../components/Common/Input';
-import useInput from '../../../hooks/useInput';
 import useInput2 from '../../../hooks/useInput2';
+import useMutate from '../../../hooks/useMutate';
+import useToggle from '../../../hooks/useToggle';
 import InputUtils from '../../../utils/InputUtils';
-import TokenStorage from '../../../utils/Storage';
 
 const LoginInput = () => {
-  //   const initialInput = InputUtils.initialSignin;
-  const { signin, handleInput } = useInput('auth');
-  //   const { inputValue, handleInput, handleMutation } = useInput2(initialInput, 'signin', 'post');
+  const initialInput = InputUtils.initialSignin;
+  const { handleToggle } = useToggle('auth');
+  const { inputValue, handleInput, initInput } = useInput2(initialInput);
+  const { handleMutation } = useMutate('signin', 'post', inputValue, initInput, handleToggle);
+
   return (
     <Box>
       <Input
@@ -17,7 +19,7 @@ const LoginInput = () => {
         type="email"
         name="email"
         size="large"
-        value={signin.email}
+        value={inputValue.email}
         placeholder="이메일을 입력해주세요"
         onChange={handleInput}
       />
@@ -26,17 +28,17 @@ const LoginInput = () => {
         type="password"
         name="password"
         size="large"
-        value={signin.password}
+        value={inputValue.password}
         placeholder="비밀번호를 입력해주세요"
         onChange={handleInput}
       />
-      {/* <Button
+      <Button
         size="large"
         text="SIGN IN"
         onClick={handleMutation}
         // disabled={!isValid}
         margin="auth"
-      /> */}
+      />
     </Box>
   );
 };

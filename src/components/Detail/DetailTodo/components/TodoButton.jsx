@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import useCheck from '../../../../hooks/useCheck';
+import useMutate from '../../../../hooks/useMutate';
 import useParam from '../../../../hooks/useParam';
 import useToggle from '../../../../hooks/useToggle';
 import GoalUtils from '../../../../utils/GoalUtils';
@@ -7,8 +7,9 @@ import { Button } from '../../../Common/Button';
 
 const TodoButton = ({ goal }) => {
   const { checkUserId } = useParam();
-  const { handleIsComplete } = useCheck('goals', goal?.id);
   const { handleToggle } = useToggle('detail');
+  const isComplete = { is_complete: !goal?.is_complete };
+  const { handleMutation } = useMutate(`goals/${goal?.id}`, 'patch', isComplete);
 
   return (
     <Wrapper>
@@ -16,7 +17,7 @@ const TodoButton = ({ goal }) => {
         <Button
           text="완료"
           size="medium"
-          onClick={handleIsComplete}
+          onClick={handleMutation}
           disabled={!GoalUtils.isComplete(goal)}
         />
       )}

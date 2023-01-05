@@ -1,5 +1,5 @@
 import Container from '../../../components/Common/Container';
-import CreateGroup from './components/CreateGroup';
+import CreateGroup from './components/CreateGroupInput';
 import GroupList from './components/GroupList';
 
 const GroupMain = () => {

@@ -1,26 +1,27 @@
 import { AiFillDelete, AiFillEdit } from 'react-icons/ai';
 import styled from 'styled-components';
-import useDelete from '../../../../hooks/useDelete';
+import useMutate from '../../../../hooks/useMutate';
 import useToggle from '../../../../hooks/useToggle';
-import { createGoalToggleChange } from '../../../../store/slices/toggleSlice';
 
-const ItemButton = ({ goal }) => {
+const GoalButton = ({ goal }) => {
   const { handleToggle, editGoalToggle, createGoalToggle } = useToggle('edit', goal);
-  const { handleDelete } = useDelete('goals', createGoalToggleChange.id);
-
+  const { handleMutation } = useMutate(`goals/${goal?.id}`, 'delete');
   return (
     <ButtonWrapper>
       <Button onClick={handleToggle} disabled={editGoalToggle || createGoalToggle}>
         <AiFillEdit />
       </Button>
-      <Button onClick={handleDelete}>
+      <Button onClick={handleMutation}>
         <AiFillDelete />
       </Button>
     </ButtonWrapper>
   );
 };
 
-export default ItemButton;
+// 수정버튼 클릭했을 때 input에 기존값 가져오기
+// goal id를 어떻게 전달할지?
+
+export default GoalButton;
 
 const ButtonWrapper = styled.div`
   display: flex;

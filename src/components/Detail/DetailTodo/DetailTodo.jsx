@@ -13,7 +13,7 @@ const DetailTodo = ({ goal }) => {
 
   return (
     <TodoBox>
-      {id === user_id && <TodoInput />}
+      {id === user_id && <TodoInput id={goal?.id} />}
       <TodoList goal={goal} />
       <TodoButton goal={goal} />
     </TodoBox>

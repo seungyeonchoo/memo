@@ -1,12 +1,14 @@
 import styled from 'styled-components';
-import useCreate from '../../../../hooks/useCreate';
-import useInput from '../../../../hooks/useInput';
+import useInput2 from '../../../../hooks/useInput2';
+import useMutate from '../../../../hooks/useMutate';
+import InputUtils from '../../../../utils/InputUtils';
 import { AddButton } from '../../../Common/Button';
 import Input from '../../../Common/Input';
 
 const CommentButton = ({ todoId }) => {
-  const { handleCreate: handleCreateCommnent } = useCreate('comments', todoId);
-  const { handleInput: handleCommnetInput, commentInput } = useInput('comments');
+  const initialComment = { ...InputUtils.initialComment, todoId: todoId };
+  const { handleInput, initInput, inputValue } = useInput2(initialComment);
+  const { handleMutation } = useMutate(`comments`, 'post', inputValue, initInput);
 
   return (
     <Wrapper>
@@ -15,15 +17,10 @@ const CommentButton = ({ todoId }) => {
         size="medium"
         name="comment"
         placeholder="코멘트를 남겨주세요."
-        onChange={handleCommnetInput}
-        value={commentInput.comment}
+        onChange={handleInput}
+        value={inputValue.comment}
       />
-      <AddButton
-        text="+"
-        size="small"
-        onClick={handleCreateCommnent}
-        disabled={!commentInput.comment}
-      />
+      <AddButton text="+" size="small" onClick={handleMutation} disabled={!inputValue.comment} />
     </Wrapper>
   );
 };

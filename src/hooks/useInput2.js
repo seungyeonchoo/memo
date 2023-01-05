@@ -1,9 +1,6 @@
 import { useState } from 'react';
-import { useMutation, useQueryClient } from 'react-query';
-import Http from '../services/Http';
 
-const useInput2 = (url, method, initialInput, ...rest) => {
-  const queryClient = useQueryClient();
+const useInput2 = (initialInput, ...rest) => {
   const [inputValue, setInputValue] = useState(initialInput);
 
   const handleInput = e => {
@@ -11,20 +8,10 @@ const useInput2 = (url, method, initialInput, ...rest) => {
     setInputValue({ ...inputValue, [name]: value });
   };
 
-  const mutateData = new Http(url)[method]; // post || patch
-  const { mutate } = useMutation(mutateData);
-
-  const handleMutation = () => {
-    mutate(inputValue, {
-      onSuccess: () => {
-        queryClient.invalidateQueries();
-        setInputValue(initialInput);
-        [...rest].forEach(el => el());
-      },
-    });
+  const initInput = () => {
+    setInputValue(initialInput);
   };
-
-  return { inputValue, handleInput, handleMutation };
+  return { inputValue, handleInput, initInput };
 };
 
 export default useInput2;

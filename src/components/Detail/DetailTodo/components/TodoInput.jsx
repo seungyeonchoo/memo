@@ -1,17 +1,17 @@
 import styled from 'styled-components';
-import useCreate from '../../../../hooks/useCreate';
-import useInput from '../../../../hooks/useInput';
 import useInput2 from '../../../../hooks/useInput2';
-import useToggle from '../../../../hooks/useToggle';
+import useMutate from '../../../../hooks/useMutate';
 import InputUtils from '../../../../utils/InputUtils';
 import { AddButton } from '../../../Common/Button';
 import Input from '../../../Common/Input';
 
-const TodoInput = () => {
-  const { detailToggle } = useToggle();
-  const initialTodo = { ...InputUtils.initialTodo, goalId: detailToggle.goal };
-  const { handleInput, handleMutation, inputValue } = useInput2('todos', 'post', initialTodo);
+const initialTodo = InputUtils.initialTodo;
 
+const TodoInput = ({ id }) => {
+  const { handleInput, initInput, inputValue } = useInput2({ ...initialTodo, goalId: id });
+  const { handleMutation } = useMutate('todos', 'post', inputValue, initInput);
+
+  //   if (id === undefined) return <div>loading...</div>;
   return (
     <Wrapper>
       <Input
@@ -19,10 +19,10 @@ const TodoInput = () => {
         name="todo"
         size="large"
         placeholder="할일을 입력해 주세요."
-        value={inputValue.todo}
+        value={inputValue?.todo}
         onChange={handleInput}
       />
-      <AddButton text="+" size="small" onClick={handleMutation} disabled={!inputValue.todo} />
+      <AddButton text="+" size="small" onClick={handleMutation} disabled={!inputValue?.todo} />
     </Wrapper>
   );
 };

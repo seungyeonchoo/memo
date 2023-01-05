@@ -1,18 +1,15 @@
-import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import useCheck from '../../../../hooks/useCheck';
-import useDelete from '../../../../hooks/useDelete';
-import useInput2 from '../../../../hooks/useInput2';
+import useMutate from '../../../../hooks/useMutate';
 import useParam from '../../../../hooks/useParam';
-import usePatch from '../../../../hooks/usePatch';
 import DetailComment from '../../DetailComment/DetailComment';
 
 const TodoItem = ({ todo }) => {
   const { checkUserId } = useParam();
   const { handleIsComplete } = useCheck('todos', todo.id);
   const commentToggle = { comment_toggle: !todo?.comment_toggle };
-  const { handleMutation: handleDelete } = useInput2(`todos/${todo?.id}`, 'delete');
-  const { handleMutation: handlePatch } = useInput2(`todos/${todo?.id}`, 'patch', commentToggle);
+  const { handleMutation: handleDelete } = useMutate(`todos/${todo?.id}`, 'delete');
+  const { handleMutation: handlePatch } = useMutate(`todos/${todo?.id}`, 'patch', commentToggle);
 
   return (
     <>
