@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import useInput2 from '../../../../hooks/useInput2';
+import useInput from '../../../../hooks/useInput';
 import useMutate from '../../../../hooks/useMutate';
 import InputUtils from '../../../../utils/InputUtils';
 import { AddButton } from '../../../Common/Button';
@@ -7,7 +7,7 @@ import Input from '../../../Common/Input';
 
 const CommentButton = ({ todoId }) => {
   const initialComment = { ...InputUtils.initialComment, todoId: todoId };
-  const { handleInput, initInput, inputValue } = useInput2(initialComment);
+  const { handleInput, initInput, inputValue } = useInput(initialComment);
   const { handleMutation } = useMutate(`comments`, 'post', inputValue, initInput);
 
   return (

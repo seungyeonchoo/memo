@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 import { Button } from '../../../components/Common/Button';
 import Input from '../../../components/Common/Input';
-import useInput2 from '../../../hooks/useInput2';
+import useInput from '../../../hooks/useInput';
 import useMutate from '../../../hooks/useMutate';
 import useToggle from '../../../hooks/useToggle';
 import InputUtils from '../../../utils/InputUtils';
 
-const LoginInput = () => {
+const LoginInput = ({}) => {
   const initialInput = InputUtils.initialSignin;
   const { handleToggle } = useToggle('auth');
-  const { inputValue, handleInput, initInput } = useInput2(initialInput);
+  const { inputValue, handleInput, initInput } = useInput(initialInput);
   const { handleMutation } = useMutate('signin', 'post', inputValue, initInput, handleToggle);
 
   return (
@@ -36,7 +36,7 @@ const LoginInput = () => {
         size="large"
         text="SIGN IN"
         onClick={handleMutation}
-        // disabled={!isValid}
+        disabled={!InputUtils.signIn(inputValue)}
         margin="auth"
       />
     </Box>

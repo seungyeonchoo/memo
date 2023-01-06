@@ -1,27 +1,14 @@
-import { useDispatch } from 'react-redux';
-import styled from 'styled-components';
-import useInput2 from '../../../../hooks/useInput2';
-import useMutate from '../../../../hooks/useMutate';
-import { createGoalToggleChange } from '../../../../store/slices/toggleSlice';
-import InputUtils from '../../../../utils/InputUtils';
 import Input, { AreaInput } from '../../../Common/Input';
-import InputButton from './InputButtons';
 
-const Inputs = () => {
-  const dispatch = useDispatch();
-  const initGoalToggle = () => dispatch(createGoalToggleChange());
-  const { inputValue, handleInput, initInput } = useInput2(InputUtils.initialGoal);
-  const { handleMutation: handleCreate } = useMutate('goals', 'post', inputValue, initGoalToggle);
-  const { handleMutation: handleUpdate } = useMutate('goals', 'patch', inputValue, initGoalToggle);
-
+const Inputs = ({ input, handleInput }) => {
   return (
-    <InputWrapper>
+    <>
       <Input
         label="마감기한"
         type="date"
         size="large"
         name="due_date"
-        value={inputValue.due_date}
+        value={input.due_date}
         onChange={handleInput}
       />
       <Input
@@ -30,7 +17,7 @@ const Inputs = () => {
         size="large"
         name="goal_name"
         placeholder="목표명을 입력해주세요."
-        value={inputValue.goal_name}
+        value={input.goal_name}
         onChange={handleInput}
       />
       <AreaInput
@@ -38,23 +25,11 @@ const Inputs = () => {
         size="large"
         name="description"
         placeholder="목표에 대한 설명을 입력해주세요."
-        value={inputValue.description}
+        value={input.description}
         onChange={handleInput}
       />
-      <InputButton handleCreate={handleCreate} handleUpdates={handleUpdate} />
-    </InputWrapper>
+    </>
   );
 };
 
 export default Inputs;
-
-const InputWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 50vh;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #fff;
-  padding: 1em 0;
-  border-radius: 10px;
-`;

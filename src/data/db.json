@@ -13,6 +13,20 @@
       "password_confirm": true,
       "name": "추승연",
       "id": 2
+    },
+    {
+      "email": "css@css.com",
+      "password": "$2a$10$XvYV4vu.u2JrPd0EZkDUhOCGncJQrmw44a5OcqnTMXCR4WLDFy20y",
+      "password_confirm": "tmddus12",
+      "name": "tmddus",
+      "id": 3
+    },
+    {
+      "email": "coo4338@naver.com",
+      "password": "$2a$10$MIBMuLdt0u7t0f/LSN6RiOKsHNi2pHkGSbdbMJvNmeLuFl/ZuzXDG",
+      "password_confirm": "tmddus12",
+      "name": "tmddus",
+      "id": 4
     }
   ],
   "goals": [
@@ -121,6 +135,26 @@
       "is_public": false,
       "is_complete": false,
       "id": 8
+    },
+    {
+      "due_date": "2023-01-25",
+      "goal_name": "1",
+      "description": "2",
+      "userId": 1,
+      "date": "2023-01-06T17:28:28.318Z",
+      "is_public": false,
+      "is_complete": false,
+      "id": 9
+    },
+    {
+      "due_date": "2023-01-11",
+      "goal_name": "2",
+      "description": "3",
+      "userId": 1,
+      "date": "2023-01-06T17:28:28.318Z",
+      "is_public": false,
+      "is_complete": false,
+      "id": 10
     }
   ],
   "todos": [

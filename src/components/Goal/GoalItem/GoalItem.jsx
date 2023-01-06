@@ -5,15 +5,14 @@ import GoalStatus from './components/GoalStatus';
 import GoalText from './components/GoalText';
 import GoalButton from './components/GoalButton';
 
-const GoalItem = ({ goal }) => {
+const GoalItem = ({ goal, toggle, handleToggle }) => {
   const { checkUserId } = useParam();
   const { handleToggle: handleDetailToggle } = useToggle('detail', goal);
-
   return (
     <GoalWrapper onClick={handleDetailToggle}>
       <GoalStatus goal={goal} />
       <GoalText goal={goal} />
-      {checkUserId && <GoalButton goal={goal} />}
+      {checkUserId && <GoalButton goal={goal} toggle={toggle} handleToggle={handleToggle} />}
     </GoalWrapper>
   );
 };

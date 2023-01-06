@@ -33,7 +33,7 @@ const useToggle = (item, goal, profile) => {
   } = useSelector(state => state.toggle);
 
   const Items = {
-    auth: authToggleChange,
+    // auth: authToggleChange,
     goals: createGoalToggleChange,
     sort: sortToggleChange,
     edit: editGoalToggleChange,
@@ -48,19 +48,18 @@ const useToggle = (item, goal, profile) => {
 
   const handleToggle = e => {
     e.stopPropagation();
-    if (item === 'goals') dispatch(goalInputChange(InputUtils.initialGoal));
-    if (item === 'edit') dispatch(goalInputChange(!editGoalToggle ? goal : InputUtils.initialGoal));
-    if (item === 'auth') {
-      dispatch(signinChange(InputUtils.initialSignin));
-      dispatch(signupChange(InputUtils.initialSignup));
-    }
+    // if (item === 'goals') dispatch(goalInputChange(InputUtils.initialGoal));
+    // if (item === 'edit') dispatch(goalInputChange(!editGoalToggle ? goal : InputUtils.initialGoal));
+    // if (item === 'auth') {
+    //   dispatch(signinChange(InputUtils.initialSignin));
+    //   dispatch(signupChange(InputUtils.initialSignup));
+    // }
     dispatch(curr_item(goal ? goal.id : profile || null));
     // if (item === 'detail') refetch();
   };
 
   return {
     createGoalToggle,
-    authToggle,
     editGoalToggle,
     sortToggle,
     filterToggle,

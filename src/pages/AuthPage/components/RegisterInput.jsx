@@ -1,13 +1,14 @@
 import styled from 'styled-components';
+import { Button } from '../../../components/Common/Button';
 import Input from '../../../components/Common/Input';
-import useInput2 from '../../../hooks/useInput2';
+import useInput from '../../../hooks/useInput';
 import useMutate from '../../../hooks/useMutate';
 import InputUtils from '../../../utils/InputUtils';
 
-const RegisterInput = () => {
+const RegisterInput = ({ handleToggle }) => {
   const initialInput = InputUtils.initialSignup;
-  const { inputValue, handleInput, initInput } = useInput2(initialInput);
-  const { handleMutation } = useMutate('signup', 'post', inputValue, initInput);
+  const { inputValue, handleInput, initInput } = useInput(initialInput);
+  const { handleMutation } = useMutate('signup', 'post', inputValue, initInput, handleToggle);
 
   return (
     <Box>
@@ -46,6 +47,13 @@ const RegisterInput = () => {
         value={inputValue.name}
         placeholder="이름을 입력해주세요"
         onChange={handleInput}
+      />
+      <Button
+        size="large"
+        text="SIGN IN"
+        onClick={handleMutation}
+        disabled={!InputUtils.signUp(inputValue)}
+        margin="auth"
       />
     </Box>
   );

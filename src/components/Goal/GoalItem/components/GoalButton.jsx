@@ -3,12 +3,14 @@ import styled from 'styled-components';
 import useMutate from '../../../../hooks/useMutate';
 import useToggle from '../../../../hooks/useToggle';
 
-const GoalButton = ({ goal }) => {
-  const { handleToggle, editGoalToggle, createGoalToggle } = useToggle('edit', goal);
+const GoalButton = ({ goal, toggle, handleToggle }) => {
+  // const { handleToggle, editGoalToggle, createGoalToggle } = useToggle('edit', goal);
   const { handleMutation } = useMutate(`goals/${goal?.id}`, 'delete');
+  const { editToggle, createToggle } = toggle;
+
   return (
     <ButtonWrapper>
-      <Button onClick={handleToggle} disabled={editGoalToggle || createGoalToggle}>
+      <Button onClick={handleToggle} disabled={editToggle || createToggle}>
         <AiFillEdit />
       </Button>
       <Button onClick={handleMutation}>

@@ -1,11 +1,11 @@
 import { Button } from '../../../../components/Common/Button';
 import Input, { AreaInput } from '../../../../components/Common/Input';
-import useInput2 from '../../../../hooks/useInput2';
+import useInput from '../../../../hooks/useInput';
 import useMutate from '../../../../hooks/useMutate';
 import InputUtils from '../../../../utils/InputUtils';
 
 const CreateGroup = () => {
-  const { inputValue, handleInput, initInput } = useInput2(InputUtils.initailGroup);
+  const { inputValue, handleInput, initInput } = useInput(InputUtils.initailGroup);
   const { handleMutation } = useMutate('groups', 'post', inputValue, initInput);
   // 그룹 생성 이후에
   // 그룹장 = user_id
