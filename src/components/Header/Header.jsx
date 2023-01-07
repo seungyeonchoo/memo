@@ -1,14 +1,15 @@
 import styled from 'styled-components';
 import NavBar from './components/NavBar';
 import { ImMenu } from 'react-icons/im';
-import useToggle from '../../hooks/useToggle';
 import Search from '../Search/Search';
+import useToggle from '../../hooks/useToggle';
+import { sideToggleChange } from '../../store/slices/toggleSlice';
 
 const Header = () => {
-  const { handleToggle } = useToggle('side');
+  const { handleGlobalToggle } = useToggle(sideToggleChange);
   return (
     <HeaderContainer>
-      <div onClick={handleToggle}>
+      <div onClick={handleGlobalToggle}>
         <ImMenu />
       </div>
       <Search />

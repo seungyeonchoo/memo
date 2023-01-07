@@ -1,10 +1,10 @@
-import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import useInput from '../../hooks/useInput';
-import useMutate from '../../hooks/useMutate';
 import useParam from '../../hooks/useParam';
 import useToggle from '../../hooks/useToggle';
-import useToggle2 from '../../hooks/useToggle2';
+import { goalInputChange } from '../../store/slices/inputSlice';
+import { createToggleChange } from '../../store/slices/toggleSlice';
 import InputUtils from '../../utils/InputUtils';
 import { Button } from '../Common/Button';
 import Container from '../Common/Container';
@@ -13,26 +13,19 @@ import GoalList from './GoalList/GoalList';
 
 const Goal = ({ user }) => {
   const { checkUserId } = useParam();
-  const [createToggle, handleCreateToggle] = useToggle2();
-  const [editToggle, handleEditToggle] = useToggle2();
-  const { inputValue, handleInput } = useInput(InputUtils.initialGoal);
-  const { handleMutation: create } = useMutate('goals', 'post', inputValue, handleCreateToggle);
-  const { handleMutation: update } = useMutate('goals', 'patch', inputValue, handleEditToggle);
+  const { createToggle, editToggle } = useSelector(state => state.toggle);
+  const { setGlobalInput } = useInput(InputUtils.initialGoal, goalInputChange);
+  const { handleGlobalToggle } = useToggle(createToggleChange, setGlobalInput);
 
   return (
     <Container>
       {createToggle || editToggle ? (
-        <GoalInput
-          toggle={createToggle}
-          handleToggle={{ handleCreateToggle, handleEditToggle }}
-          handleInputChange={{ inputValue, handleInput }}
-          handleMutation={{ create, update }}
-        />
+        <GoalInput />
       ) : (
         <>
           <TitleText>{user?.name}님의 목표</TitleText>
-          {checkUserId && <Button size="large" text="목표추가" onClick={handleCreateToggle} />}
-          <GoalList toggle={{ createToggle, editToggle }} handleToggle={handleEditToggle} />
+          {checkUserId && <Button size="large" text="목표추가" onClick={handleGlobalToggle} />}
+          <GoalList />
         </>
       )}
     </Container>

@@ -22,7 +22,7 @@ const UserProfile = () => {
         </ProfileWrapper>
       </Box>
       <ProfileButton />
-      {/* <Approaching user={user} /> */}
+      <Approaching user={user} />
     </Container>
   );
 };

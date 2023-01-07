@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import useToggle from '../../../hooks/useToggle';
 
 const AuthRegister = ({ onClick, toggle }) => {
   return (

@@ -1,18 +1,30 @@
 import styled from 'styled-components';
 import useParam from '../../../hooks/useParam';
-import useToggle from '../../../hooks/useToggle';
 import GoalStatus from './components/GoalStatus';
 import GoalText from './components/GoalText';
 import GoalButton from './components/GoalButton';
+import useInput from '../../../hooks/useInput';
+import { goalInputChange } from '../../../store/slices/inputSlice';
+import useToggle from '../../../hooks/useToggle';
+import { detailToggleChange } from '../../../store/slices/toggleSlice';
 
-const GoalItem = ({ goal, toggle, handleToggle }) => {
+const GoalItem = ({ goal, toggle, handleToggle, handleSetInput }) => {
   const { checkUserId } = useParam();
-  const { handleToggle: handleDetailToggle } = useToggle('detail', goal);
+  const { setGlobalInput } = useInput(goal, goalInputChange);
+  const { handleGlobalToggle } = useToggle(detailToggleChange, setGlobalInput);
+
   return (
-    <GoalWrapper onClick={handleDetailToggle}>
+    <GoalWrapper onClick={handleGlobalToggle}>
       <GoalStatus goal={goal} />
       <GoalText goal={goal} />
-      {checkUserId && <GoalButton goal={goal} toggle={toggle} handleToggle={handleToggle} />}
+      {checkUserId && (
+        <GoalButton
+          goal={goal}
+          toggle={toggle}
+          handleToggle={handleToggle}
+          handleSetInput={handleSetInput}
+        />
+      )}
     </GoalWrapper>
   );
 };

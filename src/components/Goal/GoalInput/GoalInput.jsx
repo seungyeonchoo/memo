@@ -3,19 +3,12 @@ import InputButton from './components/InputButtons';
 import Inputs from './components/Inputs';
 import InputTitle from './components/InputTitle';
 
-const GoalInput = ({ toggle, handleToggle, handleMutation, handleInputChange }) => {
-  const { handleCreateToggle, handleEditToggle } = handleToggle;
-  const { create, update } = handleMutation;
-  const { inputValue, handleInput } = handleInputChange;
-
+const GoalInput = () => {
   return (
     <InputWrapper>
       <InputTitle />
-      <Inputs input={inputValue} handleInput={handleInput} />
-      <InputButton
-        handleClick={toggle ? create : update}
-        handleCancel={toggle ? handleCreateToggle : handleEditToggle}
-      />
+      <Inputs />
+      <InputButton />
     </InputWrapper>
   );
 };

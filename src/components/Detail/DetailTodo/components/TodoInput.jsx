@@ -12,6 +12,7 @@ const TodoInput = ({ id }) => {
   const { handleMutation } = useMutate('todos', 'post', inputValue, initInput);
   // goalId 값을 prop으로 제대로 받아오기
   //   if (id === undefined) return <div>loading...</div>;
+
   return (
     <Wrapper>
       <Input

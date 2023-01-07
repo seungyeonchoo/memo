@@ -1,12 +1,12 @@
+import { useSelector } from 'react-redux';
 import useFetch from '../../hooks/useFetch';
-import useToggle from '../../hooks/useToggle';
 import Container from '../Common/Container';
 import TodoTitle from './DetailTodo/components/TodoTitle';
 import DetailTodo from './DetailTodo/DetailTodo';
 
 const Detail = () => {
-  const { detailToggle } = useToggle();
-  const { data: goal } = useFetch('goals', detailToggle.goal);
+  const { goalInput } = useSelector(state => state.input);
+  const { data: goal } = useFetch('goals', goalInput.id);
 
   return (
     <Container>

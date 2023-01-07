@@ -70,10 +70,24 @@
         },
         {
           "todo": "로그아웃했을 때 캐시데이터 삭제하기",
-          "is_complete": false,
+          "is_complete": true,
           "goalId": 3,
           "comment_toggle": false,
           "id": 12
+        },
+        {
+          "todo": "로그인시 주소 이상함",
+          "is_complete": false,
+          "goalId": 3,
+          "comment_toggle": false,
+          "id": 13
+        },
+        {
+          "todo": "토큰이 있으면 바로 메인 페이지로 이동 + 토큰이 없으면 다시 로그인 페이지로",
+          "is_complete": false,
+          "goalId": 3,
+          "comment_toggle": false,
+          "id": 17
         }
       ]
     },
@@ -87,13 +101,6 @@
       "is_complete": false,
       "id": 5,
       "todos": [
-        {
-          "todo": "작성일 변환 함수",
-          "is_complete": false,
-          "goalId": 5,
-          "id": 8,
-          "comment_toggle": false
-        },
         {
           "todo": "프로필 토글 (알림, 기한임박, 쪽지)",
           "is_complete": false,
@@ -112,7 +119,36 @@
           "todo": "투두 및 메모 작성 및 완료시 작성자 / 완료자 추가 (인풋 수정 필요)",
           "is_complete": false,
           "goalId": 5,
-          "id": 11
+          "id": 11,
+          "comment_toggle": false
+        },
+        {
+          "todo": "엔터키 사용하여 버튼 클릭하기",
+          "is_complete": false,
+          "goalId": 5,
+          "comment_toggle": false,
+          "id": 14
+        },
+        {
+          "todo": "회원가입할때 계정 공개 여부 추가",
+          "is_complete": false,
+          "goalId": 5,
+          "comment_toggle": false,
+          "id": 15
+        },
+        {
+          "todo": "사이드바 프로필에서 정보 수정 기능 추가",
+          "is_complete": false,
+          "goalId": 5,
+          "comment_toggle": false,
+          "id": 16
+        },
+        {
+          "todo": "햄버거버튼 클릭시 X로 변경",
+          "is_complete": false,
+          "goalId": 5,
+          "comment_toggle": false,
+          "id": 18
         }
       ]
     },
@@ -127,34 +163,25 @@
       "id": 7
     },
     {
-      "due_date": "2023-01-24",
-      "goal_name": "123",
-      "description": "1321",
+      "due_date": "2023-01-10",
+      "goal_name": "1234",
+      "description": "1",
       "userId": 1,
-      "date": "2023-01-05T19:55:12.003Z",
+      "date": "2023-01-07T22:21:53.238Z",
       "is_public": false,
       "is_complete": false,
-      "id": 8
+      "id": 8,
+      "todos": []
     },
     {
-      "due_date": "2023-01-25",
-      "goal_name": "1",
-      "description": "2",
+      "due_date": "2023-01-08",
+      "goal_name": "s",
+      "description": "s",
       "userId": 1,
-      "date": "2023-01-06T17:28:28.318Z",
+      "date": "2023-01-07T23:08:41.469Z",
       "is_public": false,
       "is_complete": false,
       "id": 9
-    },
-    {
-      "due_date": "2023-01-11",
-      "goal_name": "2",
-      "description": "3",
-      "userId": 1,
-      "date": "2023-01-06T17:28:28.318Z",
-      "is_public": false,
-      "is_complete": false,
-      "id": 10
     }
   ],
   "todos": [
@@ -405,6 +432,48 @@
       "is_complete": false,
       "comment_toggle": false,
       "id": 73
+    },
+    {
+      "todo": "asad",
+      "is_complete": false,
+      "comment_toggle": false,
+      "id": 74
+    },
+    {
+      "todo": "asdad",
+      "is_complete": false,
+      "comment_toggle": false,
+      "id": 78
+    },
+    {
+      "todo": "qq",
+      "is_complete": false,
+      "comment_toggle": false,
+      "id": 80
+    },
+    {
+      "todo": "qqq",
+      "is_complete": false,
+      "comment_toggle": false,
+      "id": 81
+    },
+    {
+      "todo": "asd",
+      "is_complete": false,
+      "comment_toggle": false,
+      "id": 82
+    },
+    {
+      "todo": "ads",
+      "is_complete": false,
+      "comment_toggle": false,
+      "id": 83
+    },
+    {
+      "todo": "ㄴㅁㅇ",
+      "is_complete": false,
+      "comment_toggle": false,
+      "id": 88
     }
   ],
   "comments": [

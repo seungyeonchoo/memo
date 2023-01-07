@@ -1,16 +1,21 @@
 import { AiFillDelete, AiFillEdit } from 'react-icons/ai';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
+import useInput from '../../../../hooks/useInput';
 import useMutate from '../../../../hooks/useMutate';
 import useToggle from '../../../../hooks/useToggle';
+import { goalInputChange } from '../../../../store/slices/inputSlice';
+import { editToggleChange } from '../../../../store/slices/toggleSlice';
 
-const GoalButton = ({ goal, toggle, handleToggle }) => {
-  // const { handleToggle, editGoalToggle, createGoalToggle } = useToggle('edit', goal);
+const GoalButton = ({ goal }) => {
+  const { editToggle, createToggle } = useSelector(state => state.toggle);
+  const { setGlobalInput } = useInput(goal, goalInputChange);
+  const { handleGlobalToggle } = useToggle(editToggleChange, setGlobalInput);
   const { handleMutation } = useMutate(`goals/${goal?.id}`, 'delete');
-  const { editToggle, createToggle } = toggle;
 
   return (
     <ButtonWrapper>
-      <Button onClick={handleToggle} disabled={editToggle || createToggle}>
+      <Button onClick={handleGlobalToggle} disabled={editToggle || createToggle}>
         <AiFillEdit />
       </Button>
       <Button onClick={handleMutation}>

@@ -14,7 +14,7 @@ const useMutate = (url, method, inputValue, ...rest) => {
     mutate(inputValue, {
       onSuccess: data => {
         queryClient.invalidateQueries();
-        [...rest].forEach(el => el());
+        [...rest].forEach(el => el(e));
 
         if (url === 'signin') {
           Storage.setToken(data.accessToken);

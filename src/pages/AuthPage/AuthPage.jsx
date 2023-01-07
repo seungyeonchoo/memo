@@ -1,20 +1,18 @@
 import styled from 'styled-components';
 import useToggle from '../../hooks/useToggle';
-import useToggle2 from '../../hooks/useToggle2';
 import AuthRegister from './components/AuthRegister';
 import AuthTitle from './components/AuthTitle';
 import LoginInput from './components/LoginInput';
 import RegisterInput from './components/RegisterInput';
 
 const AuthPage = () => {
-  const { authToggle } = useToggle();
-  const [registerToggle, handleRegisterToggle] = useToggle2();
+  const { toggle, handleToggle } = useToggle();
 
   return (
     <Container>
-      <AuthTitle toggle={registerToggle} />
-      {registerToggle ? <RegisterInput handleToggle={handleRegisterToggle} /> : <LoginInput />}
-      <AuthRegister onClick={handleRegisterToggle} toggle={registerToggle} />
+      <AuthTitle toggle={toggle} />
+      {toggle ? <RegisterInput handleToggle={handleToggle} /> : <LoginInput />}
+      <AuthRegister onClick={handleToggle} toggle={toggle} />
     </Container>
   );
 };
