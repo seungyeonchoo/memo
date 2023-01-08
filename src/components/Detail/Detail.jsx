@@ -5,9 +5,9 @@ import TodoTitle from './DetailTodo/components/TodoTitle';
 import DetailTodo from './DetailTodo/DetailTodo';
 
 const Detail = () => {
-  const { goalInput } = useSelector(state => state.input);
-  const { data: goal } = useFetch('goals', goalInput.id);
-
+  const { input, param } = useSelector(state => state);
+  const id = input.goalInput.id;
+  const { data: goal } = useFetch(`goals/${id}`, param.goalParams, ['goals', { id: id }]);
   return (
     <Container>
       <TodoTitle goal={goal} />

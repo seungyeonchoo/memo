@@ -7,9 +7,6 @@ const GoalStatus = ({ goal }) => {
   return (
     <StatusBox>
       <Date>{goal?.is_complete ? 'Clear' : DateUtils.diffDate(goal.due_date)}</Date>
-      <div>
-        {goal?.todos.filter(el => el.is_complete === true).length} of {goal.todos.length}
-      </div>
     </StatusBox>
   );
 };

@@ -16,7 +16,7 @@ const Goal = ({ user }) => {
   const { createToggle, editToggle } = useSelector(state => state.toggle);
   const { setGlobalInput } = useInput(InputUtils.initialGoal, goalInputChange);
   const { handleGlobalToggle } = useToggle(createToggleChange, setGlobalInput);
-
+  console.log(user);
   return (
     <Container>
       {createToggle || editToggle ? (
@@ -25,7 +25,7 @@ const Goal = ({ user }) => {
         <>
           <TitleText>{user?.name}님의 목표</TitleText>
           {checkUserId && <Button size="large" text="목표추가" onClick={handleGlobalToggle} />}
-          <GoalList />
+          <GoalList user={user} />
         </>
       )}
     </Container>

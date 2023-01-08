@@ -8,9 +8,11 @@ import { useSelector } from 'react-redux';
 
 const UserPage = () => {
   const { id } = useParams();
-  const { data: user } = useFetch('users', id);
-  const { sideToggle, detailToggle } = useSelector(state => state.toggle);
+  const { toggle, param } = useSelector(state => state);
+  const { sideToggle, detailToggle } = toggle;
+  const { data: user } = useFetch(`users/${id}`, param.userParams, ['users', { id: id }]);
 
+  console.log(user);
   return (
     <UserContainer>
       {sideToggle && <UserProfile />}

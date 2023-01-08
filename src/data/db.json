@@ -172,16 +172,6 @@
       "is_complete": false,
       "id": 8,
       "todos": []
-    },
-    {
-      "due_date": "2023-01-08",
-      "goal_name": "s",
-      "description": "s",
-      "userId": 1,
-      "date": "2023-01-07T23:08:41.469Z",
-      "is_public": false,
-      "is_complete": false,
-      "id": 9
     }
   ],
   "todos": [
@@ -474,6 +464,38 @@
       "is_complete": false,
       "comment_toggle": false,
       "id": 88
+    },
+    {
+      "todo": "s",
+      "is_complete": false,
+      "comment_toggle": false,
+      "id": 89
+    },
+    {
+      "todo": "s",
+      "is_complete": false,
+      "goalId": 8,
+      "comment_toggle": false,
+      "id": 90
+    },
+    {
+      "todo": "ss",
+      "is_complete": false,
+      "goalId": 8,
+      "comment_toggle": false,
+      "id": 91
+    },
+    {
+      "todo": "f",
+      "is_complete": false,
+      "comment_toggle": false,
+      "id": 92
+    },
+    {
+      "todo": "s",
+      "is_complete": false,
+      "comment_toggle": false,
+      "id": 93
     }
   ],
   "comments": [

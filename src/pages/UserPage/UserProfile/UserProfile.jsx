@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import Approaching from '../../../components/Approaching/Approaching';
 import { Button } from '../../../components/Common/Button';
@@ -11,7 +12,8 @@ import ProfileImg from './components/ProfileImg';
 
 const UserProfile = () => {
   const { handleLogOut } = useAuth();
-  const { data: user } = useFetch('users', user_id);
+  const { userParams } = useSelector(state => state.param);
+  const { data: user } = useFetch(`users/${user_id}`, userParams, ['users', { id: user_id }]);
   return (
     <Container z_index={1}>
       <Box>
