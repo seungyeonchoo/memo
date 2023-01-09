@@ -12,7 +12,6 @@ const UserPage = () => {
   const { sideToggle, detailToggle } = toggle;
   const { data: user } = useFetch(`users/${id}`, param.userParams, ['users', { id: id }]);
 
-  console.log(user);
   return (
     <UserContainer>
       {sideToggle && <UserProfile />}

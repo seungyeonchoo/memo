@@ -16,7 +16,6 @@ const Goal = ({ user }) => {
   const { createToggle, editToggle } = useSelector(state => state.toggle);
   const { setGlobalInput } = useInput(InputUtils.initialGoal, goalInputChange);
   const { handleGlobalToggle } = useToggle(createToggleChange, setGlobalInput);
-  console.log(user);
   return (
     <Container>
       {createToggle || editToggle ? (

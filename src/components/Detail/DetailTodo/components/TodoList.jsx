@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import TodoItem from './TodoItem';
 
 const TodoList = ({ goal }) => {
-  console.log(goal);
   return (
     <TodoWrapper>
       {goal?.todos.map(el => (

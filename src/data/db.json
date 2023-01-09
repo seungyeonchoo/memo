@@ -161,17 +161,6 @@
       "is_public": false,
       "is_complete": false,
       "id": 7
-    },
-    {
-      "due_date": "2023-01-10",
-      "goal_name": "1234",
-      "description": "1",
-      "userId": 1,
-      "date": "2023-01-07T22:21:53.238Z",
-      "is_public": false,
-      "is_complete": false,
-      "id": 8,
-      "todos": []
     }
   ],
   "todos": [
@@ -470,20 +459,6 @@
       "is_complete": false,
       "comment_toggle": false,
       "id": 89
-    },
-    {
-      "todo": "s",
-      "is_complete": false,
-      "goalId": 8,
-      "comment_toggle": false,
-      "id": 90
-    },
-    {
-      "todo": "ss",
-      "is_complete": false,
-      "goalId": 8,
-      "comment_toggle": false,
-      "id": 91
     },
     {
       "todo": "f",
