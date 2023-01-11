@@ -9,18 +9,19 @@ import Input from '../../Common/Input';
 import AutoComplete from './AutoComplete';
 
 const SearchInput = () => {
-  const { inputValue, handleInput } = useInput({ q: '' });
+  const { inputValue, handleInput } = useInput({ name_like: '' });
+  // limit로 5 ~ 10개의 결과만 보여주고 더보기 클릭하면 상세 검색 화면으로 이동할 수 있게
   const { userParams } = useSelector(state => state.param);
   useDebounce(inputValue, userParamsChange);
-  const { data } = useFetch('users', userParams, ['users', { q: userParams.q }]);
+  const { data } = useFetch('users', userParams, ['users', { name_like: userParams.name_like }]);
   return (
-    <>
+    <SearchContainer>
       <Wrapper>
-        <Input size="large" name="q" value={inputValue.q} onChange={handleInput} />
+        <Input size="large" name="name_like" value={inputValue.name_like} onChange={handleInput} />
         <Button size="medium" text="검색" />
       </Wrapper>
-      {inputValue.q && <AutoComplete data={data} />}
-    </>
+      {inputValue.name_like && <AutoComplete data={data} />}
+    </SearchContainer>
   );
 };
 
@@ -28,4 +29,9 @@ export default SearchInput;
 
 const Wrapper = styled.div`
   display: flex;
+`;
+
+const SearchContainer = styled.section`
+  display: flex;
+  flex-direction: column;
 `;

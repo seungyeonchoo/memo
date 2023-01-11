@@ -1,10 +1,11 @@
+import styled from 'styled-components';
 import { Button } from '../../../../components/Common/Button';
 import Input, { AreaInput } from '../../../../components/Common/Input';
 import useInput from '../../../../hooks/useInput';
 import useMutate from '../../../../hooks/useMutate';
 import InputUtils from '../../../../utils/InputUtils';
 
-const CreateGroup = () => {
+const CreateGroup = ({ onClick }) => {
   const { inputValue, handleInput, initInput } = useInput(InputUtils.initailGroup);
   const { handleMutation } = useMutate('groups', 'post', inputValue, initInput);
   // 그룹 생성 이후에
@@ -28,9 +29,16 @@ const CreateGroup = () => {
         value={inputValue.description}
         onChange={handleInput}
       />
-      <Button size="medium" text="Create" onClick={handleMutation} />
+      <ButtonWrapper>
+        <Button size="medium" text="Create" onClick={handleMutation} />
+        <Button size="medium" text="Cancel" onClick={onClick} />
+      </ButtonWrapper>
     </>
   );
 };
 
 export default CreateGroup;
+
+const ButtonWrapper = styled.div`
+  display: flex;
+`;

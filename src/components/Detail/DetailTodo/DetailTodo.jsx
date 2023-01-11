@@ -7,7 +7,7 @@ import TodoList from './components/TodoList';
 
 const DetailTodo = ({ goal }) => {
   const { id } = useParams();
-
+  if (goal === undefined) return <div>loading...</div>;
   return (
     <TodoBox>
       {id === user_id && <TodoInput id={goal?.id} />}

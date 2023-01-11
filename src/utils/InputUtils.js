@@ -1,10 +1,16 @@
-import { UserStorage } from './Storage';
+import { UserStorage, user_id } from './Storage';
 
 class InputUtils {
   // initialInputs
   static initialSignin = { email: '', password: '' };
   static initialSignup = { email: '', password: '', password_confirm: '', name: '' };
-  static initailGroup = { name: '', description: '', is_public: true };
+  static initailGroup = {
+    name: '',
+    description: '',
+    is_public: true,
+    users: [user_id],
+    admin: user_id,
+  };
   static initialTodo = {
     todo: '',
     is_complete: false,
