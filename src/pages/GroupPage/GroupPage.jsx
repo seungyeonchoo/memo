@@ -1,15 +1,22 @@
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
+import Goal from '../../components/Goal/Goal';
 import useFetch from '../../hooks/useFetch';
+import ParamUtils from '../../utils/ParamUtils';
 import GroupMain from './GroupMain/GroupMain';
 
 const GroupPage = () => {
+  const { idx } = useParams();
+  const { data: group } = useFetch(`users/${idx}`, ParamUtils.initialGroupParams, [
+    'groups',
+    { id: idx },
+  ]);
   //   const { userParams } = useSelector(state => state.param);
-  const { data } = useFetch(`groups`, null, ['groups']);
+
   return (
     <GroupContainer>
-      <GroupMain group={data} />
+      <Goal user={group} />
     </GroupContainer>
   );
 };

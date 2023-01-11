@@ -5,7 +5,7 @@ import useInput from '../../../../hooks/useInput';
 import useMutate from '../../../../hooks/useMutate';
 import InputUtils from '../../../../utils/InputUtils';
 
-const CreateGroup = ({ onClick }) => {
+const CreateGroup = () => {
   const { inputValue, handleInput, initInput } = useInput(InputUtils.initailGroup);
   const { handleMutation } = useMutate('groups', 'post', inputValue, initInput);
   // 그룹 생성 이후에
@@ -29,10 +29,11 @@ const CreateGroup = ({ onClick }) => {
         value={inputValue.description}
         onChange={handleInput}
       />
-      <ButtonWrapper>
+      <Button size="large" text="create new group" onClick={handleMutation} />
+      {/* <ButtonWrapper>
         <Button size="medium" text="Create" onClick={handleMutation} />
         <Button size="medium" text="Cancel" onClick={onClick} />
-      </ButtonWrapper>
+      </ButtonWrapper> */}
     </>
   );
 };

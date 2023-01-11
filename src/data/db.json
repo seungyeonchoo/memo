@@ -328,9 +328,7 @@
       "name": "1",
       "description": "1",
       "is_public": true,
-      "users": [
-        "1"
-      ],
+      "users": ["1"],
       "admin": "1",
       "id": 3
     },
@@ -338,11 +336,26 @@
       "name": "xptmxm",
       "description": "qwe",
       "is_public": true,
-      "users": [
-        "1"
-      ],
+      "users": ["1"],
       "admin": "1",
       "id": 4
+    },
+    {
+      "name": "das",
+      "description": "dasd",
+      "is_public": true,
+      "users": ["1"],
+      "admin": "1",
+      "id": 5
+    },
+    {
+      "name": "1123",
+      "description": "1231",
+      "is_public": true,
+      "users": ["1"],
+      "admin": "1",
+      "id": 6
     }
-  ]
+  ],
+  "groupGoals": []
 }

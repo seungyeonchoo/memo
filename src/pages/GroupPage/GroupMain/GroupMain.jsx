@@ -1,22 +1,26 @@
-import { Button } from '../../../components/Common/Button';
+import styled from 'styled-components';
 import Container from '../../../components/Common/Container';
-import useToggle from '../../../hooks/useToggle';
+import useFetch from '../../../hooks/useFetch';
 import CreateGroup from './components/CreateGroupInput';
 import GroupList from './components/GroupList';
 
-const GroupMain = ({ group }) => {
-  const { toggle, handleToggle } = useToggle();
+const GroupMain = () => {
+  const { data } = useFetch(`groups`, null, ['groups']);
   return (
-    <Container>
-      {toggle ? (
-        <CreateGroup onClick={handleToggle} />
-      ) : (
-        <Button size="large" text="create new group" onClick={handleToggle} />
-      )}
-
-      <GroupList group={group} />
-    </Container>
+    <GroupContainer>
+      <Container>
+        <CreateGroup />
+        <GroupList group={data} />
+      </Container>
+    </GroupContainer>
   );
 };
 
 export default GroupMain;
+
+const GroupContainer = styled.main`
+  display: flex;
+  justify-content: space-evenly;
+  min-height: 70vh;
+  margin: 3em 0;
+`;
