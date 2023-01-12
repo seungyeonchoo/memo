@@ -163,11 +163,11 @@
       "id": 7
     },
     {
-      "due_date": "2023-01-19",
-      "goal_name": "sdsa",
-      "description": "asdad",
+      "due_date": "2023-01-20",
+      "goal_name": "s",
+      "description": "x",
       "userId": 1,
-      "date": "2023-01-09T20:54:50.960Z",
+      "date": "2023-01-12T19:55:50.714Z",
       "is_public": false,
       "is_complete": false,
       "id": 8
@@ -183,7 +183,7 @@
     },
     {
       "todo": "아이템 클릭시 & 목표 필터 및 정렬 버튼 클릭 시 디테일 토글은 변화하는데 refetch되지 않는 문제",
-      "is_complete": false,
+      "is_complete": true,
       "goalId": 3,
       "id": 5,
       "comment_toggle": false
@@ -197,7 +197,7 @@
     },
     {
       "todo": "useAuth 및 useParam 리팩토링",
-      "is_complete": false,
+      "is_complete": true,
       "goalId": 3,
       "id": 7,
       "comment_toggle": false
@@ -328,7 +328,9 @@
       "name": "1",
       "description": "1",
       "is_public": true,
-      "users": ["1"],
+      "users": [
+        "1"
+      ],
       "admin": "1",
       "id": 3
     },
@@ -336,7 +338,9 @@
       "name": "xptmxm",
       "description": "qwe",
       "is_public": true,
-      "users": ["1"],
+      "users": [
+        "1"
+      ],
       "admin": "1",
       "id": 4
     },
@@ -344,7 +348,9 @@
       "name": "das",
       "description": "dasd",
       "is_public": true,
-      "users": ["1"],
+      "users": [
+        "1"
+      ],
       "admin": "1",
       "id": 5
     },
@@ -352,10 +358,33 @@
       "name": "1123",
       "description": "1231",
       "is_public": true,
-      "users": ["1"],
+      "users": [
+        "1"
+      ],
       "admin": "1",
       "id": 6
     }
   ],
-  "groupGoals": []
+  "groupGoals": [
+    {
+      "due_date": "2023-01-19",
+      "goal_name": "asdasd",
+      "description": "asdasd",
+      "groupId": 4,
+      "date": "2023-01-12T23:33:08.467Z",
+      "is_public": false,
+      "is_complete": false,
+      "id": 1
+    },
+    {
+      "due_date": "2023-01-19",
+      "goal_name": "asdasd",
+      "description": "asdasd",
+      "groupId": 3,
+      "date": "2023-01-12T23:33:08.467Z",
+      "is_public": false,
+      "is_complete": false,
+      "id": 2
+    }
+  ]
 }

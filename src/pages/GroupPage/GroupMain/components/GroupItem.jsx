@@ -7,10 +7,10 @@ const GroupItem = ({ group }) => {
   return (
     <Item onClick={() => nav(`/groups/${group.id}`)}>
       <div>
-        {group.admin === user_id && '*'}
-        {group.name}
+        {group?.admin === user_id && '*'}
+        {group?.name}
       </div>
-      <div>{group.users.length}</div>
+      <div>{group?.users.length}</div>
     </Item>
   );
 };

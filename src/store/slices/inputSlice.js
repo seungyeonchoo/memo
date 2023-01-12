@@ -5,20 +5,17 @@ const inputSlice = createSlice({
   name: 'input',
   initialState: {
     goalInput: InputUtils.initialGoal,
+    groupGoalInput: InputUtils.initialGroupGoal,
   },
   reducers: {
     goalInputChange: (state, action) => {
       state.goalInput = action.payload;
     },
+    groupGoalInputChange: (state, action) => {
+      state.groupGoalInput = action.payload;
+    },
   },
 });
 
-export const {
-  goalInputChange,
-  signinChange,
-  signupChange,
-  todoInputChange,
-  commentInputChange,
-  groupInputChange,
-} = inputSlice.actions;
+export const { goalInputChange, groupGoalInputChange } = inputSlice.actions;
 export default inputSlice.reducer;

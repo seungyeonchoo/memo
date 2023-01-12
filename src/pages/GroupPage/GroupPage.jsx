@@ -7,16 +7,16 @@ import ParamUtils from '../../utils/ParamUtils';
 import GroupMain from './GroupMain/GroupMain';
 
 const GroupPage = () => {
-  const { idx } = useParams();
-  const { data: group } = useFetch(`users/${idx}`, ParamUtils.initialGroupParams, [
+  const { id } = useParams();
+  const { data: group } = useFetch(`groups/${id}`, ParamUtils.initialGroupParams, [
     'groups',
-    { id: idx },
+    { id: id },
   ]);
   //   const { userParams } = useSelector(state => state.param);
 
   return (
     <GroupContainer>
-      <Goal user={group} />
+      <Goal data={group} type="groups" />
     </GroupContainer>
   );
 };

@@ -32,6 +32,16 @@ class InputUtils {
     is_complete: false,
   };
 
+  static initialGroupGoal = {
+    due_date: '',
+    goal_name: '',
+    description: '',
+    groupId: '',
+    date: new Date(),
+    is_public: false,
+    is_complete: false,
+  };
+
   static signIn = input => {
     const email = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/g;
     const password = /^.{8,}$/g;

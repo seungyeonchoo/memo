@@ -1,17 +1,31 @@
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import useMutate from '../../../../hooks/useMutate';
 import useToggle from '../../../../hooks/useToggle';
 import { createToggleChange, editToggleChange } from '../../../../store/slices/toggleSlice';
+import { user_id } from '../../../../utils/Storage';
 import { Button } from '../../../Common/Button';
 
-const InputButton = () => {
+const InputButton = ({ type }) => {
+  const { id } = useParams();
   const { input, toggle } = useSelector(state => state);
-  const url = toggle.createToggle ? 'goals' : `goals/${input.goalInput.id}`;
-  const method = toggle.createToggle ? 'post' : 'patch';
-  const toggleChange = toggle.createToggle ? createToggleChange : editToggleChange;
-  const { handleGlobalToggle } = useToggle(toggleChange);
-  const { handleMutation } = useMutate(url, method, input.goalInput, handleGlobalToggle);
+  const createToggle = toggle.createToggle;
+  const { handleGlobalToggle } = useToggle(createToggle ? createToggleChange : editToggleChange);
+  const { handleMutation: handleCreateGoal } = useMutate(
+    createToggle ? 'goals' : `'goals'/${input.goalInput.id}`,
+    createToggle ? 'post' : 'patch',
+    input.goalInput,
+    handleGlobalToggle
+  );
+  const { handleMutation: handleCreateGroupGoal } = useMutate(
+    createToggle ? 'groupGoals' : `'groupGoals'/${input.groupGoalInput.id}`,
+    createToggle ? 'post' : 'patch',
+    { ...input.groupGoalInput, groupId: Number(id) },
+    handleGlobalToggle
+  );
+
+  const handleMutation = type === 'users' ? handleCreateGoal : handleCreateGroupGoal;
 
   return (
     <ButtonWrapper>

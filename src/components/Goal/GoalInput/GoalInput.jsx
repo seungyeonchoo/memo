@@ -3,12 +3,12 @@ import InputButton from './components/InputButtons';
 import Inputs from './components/Inputs';
 import InputTitle from './components/InputTitle';
 
-const GoalInput = () => {
+const GoalInput = ({ type }) => {
   return (
     <InputWrapper>
       <InputTitle />
-      <Inputs />
-      <InputButton />
+      <Inputs type={type} />
+      <InputButton type={type} />
     </InputWrapper>
   );
 };
