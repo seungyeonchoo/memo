@@ -13,7 +13,7 @@ const InputButton = ({ type }) => {
   const createToggle = toggle.createToggle;
   const { handleGlobalToggle } = useToggle(createToggle ? createToggleChange : editToggleChange);
   const { handleMutation: handleCreateGoal } = useMutate(
-    createToggle ? 'goals' : `'goals'/${input.goalInput.id}`,
+    createToggle ? 'goals' : `goals/${input.goalInput.id}`,
     createToggle ? 'post' : 'patch',
     input.goalInput,
     handleGlobalToggle

@@ -10,8 +10,8 @@ const Detail = () => {
   const { data: goal } = useFetch(`goals/${id}`, param.goalParams, ['goals', { id: id }]);
   return (
     <Container>
-      <TodoTitle goal={goal} />
-      <DetailTodo goal={goal} />
+      {/* <TodoTitle goal={goal} />
+      <DetailTodo goal={goal} /> */}
     </Container>
   );
 };

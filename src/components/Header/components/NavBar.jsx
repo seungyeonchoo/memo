@@ -6,7 +6,7 @@ const NavBar = () => {
   const nav = useNavigate();
   return (
     <NavContainer>
-      <NavBtn>Home</NavBtn>
+      <NavBtn onClick={() => nav(`/main`)}>Home</NavBtn>
       <NavBtn onClick={() => nav(`/users/${user_id}`)}>Personal</NavBtn>
       <NavBtn onClick={() => nav(`/groups`)}>Group</NavBtn>
     </NavContainer>

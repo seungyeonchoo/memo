@@ -14,6 +14,11 @@ const Inputs = ({ type }) => {
 
   return (
     <>
+      <select name="repeat" onChange={handleInputChange} required>
+        <option>선택</option>
+        <option>Daily</option>
+        <option>Weekly</option>
+      </select>
       <Input
         label="마감기한"
         type="date"

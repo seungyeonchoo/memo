@@ -5,6 +5,7 @@ import useParam from '../../hooks/useParam';
 import useToggle from '../../hooks/useToggle';
 import { goalInputChange } from '../../store/slices/inputSlice';
 import { createToggleChange } from '../../store/slices/toggleSlice';
+import DateUtils from '../../utils/DateUtils';
 import InputUtils from '../../utils/InputUtils';
 import { user_id } from '../../utils/Storage';
 import { Button } from '../Common/Button';
@@ -17,9 +18,7 @@ const Goal = ({ data, type }) => {
   const { createToggle, editToggle } = useSelector(state => state.toggle);
   const { setGlobalInput } = useInput(InputUtils.initialGoal, goalInputChange);
   const { handleGlobalToggle } = useToggle(createToggleChange, setGlobalInput);
-
   const check = type === 'users' ? checkUserId : data?.admin;
-
   return (
     <Container>
       {createToggle || editToggle ? (
@@ -34,7 +33,6 @@ const Goal = ({ data, type }) => {
     </Container>
   );
 };
-
 export default Goal;
 
 const TitleText = styled.h1`

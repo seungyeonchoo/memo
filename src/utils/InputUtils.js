@@ -30,6 +30,8 @@ class InputUtils {
     date: new Date(),
     is_public: false,
     is_complete: false,
+    repeat: '',
+    done: [],
   };
 
   static initialGroupGoal = {

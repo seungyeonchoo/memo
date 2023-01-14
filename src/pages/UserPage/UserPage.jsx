@@ -15,7 +15,9 @@ const UserPage = () => {
   return (
     <UserContainer>
       {sideToggle && <UserProfile />}
-      {detailToggle ? <Detail /> : <Goal data={user} type="users" />}
+      {/* {detailToggle ? <Detail /> : <Goal data={user} type="users" />} */}
+      <Goal data={user} type="users" />
+      {detailToggle && <Detail />}
     </UserContainer>
   );
 };

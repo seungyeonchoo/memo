@@ -1,20 +1,16 @@
-import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
+import GoalUtils from '../../../utils/GoalUtils';
 import GoalItem from '../GoalItem/GoalItem';
 
 const GoalList = ({ user, type }) => {
-  const goalType = type === 'users' ? user?.goals : user?.groupGoals;
-
+  const goals =
+    type === 'users' ? GoalUtils.sortItems(user?.goals) : GoalUtils.sortItems(user?.groupGoals);
   return (
     <ListWrapper>
-      {goalType?.length === 0 && <div>아직 등록된 목표가 없습니다.</div>}
-      {goalType
-        ?.sort((a, b) => new Date(a.due_date) - new Date(b.due_date))
-        .map(goal => (
-          <GoalItem key={goal.id} goal={goal} />
-        ))}
+      {goals?.length === 0 && <div>아직 등록된 목표가 없습니다.</div>}
+      {goals?.map(el => (
+        <GoalItem key={el.id} goal={el} />
+      ))}
     </ListWrapper>
   );
 };

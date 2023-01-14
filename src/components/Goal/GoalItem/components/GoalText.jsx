@@ -3,7 +3,6 @@ import styled from 'styled-components';
 const GoalText = ({ goal }) => {
   return (
     <TextWrapper>
-      <Text>Due to {goal.due_date}</Text>
       <Text>{goal.goal_name}</Text>
     </TextWrapper>
   );
