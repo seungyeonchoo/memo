@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import CalendarTitle from './components/CalendarTitle';
-import Table from './components/Table';
+import CalendarTable from './components/CalendarTable';
 
 const Calendar = () => {
   const thisYear = new Date().getFullYear();
@@ -11,7 +11,7 @@ const Calendar = () => {
   return (
     <Container>
       <CalendarTitle year={year} month={month} handleMonth={{ setYear, setMonth }} />
-      <Table year={year} month={month} />
+      <CalendarTable year={year} month={month} />
     </Container>
   );
 };

@@ -1,3 +1,4 @@
+import DateUtils from './DateUtils';
 import { UserStorage, user_id } from './Storage';
 
 class InputUtils {
@@ -27,7 +28,7 @@ class InputUtils {
     goal_name: '',
     description: '',
     userId: Number(new UserStorage().getId()),
-    date: new Date(),
+    date: DateUtils.convert(new Date()),
     is_public: false,
     is_complete: false,
     repeat: '',

@@ -6,6 +6,7 @@ const inputSlice = createSlice({
   initialState: {
     goalInput: InputUtils.initialGoal,
     groupGoalInput: InputUtils.initialGroupGoal,
+    dateInfo: { date: '', week: '' },
   },
   reducers: {
     goalInputChange: (state, action) => {
@@ -14,8 +15,11 @@ const inputSlice = createSlice({
     groupGoalInputChange: (state, action) => {
       state.groupGoalInput = action.payload;
     },
+    dateInfoUpdate: (state, action) => {
+      state.dateInfo = action.payload;
+    },
   },
 });
 
-export const { goalInputChange, groupGoalInputChange } = inputSlice.actions;
+export const { goalInputChange, groupGoalInputChange, dateInfoUpdate } = inputSlice.actions;
 export default inputSlice.reducer;

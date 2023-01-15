@@ -4,6 +4,7 @@ import useFetch from '../../hooks/useFetch';
 import { user_id } from '../../utils/Storage';
 import Calendar from './Calendar/Calendar';
 import TodoList from './TodoGoals/components/TodoList';
+import TodoTitle from './TodoGoals/components/TodoTitle';
 
 const MainPage = () => {
   const { userParams } = useSelector(state => state.param);
@@ -13,6 +14,7 @@ const MainPage = () => {
     <MainContainer>
       <Calendar />
       <List>
+        <TodoTitle />
         <TodoList user={data} repeat="Daily" />
         <TodoList user={data} repeat="Weekly" />
       </List>

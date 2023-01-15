@@ -1,19 +1,21 @@
 import styled from 'styled-components';
 
 const CalendarHead = () => {
-  const DAYS = ['SUN', 'SAT', 'MON', 'TUE', 'WED', 'THU', 'FRI'];
+  const DAYS = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
   return (
-    <thead>
+    <Head>
       <Row>
         {DAYS.map(el => (
           <Day key={el}>{el}</Day>
         ))}
       </Row>
-    </thead>
+    </Head>
   );
 };
 
 export default CalendarHead;
+
+const Head = styled.thead``;
 
 const Day = styled.th`
   width: calc(100% / 7);

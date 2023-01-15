@@ -15,6 +15,12 @@ class GoalUtils {
   static sortItems = goals => {
     return goals?.sort((a, b) => new Date(a.due_date) - new Date(b.due_date));
   };
+
+  static filterGoalsOfDate = (goals, selectDate) => {
+    return goals?.filter(
+      el => new Date(selectDate) > new Date(el.date) && new Date(selectDate) < new Date(el.due_date)
+    );
+  };
 }
 
 export default GoalUtils;
