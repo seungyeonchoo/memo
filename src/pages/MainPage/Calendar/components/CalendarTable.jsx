@@ -5,13 +5,11 @@ import CalendarHead from './CalendarHead';
 
 const CalendarTable = ({ year, month }) => {
   const { result, weeks } = DateUtils.getDates(year, month);
-  const calendar = DateUtils.generateCalendar(result, weeks);
 
-  console.log(DateUtils.convert(new Date()));
   return (
     <Table>
       <CalendarHead />
-      <CalendarBody data={calendar} year={year} month={month} />
+      <CalendarBody data={DateUtils.generateCalendar(result, weeks)} year={year} month={month} />
     </Table>
   );
 };

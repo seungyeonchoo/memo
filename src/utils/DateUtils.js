@@ -89,6 +89,19 @@ class DateUtils {
       handleMonth.setMonth(month + 1);
     }
   };
+
+  static getDateList = (start, end) => {
+    const ans = [];
+    const s = new Date(start);
+    const e = new Date(end);
+    const len = (e - s) / (1000 * 60 * 60 * 24);
+
+    for (let i = 0; i <= len; i++) {
+      const date = new Date(s.setDate(s.getDate() + 1));
+      ans.push(DateUtils.convert(date));
+    }
+    return ans;
+  };
 }
 
 export default DateUtils;
