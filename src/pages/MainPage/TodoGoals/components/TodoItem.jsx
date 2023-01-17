@@ -4,7 +4,7 @@ import DateUtils from '../../../../utils/DateUtils';
 
 const TodoItem = ({ goal }) => {
   const { dateInfo } = useSelector(state => state.input);
-  const today = goal.repeat === 'Daily' ? DateUtils.convert(new Date()) === dateInfo.date : null;
+  const today = DateUtils.convert(new Date()) === dateInfo.date;
   const done = goal?.done.includes(goal.repeat === 'Daily' ? dateInfo.date : dateInfo.week);
   const { handleMutation } = useMutate(`goals/${goal.id}`, 'patch', {
     done: [...goal?.done, goal.repeat === 'Daily' ? dateInfo.date : dateInfo.week],

@@ -12,17 +12,6 @@ class InputUtils {
     users: [user_id],
     admin: user_id,
   };
-  static initialTodo = {
-    todo: '',
-    is_complete: false,
-    goalId: '',
-    comment_toggle: false,
-  };
-  static initialComment = {
-    comment: '',
-    date: new Date(),
-    todoId: '',
-  };
   static initialGoal = {
     due_date: '',
     goal_name: '',

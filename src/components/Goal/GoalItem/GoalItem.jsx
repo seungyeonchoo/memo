@@ -7,23 +7,34 @@ import useInput from '../../../hooks/useInput';
 import { goalInputChange } from '../../../store/slices/inputSlice';
 import useToggle from '../../../hooks/useToggle';
 import { detailToggleChange } from '../../../store/slices/toggleSlice';
+import useMutate from '../../../hooks/useMutate';
+import { user_id } from '../../../utils/Storage';
+import DateUtils from '../../../utils/DateUtils';
 
 const GoalItem = ({ goal, toggle, handleToggle, handleSetInput }) => {
   const { checkUserId } = useParam();
   const { setGlobalInput } = useInput(goal, goalInputChange);
   const { handleGlobalToggle } = useToggle(detailToggleChange, setGlobalInput);
+  const { handleMutation } = useMutate('goals', 'post', {
+    ...goal,
+    userId: Number(user_id),
+    id: null,
+    date: DateUtils.convert(new Date()),
+  });
 
   return (
     <GoalWrapper onClick={handleGlobalToggle}>
       <GoalStatus goal={goal} />
       <GoalText goal={goal} />
-      {checkUserId && (
+      {checkUserId ? (
         <GoalButton
           goal={goal}
           toggle={toggle}
           handleToggle={handleToggle}
           handleSetInput={handleSetInput}
         />
+      ) : (
+        <span onClick={handleMutation}>Fork</span>
       )}
     </GoalWrapper>
   );

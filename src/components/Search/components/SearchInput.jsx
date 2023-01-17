@@ -18,7 +18,6 @@ const SearchInput = () => {
     <SearchContainer>
       <Wrapper>
         <Input size="large" name="name_like" value={inputValue.name_like} onChange={handleInput} />
-        <Button size="medium" text="검색" />
       </Wrapper>
       {inputValue.name_like && <AutoComplete data={data} />}
     </SearchContainer>

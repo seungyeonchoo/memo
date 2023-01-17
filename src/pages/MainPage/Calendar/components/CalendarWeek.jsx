@@ -3,7 +3,7 @@ import DateUtils from '../../../../utils/DateUtils';
 import CalendarDate from './CalendarDate';
 
 const CalendarWeek = ({ data, year, month, idx, weeks }) => {
-  const thisWeek = `${year}.${month} week${idx + 1}`;
+  const thisWeek = `${year}-${month < 10 ? `0${month}` : month} week${idx + 1}`;
 
   return (
     <Row key={idx} name={thisWeek}>

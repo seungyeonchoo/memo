@@ -4,10 +4,6 @@ class DateUtils {
     return diffDate === 0 ? `D-Day` : diffDate > 0 ? `D-${diffDate}` : `D+${diffDate * -1}`;
   };
 
-  static diff = due_date => {
-    return Math.ceil((new Date(due_date) - new Date()) / (1000 * 60 * 60 * 24));
-  };
-
   // date_input : string
   static convert = date_input => {
     const year = new Date(date_input).getFullYear();
@@ -36,7 +32,7 @@ class DateUtils {
     return { result, weeks };
   };
 
-  static generateCalendar = (result, weeks) => {
+  static generateCalendar = result => {
     let ans = [];
     let curr = [];
 
@@ -90,17 +86,37 @@ class DateUtils {
     }
   };
 
-  static getDateList = (start, end) => {
+  static getDateList = (start, end, repeat) => {
     const ans = [];
     const s = new Date(start);
-    const e = new Date(end);
+    const e = Math.min(new Date(end), new Date());
     const len = (e - s) / (1000 * 60 * 60 * 24);
 
-    for (let i = 0; i <= len; i++) {
-      const date = new Date(s.setDate(s.getDate() + 1));
-      ans.push(DateUtils.convert(date));
+    for (let i = 0; i <= len - 1; i++) {
+      const date = this.convert(new Date(s.setDate(s.getDate() + 1)));
+      if (repeat === 'Daily') ans.push(date);
+      else if (repeat === 'Weekly' && !ans.includes(this.getWeekList(date))) {
+        ans.push(this.getWeekList(date));
+      }
     }
     return ans;
+  };
+
+  static getWeekList = date => {
+    const year = new Date(date).getFullYear();
+    const month = new Date(date).getMonth();
+    const startDay = new Date(year, month).getDay();
+    const currDate = new Date(date).getDate();
+    let d = new Date(year, month);
+
+    let week = 0;
+
+    for (let i = 1; i <= currDate; i++) {
+      d.setDate(i);
+      if ((i === 1 && startDay !== 0) || d.getDay() === 0) week++;
+    }
+
+    return `${year}-${month < 10 ? `0${month + 1}` : month + 1} week${week}`;
   };
 }
 

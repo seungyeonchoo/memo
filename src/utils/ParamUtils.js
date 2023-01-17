@@ -8,7 +8,6 @@ class ParamUtils {
     _embed: 'todos',
   };
   static initialUserParams = { _embed: 'goals' };
-  static initialTodoParams = { _embed: 'comments' };
   static initialGroupParams = { _embed: 'groupGoals' };
 }
 

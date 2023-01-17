@@ -1,15 +1,13 @@
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
-import { Button } from '../../../components/Common/Button';
-import Container from '../../../components/Common/Container';
-import useAuth from '../../../hooks/useAuth';
-import useFetch from '../../../hooks/useFetch';
-import { user_id } from '../../../utils/Storage';
+import useAuth from '../../hooks/useAuth';
+import useFetch from '../../hooks/useFetch';
+import { user_id } from '../../utils/Storage';
+import { Button } from '../Common/Button';
 import BasicInfo from './components/BasicInfo';
 import ProfileButton from './components/ProfileButton';
-import ProfileImg from './components/ProfileImg';
 
-const UserProfile = () => {
+const Side = () => {
   const { handleLogOut } = useAuth();
   const { userParams } = useSelector(state => state.param);
   const { data: user } = useFetch(`users/${user_id}`, userParams, ['users', { id: user_id }]);
@@ -17,7 +15,6 @@ const UserProfile = () => {
     <Container z_index={1}>
       <Box>
         <ProfileWrapper>
-          <ProfileImg user={user} />
           <BasicInfo user={user} />
           <Button text="로그아웃" onClick={handleLogOut} />
         </ProfileWrapper>
@@ -27,17 +24,17 @@ const UserProfile = () => {
   );
 };
 
-export default UserProfile;
-// const Container = styled.div`
-//   display: flex;
-//   position: absolute;
-//   z-index: 1;
-//   flex-direction: column;
-//   height: 70vh;
-//   padding: 4rem;
-//   /* background-color: #e0e0e0; */
-//   background-color: #8e8e8e;
-// `;
+export default Side;
+const Container = styled.div`
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  flex-direction: column;
+  height: 30vh;
+  padding: 4rem;
+  /* background-color: #e0e0e0; */
+  background-color: #8e8e8e;
+`;
 
 const Box = styled.section`
   display: flex;

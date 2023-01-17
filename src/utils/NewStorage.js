@@ -1,16 +1,14 @@
-import { TOKEN_KEY } from './constant';
-
 const STORAGE = sessionStorage;
 
 class Storage {
   static setToken = token => {
-    STORAGE.setItem(TOKEN_KEY, token);
+    STORAGE.setItem('ACCESS_TOKEN', token);
   };
   static getToken = () => {
-    return STORAGE.getItem(TOKEN_KEY);
+    return STORAGE.getItem('ACCESS_TOKEN');
   };
   static removeToken = () => {
-    STORAGE.removeItem(TOKEN_KEY);
+    STORAGE.removeItem('ACCESS_TOKEN');
   };
   static setId = info => {
     STORAGE.setItem('user_id', info);
