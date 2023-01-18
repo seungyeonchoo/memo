@@ -1,6 +1,8 @@
+import styled from 'styled-components';
+
 const MonthList = ({ handleMonth }) => {
   return (
-    <table>
+    <List>
       <tbody>
         <tr>
           <th onClick={() => handleMonth(1)}>Jan</th>
@@ -23,8 +25,22 @@ const MonthList = ({ handleMonth }) => {
           <th onClick={() => handleMonth(12)}>Dec</th>
         </tr>
       </tbody>
-    </table>
+    </List>
   );
 };
 
 export default MonthList;
+
+const List = styled.table`
+  display: flex;
+  justify-content: center;
+  height: 200px;
+  width: 300px;
+  background-color: #fff;
+  top: 13rem;
+  z-index: 1;
+`;
+
+const Item = styled.th`
+  display: flex;
+`;

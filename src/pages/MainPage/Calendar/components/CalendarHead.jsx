@@ -24,4 +24,8 @@ const Day = styled.th`
 const Row = styled.tr`
   width: 100%;
   display: flex;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #666;
+  font-weight: bold;
 `;

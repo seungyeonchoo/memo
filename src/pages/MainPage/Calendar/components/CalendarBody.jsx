@@ -13,4 +13,6 @@ const CalendarBody = ({ data, year, month }) => {
 
 export default CalendarBody;
 
-const TableBody = styled.tbody``;
+const TableBody = styled.tbody`
+  width: 100%;
+`;

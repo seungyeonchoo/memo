@@ -39,7 +39,9 @@
       "is_public": false,
       "is_complete": false,
       "repeat": "Daily",
-      "done": [],
+      "done": [
+        "2023-01-18"
+      ],
       "id": 1
     }
   ],

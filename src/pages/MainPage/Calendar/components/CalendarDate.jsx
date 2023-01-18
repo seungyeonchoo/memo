@@ -1,29 +1,29 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
-import useFetch from '../../../../hooks/useFetch';
 import useInput from '../../../../hooks/useInput';
 import { dateInfoUpdate } from '../../../../store/slices/inputSlice';
 import DateUtils from '../../../../utils/DateUtils';
-import GoalUtils from '../../../../utils/GoalUtils';
-import { user_id } from '../../../../utils/Storage';
 import DateStatus from './DateStatus';
 
 const CalendarDate = ({ date, name, idx, month, week }) => {
-  const { userParams } = useSelector(state => state.param);
+  const { dateInfo } = useSelector(state => state.input);
+  const isToday = name === DateUtils.convert(new Date());
   const isThisMonth = new Date(name).getMonth() + 1 !== month;
-  const color = isThisMonth ? 'grey' : idx === 0 || idx === 6 ? 'red' : 'black';
+  const isSelected = name === dateInfo.date;
+
+  const color = isThisMonth ? 'grey' : idx === 0 || idx === 6 ? '#d32f2f' : 'black';
+  const highlight = isToday ? '#ffcdd2' : isSelected ? '#bbdefb' : 'none';
   const { setGlobalInput } = useInput({ date: name, week: week }, dateInfoUpdate);
-  const { data } = useFetch(`users/${user_id}`, userParams, ['users', { id: user_id }]);
 
   useEffect(() => {
     if (name === DateUtils.convert(new Date())) setGlobalInput();
   }, []);
 
   return (
-    <TableDate name={name} color={color} onClick={setGlobalInput}>
-      <div>{name === DateUtils.convert(new Date()) ? '*' + date : date}</div>
-      <DateStatus goals={GoalUtils.filterGoalsOfDate(data?.goals, name)} name={name} week={week} />
+    <TableDate name={name} color={color} onClick={setGlobalInput} highlight={highlight}>
+      <div>{date}</div>
+      <DateStatus name={name} week={week} />
     </TableDate>
   );
 };
@@ -32,5 +32,18 @@ export default CalendarDate;
 
 const TableDate = styled.th`
   width: calc(100% / 7);
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
   color: ${props => props.color};
+  border-radius: 10px;
+  background-color: ${props => props.highlight};
+
+  &:hover {
+    box-shadow: 1px 1px 1px #666;
+  }
 `;

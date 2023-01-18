@@ -20,6 +20,7 @@ const CalendarWeek = ({ data, year, month, idx, weeks }) => {
 export default CalendarWeek;
 
 const Row = styled.tr`
-  display: flex;
   width: 100%;
+  display: flex;
+  margin: 1rem 0;
 `;

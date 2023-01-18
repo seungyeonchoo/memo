@@ -17,7 +17,7 @@ const CalendarTable = ({ year, month }) => {
 export default CalendarTable;
 
 const Table = styled.table`
-  width: 300px;
+  width: 100%;
   display: flex;
   flex-direction: column;
 `;

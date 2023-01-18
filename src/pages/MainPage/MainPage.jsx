@@ -26,7 +26,7 @@ export default MainPage;
 
 const MainContainer = styled.main`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   min-height: 70vh;
   margin: 3em 0;
 `;

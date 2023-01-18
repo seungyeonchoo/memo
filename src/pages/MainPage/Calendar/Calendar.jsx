@@ -18,4 +18,13 @@ const Calendar = () => {
 
 export default Calendar;
 
-const Container = styled.section``;
+const Container = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+  height: 500px;
+  margin: 0 5rem;
+  border-bottom: 1px solid #666;
+`;
