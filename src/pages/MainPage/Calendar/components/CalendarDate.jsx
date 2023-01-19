@@ -32,12 +32,10 @@ export default CalendarDate;
 
 const TableDate = styled.th`
   width: calc(100% / 7);
-  margin: 0 0.5rem;
+  margin: 0 0.4rem;
   padding: 0.5rem 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
   color: ${props => props.color};
   border-radius: 10px;

@@ -4,26 +4,26 @@ const MonthList = ({ handleMonth }) => {
   return (
     <List>
       <tbody>
-        <tr>
-          <th onClick={() => handleMonth(1)}>Jan</th>
-          <th onClick={() => handleMonth(2)}>Feb</th>
-          <th onClick={() => handleMonth(3)}>Mar</th>
-        </tr>
-        <tr>
-          <th onClick={() => handleMonth(4)}>Apr</th>
-          <th onClick={() => handleMonth(5)}>May</th>
-          <th onClick={() => handleMonth(6)}>Jun</th>
-        </tr>
-        <tr>
-          <th onClick={() => handleMonth(7)}>Jul</th>
-          <th onClick={() => handleMonth(8)}>Aug</th>
-          <th onClick={() => handleMonth(9)}>Sep</th>
-        </tr>
-        <tr>
-          <th onClick={() => handleMonth(10)}>Oct</th>
-          <th onClick={() => handleMonth(11)}>Nov</th>
-          <th onClick={() => handleMonth(12)}>Dec</th>
-        </tr>
+        <Row>
+          <Item onClick={() => handleMonth(1)}>Jan</Item>
+          <Item onClick={() => handleMonth(2)}>Feb</Item>
+          <Item onClick={() => handleMonth(3)}>Mar</Item>
+        </Row>
+        <Row>
+          <Item onClick={() => handleMonth(4)}>Apr</Item>
+          <Item onClick={() => handleMonth(5)}>May</Item>
+          <Item onClick={() => handleMonth(6)}>Jun</Item>
+        </Row>
+        <Row>
+          <Item onClick={() => handleMonth(7)}>Jul</Item>
+          <Item onClick={() => handleMonth(8)}>Aug</Item>
+          <Item onClick={() => handleMonth(9)}>Sep</Item>
+        </Row>
+        <Row>
+          <Item onClick={() => handleMonth(10)}>Oct</Item>
+          <Item onClick={() => handleMonth(11)}>Nov</Item>
+          <Item onClick={() => handleMonth(12)}>Dec</Item>
+        </Row>
       </tbody>
     </List>
   );
@@ -32,15 +32,18 @@ const MonthList = ({ handleMonth }) => {
 export default MonthList;
 
 const List = styled.table`
+  position: absolute;
   display: flex;
-  justify-content: center;
   height: 200px;
   width: 300px;
   background-color: #fff;
-  top: 13rem;
+  top: 11.7rem;
   z-index: 1;
+  border: 1px solid black;
 `;
-
-const Item = styled.th`
+const Row = styled.tr`
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 `;
+const Item = styled.th``;

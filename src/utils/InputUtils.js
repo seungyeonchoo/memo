@@ -16,12 +16,18 @@ class InputUtils {
     due_date: '',
     goal_name: '',
     description: '',
-    userId: Number(new UserStorage().getId()),
+    userId: Number(user_id),
     date: DateUtils.convert(new Date()),
     is_public: false,
     is_complete: false,
     repeat: '',
     done: [],
+  };
+
+  static initailDiary = {
+    date: '',
+    contents: '',
+    userId: Number(user_id),
   };
 
   static initialGroupGoal = {

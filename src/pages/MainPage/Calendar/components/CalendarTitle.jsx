@@ -8,9 +8,11 @@ const CalendarTitle = ({ year, month, handleMonth }) => {
   return (
     <>
       <Title>
-        <Button onClick={() => DateUtils.handleToPrev(year, month, handleMonth)}>{'<'}</Button>
+        {/* <Button onClick={() => DateUtils.handleToPrev(year, month, handleMonth)}>{'⇤'}</Button> */}
+        <Button onClick={() => DateUtils.handleToPrev(year, month, handleMonth)}>{'←'}</Button>
         <Text onClick={handleToggle}>{`${year}.${month < 10 ? `0${month}` : month}`}</Text>
-        <Button onClick={() => DateUtils.handleToNext(year, month, handleMonth)}>{'>'}</Button>
+        <Button onClick={() => DateUtils.handleToNext(year, month, handleMonth)}>{'→'}</Button>
+        {/* <Button onClick={() => DateUtils.handleToNext(year, month, handleMonth)}>{'⇥'}</Button> */}
         {/* <Button>TODAY</Button> */}
       </Title>
       {toggle && <MonthList handleMonth={handleMonth.setMonth} />}
@@ -43,7 +45,10 @@ const Text = styled.span`
 `;
 
 const Button = styled.button`
-  padding: 0.5rem;
+  padding: 0 1rem;
   background-color: inherit;
   border: none;
+  &:hover {
+    box-shadow: 1px 1px 1px #666;
+  }
 `;

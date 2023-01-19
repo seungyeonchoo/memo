@@ -1,7 +1,9 @@
 class DateUtils {
-  static diffDate = due_date => {
-    const diffDate = Math.ceil((new Date(due_date) - new Date()) / (1000 * 60 * 60 * 24));
-    return diffDate === 0 ? `D-Day` : diffDate > 0 ? `D-${diffDate}` : `D+${diffDate * -1}`;
+  static diffDate = (due_date, curr) => {
+    const diff = curr ? new Date(due_date) - new Date(curr) : new Date(due_date) - new Date();
+    const diffDate = Math.ceil(diff / (1000 * 60 * 60 * 24));
+    if (curr) return diffDate === 0 ? `Start!` : `Day ${diffDate * -1}`;
+    else return diffDate === 0 ? `D-Day` : diffDate > 0 ? `D-${diffDate}` : `D+${diffDate * -1}`;
   };
 
   // date_input : string

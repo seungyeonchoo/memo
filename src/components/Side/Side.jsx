@@ -28,6 +28,7 @@ export default Side;
 const Container = styled.div`
   display: flex;
   position: absolute;
+  left: 0;
   z-index: 1;
   flex-direction: column;
   height: 30vh;

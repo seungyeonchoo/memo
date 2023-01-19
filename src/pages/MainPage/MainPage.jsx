@@ -5,19 +5,19 @@ import { user_id } from '../../utils/Storage';
 import Calendar from './Calendar/Calendar';
 import TodoList from './TodoGoals/components/TodoList';
 import TodoTitle from './TodoGoals/components/TodoTitle';
+import TodoGoals from './TodoGoals/TodoGoals';
 
 const MainPage = () => {
   const { userParams } = useSelector(state => state.param);
-  const { data } = useFetch(`users/${user_id}`, userParams, ['users', { id: user_id }]);
+  const { data } = useFetch(`users/${user_id}`, userParams, [
+    'users',
+    { id: user_id, _embed: 'goals' },
+  ]);
 
   return (
     <MainContainer>
       <Calendar />
-      <List>
-        <TodoTitle />
-        <TodoList user={data} repeat="Daily" />
-        <TodoList user={data} repeat="Weekly" />
-      </List>
+      <TodoGoals data={data} />
     </MainContainer>
   );
 };
@@ -26,9 +26,7 @@ export default MainPage;
 
 const MainContainer = styled.main`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   min-height: 70vh;
   margin: 3em 0;
 `;
-
-const List = styled.div``;

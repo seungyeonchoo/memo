@@ -25,6 +25,6 @@ const Container = styled.section`
   align-items: center;
   width: 450px;
   height: 500px;
-  margin: 0 5rem;
+  margin: 0 4rem;
   border-bottom: 1px solid #666;
 `;

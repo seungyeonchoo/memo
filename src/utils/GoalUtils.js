@@ -10,7 +10,8 @@ class GoalUtils {
 
   static filterGoalsOfDate = (goals, selectDate) => {
     return goals?.filter(
-      el => new Date(selectDate) > new Date(el.date) && new Date(selectDate) < new Date(el.due_date)
+      el =>
+        new Date(selectDate) >= new Date(el.date) && new Date(selectDate) <= new Date(el.due_date)
     );
   };
 }

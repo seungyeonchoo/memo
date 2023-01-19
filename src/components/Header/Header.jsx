@@ -12,9 +12,9 @@ const Header = () => {
   return (
     <>
       <HeaderContainer>
-        <div onClick={handleSideToggle}>
+        <Menu onClick={handleSideToggle}>
           <ImMenu />
-        </div>
+        </Menu>
         {searchToggle ? (
           <>
             <Search />
@@ -31,9 +31,14 @@ const Header = () => {
 
 export default Header;
 
+const Menu = styled.div`
+  position: absolute;
+  left: 2rem;
+`;
+
 const HeaderContainer = styled.header`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: 60px;
   min-width: 100vw;
