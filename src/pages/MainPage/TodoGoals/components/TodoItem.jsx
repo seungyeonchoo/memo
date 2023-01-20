@@ -14,9 +14,9 @@ const TodoItem = ({ goal }) => {
   // done => change to object
 
   return (
-    <Item onClick={today && !done ? handleMutation : undefined}>
+    <Item done={done} onClick={today && !done ? handleMutation : undefined}>
       <DateInfo>{DateUtils.diffDate(goal.date, dateInfo.date)}</DateInfo>
-      <ItemText>{done ? `*${goal.goal_name}` : goal.goal_name}</ItemText>
+      <ItemText>{goal.goal_name}</ItemText>
     </Item>
   );
 };
@@ -24,23 +24,25 @@ const TodoItem = ({ goal }) => {
 export default TodoItem;
 
 const Item = styled.li`
-  background-color: #eeeeee;
+  background-color: ${props => (props.done ? '#ffcdd2' : '#e0e0e0')};
+  cursor: ${props => (props.done ? 'pointer' : null)};
   /* color: #fff; */
-  /* border: 1px solid #666; */
+  border: 1px solid #666;
   display: flex;
   justify-content: space-around;
-  width: 90%;
+  width: 70%;
   text-align: center;
-  padding: 0.5em;
-  margin: 0.3em;
+  padding: 0.8em;
+  margin: 0.5em;
   font-size: 0.8em;
-  cursor: pointer;
+  font-weight: bold;
+  border-radius: 10px;
 `;
 
 const DateInfo = styled.span`
-  width: 30%;
+  width: 20%;
 `;
 
 const ItemText = styled.span`
-  width: 60%;
+  width: 80%;
 `;
