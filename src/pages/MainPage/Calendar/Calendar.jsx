@@ -10,7 +10,9 @@ const Calendar = () => {
   const [month, setMonth] = useState(thisMonth);
   return (
     <Container>
-      <CalendarTitle year={year} month={month} handleMonth={{ setYear, setMonth }} />
+      {window.visualViewport.width > 800 && (
+        <CalendarTitle year={year} month={month} handleMonth={{ setYear, setMonth }} />
+      )}
       <CalendarTable year={year} month={month} />
     </Container>
   );

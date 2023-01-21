@@ -9,22 +9,23 @@ import TodoGoals from './TodoGoals/TodoGoals';
 const MainPage = () => {
   const [viewPort, setViewPort] = useState(window.visualViewport.height);
   const { userParams } = useSelector(state => state.param);
+  const vSize = window.visualViewport.width > 800;
   const { data } = useFetch(`users/${user_id}`, userParams, [
     'users',
     { id: user_id, _embed: 'goals' },
   ]);
 
   useEffect(() => {
-    const resizeWindow = () => setTimeout(() => setViewPort(window.visualViewport.width), 300);
-    window.addEventListener('resize', resizeWindow);
-    return () => clearTimeout(resizeWindow);
+    window.addEventListener('resize', () => setViewPort(window.visualViewport.width));
+    return () =>
+      window.removeEventListener('resize', () => setViewPort(window.visualViewport.width));
   }, [viewPort]);
 
   console.log(viewPort);
 
   return (
     <MainContainer>
-      {window.visualViewport.width > 800 && <Calendar />}
+      {vSize && <Calendar />}
       <TodoGoals data={data} />
     </MainContainer>
   );
