@@ -5,7 +5,6 @@ const toggleSlice = createSlice({
   initialState: {
     createToggle: false,
     editToggle: false,
-    // detailToggle: { _toggle: false, goal: null },
     detailToggle: false,
     sideToggle: false,
   },

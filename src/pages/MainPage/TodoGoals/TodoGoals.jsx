@@ -14,9 +14,10 @@ const TodoGoals = ({ data }) => {
       <TodoTitle
         toggle={diaryToggle}
         handleToggle={handleDiaryToggle}
-        onClick={vSize && handleCalendarToggle}
+        calendarToggle={calendarToggle}
+        handleCalendarToggle={vSize ? handleCalendarToggle : undefined}
       />
-      {calendarToggle ? (
+      {calendarToggle && vSize ? (
         <Calendar />
       ) : !diaryToggle ? (
         <>

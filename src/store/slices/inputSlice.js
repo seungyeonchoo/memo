@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import DateUtils from '../../utils/DateUtils';
 import InputUtils from '../../utils/InputUtils';
 
 const inputSlice = createSlice({
@@ -6,7 +7,10 @@ const inputSlice = createSlice({
   initialState: {
     goalInput: InputUtils.initialGoal,
     groupGoalInput: InputUtils.initialGroupGoal,
-    dateInfo: { date: '', week: '' },
+    dateInfo: {
+      date: DateUtils.convert(new Date()),
+      week: DateUtils.getWeekList(DateUtils.convert(new Date())),
+    },
   },
   reducers: {
     goalInputChange: (state, action) => {

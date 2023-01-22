@@ -16,9 +16,9 @@ const CalendarDate = ({ date, name, idx, month, week }) => {
   const highlight = isToday ? '#ffcdd2' : isSelected ? '#bbdefb' : 'none';
   const { setGlobalInput } = useInput({ date: name, week: week }, dateInfoUpdate);
 
-  useEffect(() => {
-    if (name === DateUtils.convert(new Date())) setGlobalInput();
-  }, []);
+  // useEffect(() => {
+  //   if (name === DateUtils.convert(new Date())) setGlobalInput();
+  // }, []);
 
   return (
     <TableDate name={name} color={color} onClick={setGlobalInput} highlight={highlight}>

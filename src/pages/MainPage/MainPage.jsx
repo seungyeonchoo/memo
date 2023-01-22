@@ -19,9 +19,9 @@ const MainPage = () => {
     window.addEventListener('resize', () => setViewPort(window.visualViewport.width));
     return () =>
       window.removeEventListener('resize', () => setViewPort(window.visualViewport.width));
-  }, [viewPort]);
+  }, [vSize]);
 
-  console.log(viewPort);
+  console.log(vSize);
 
   return (
     <MainContainer>
