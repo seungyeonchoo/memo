@@ -12,6 +12,7 @@ const Side = () => {
   const { userParams } = useSelector(state => state.param);
   const { data: user } = useFetch(`users/${user_id}`, userParams, ['users', { id: user_id }]);
   const viewPort = window.visualViewport.width < 800;
+  console.log(viewPort);
   return (
     <Container z_index={1}>
       <Box>
@@ -32,7 +33,7 @@ const Container = styled.div`
   left: 0;
   z-index: 1;
   flex-direction: column;
-  width: ${props => (props.viewPort ? '400px' : '100vw')};
+  width: 500px;
   height: 30vh;
   padding: 4rem;
   /* background-color: #e0e0e0; */

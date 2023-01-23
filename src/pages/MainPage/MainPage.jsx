@@ -21,8 +21,6 @@ const MainPage = () => {
       window.removeEventListener('resize', () => setViewPort(window.visualViewport.width));
   }, [vSize]);
 
-  console.log(vSize);
-
   return (
     <MainContainer>
       {vSize && <Calendar />}

@@ -27,14 +27,6 @@ const TodoGoals = ({ data }) => {
       ) : (
         <Diary />
       )}
-      {/* {!diaryToggle ? (
-        <>
-          <TodoList user={data} repeat="Daily" />
-          <TodoList user={data} repeat="Weekly" />
-        </>
-      ) : (
-        <Diary />
-      )} */}
     </Container>
   );
 };
@@ -47,7 +39,7 @@ const Container = styled.section`
   justify-content: center;
   align-items: center;
   width: 450px;
-  height: 500px;
+  height: 460px;
   margin: 0 4rem;
   border-bottom: ${props => (!props.border ? '1px solid #666' : 'none')};
 `;

@@ -7,6 +7,7 @@ import store from './store';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import Router from './Router';
 import { ThemeProvider } from 'styled-components';
+import { ReactQueryDevtools } from 'react-query/devtools';
 
 const queryClient = new QueryClient();
 
@@ -14,6 +15,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
+      <ReactQueryDevtools />
       <Provider store={store}>
         {/* <ThemeProvider> */}
         <GlobalStyles />
