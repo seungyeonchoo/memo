@@ -46,6 +46,8 @@ const TextArea = styled.textarea`
 const Button = styled.button`
   border: 1px solid #666;
   background-color: inherit;
+  font-size: 0.6em;
+  font-weight: bold;
   padding: 0.5em;
   width: 20%;
   cursor: pointer;

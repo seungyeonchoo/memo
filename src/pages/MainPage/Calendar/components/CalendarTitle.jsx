@@ -9,9 +9,9 @@ const CalendarTitle = ({ year, month, handleMonth }) => {
     <>
       <Title>
         {/* <Button onClick={() => DateUtils.handleToPrev(year, month, handleMonth)}>{'⇤'}</Button> */}
-        <Button onClick={() => DateUtils.handleToPrev(year, month, handleMonth)}>{'←'}</Button>
+        <Button onClick={() => DateUtils.handleToPrev(year, month, handleMonth)}>←</Button>
         <Text onClick={handleToggle}>{`${year}.${month < 10 ? `0${month}` : month}`}</Text>
-        <Button onClick={() => DateUtils.handleToNext(year, month, handleMonth)}>{'→'}</Button>
+        <Button onClick={() => DateUtils.handleToNext(year, month, handleMonth)}>→</Button>
         {/* <Button onClick={() => DateUtils.handleToNext(year, month, handleMonth)}>{'⇥'}</Button> */}
         {/* <Button>TODAY</Button> */}
       </Title>
@@ -28,6 +28,7 @@ const Title = styled.div`
   justify-content: center;
   align-items: center;
   padding: 1rem 0;
+  /* margin-bottom: 2.5rem; */
 `;
 
 const Text = styled.span`

@@ -30,6 +30,8 @@ const ButtonWrapper = styled.div`
 `;
 const Button = styled.button`
   border: 1px solid #666;
+  font-size: 0.6em;
+  font-weight: bold;
   background-color: inherit;
   padding: 0.5em;
   width: 20%;

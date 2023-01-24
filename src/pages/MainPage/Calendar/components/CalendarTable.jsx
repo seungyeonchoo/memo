@@ -7,14 +7,21 @@ const CalendarTable = ({ year, month }) => {
   const { result, weeks } = DateUtils.getDates(year, month);
 
   return (
-    <Table>
-      <CalendarHead />
-      <CalendarBody data={DateUtils.generateCalendar(result, weeks)} year={year} month={month} />
-    </Table>
+    <TableBox>
+      <Table>
+        <CalendarHead />
+        <CalendarBody data={DateUtils.generateCalendar(result, weeks)} year={year} month={month} />
+      </Table>
+    </TableBox>
   );
 };
 
 export default CalendarTable;
+
+const TableBox = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 const Table = styled.table`
   width: 100%;
