@@ -37,6 +37,7 @@ const TextArea = styled.textarea`
   resize: none;
   padding: 1rem;
   line-height: 1.2rem;
+  overflow: scroll;
 
   &:focus {
     outline: none;
@@ -49,6 +50,7 @@ const Button = styled.button`
   font-size: 0.6em;
   font-weight: bold;
   padding: 0.5em;
+  margin-top: 1em;
   width: 20%;
   cursor: pointer;
 

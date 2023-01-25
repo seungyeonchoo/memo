@@ -3,14 +3,16 @@ import useToggle from '../../../../hooks/useToggle';
 import DateUtils from '../../../../utils/DateUtils';
 import MonthList from './MonthList';
 
-const CalendarTitle = ({ year, month, handleMonth }) => {
+const CalendarTitle = ({ year, month, handleMonth, setToggle, calendarToggle }) => {
   const { toggle, handleToggle } = useToggle();
   return (
     <>
-      <Title>
+      <Title calendar={calendarToggle}>
         {/* <Button onClick={() => DateUtils.handleToPrev(year, month, handleMonth)}>{'⇤'}</Button> */}
         <Button onClick={() => DateUtils.handleToPrev(year, month, handleMonth)}>←</Button>
-        <Text onClick={handleToggle}>{`${year}.${month < 10 ? `0${month}` : month}`}</Text>
+        <Text onClick={calendarToggle ? setToggle : handleToggle}>{`${year}.${
+          month < 10 ? `0${month}` : month
+        }`}</Text>
         <Button onClick={() => DateUtils.handleToNext(year, month, handleMonth)}>→</Button>
         {/* <Button onClick={() => DateUtils.handleToNext(year, month, handleMonth)}>{'⇥'}</Button> */}
         {/* <Button>TODAY</Button> */}
@@ -28,7 +30,7 @@ const Title = styled.div`
   justify-content: center;
   align-items: center;
   padding: 1rem 0;
-  /* margin-bottom: 2.5rem; */
+  margin-bottom: ${props => (props.calendar ? '2em' : '0')};
 `;
 
 const Text = styled.span`

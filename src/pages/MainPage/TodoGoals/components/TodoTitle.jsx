@@ -5,11 +5,8 @@ const TodoTitle = ({ toggle, handleToggle, handleCalendarToggle, calendarToggle 
   const { dateInfo } = useSelector(state => state.input);
 
   return (
-    <Text border={window.visualViewport.width > 800}>
-      <div onClick={handleCalendarToggle}>
-        {calendarToggle ? dateInfo.date.slice(0, 7) : dateInfo.date}
-        {/* 년-월만 보여주고 calendar의 year & month 를 업데이트 */}
-      </div>
+    <Text border={window.innerWidth > 800}>
+      {!calendarToggle && <div onClick={handleCalendarToggle}>{dateInfo.date}</div>}
       {!calendarToggle && (
         <div>
           <Button onClick={handleToggle} disabled={!toggle}>

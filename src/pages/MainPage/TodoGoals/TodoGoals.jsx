@@ -18,7 +18,7 @@ const TodoGoals = ({ data }) => {
         handleCalendarToggle={vSize ? handleCalendarToggle : undefined}
       />
       {calendarToggle && vSize ? (
-        <Calendar />
+        <Calendar setToggle={handleCalendarToggle} calendarToggle={calendarToggle} />
       ) : !diaryToggle ? (
         <>
           <TodoList user={data} repeat="Daily" />
@@ -39,7 +39,7 @@ const Container = styled.section`
   justify-content: center;
   align-items: center;
   width: 450px;
-  height: 460px;
+  height: 500px;
   margin: 0 4rem;
   border-bottom: ${props => (!props.border ? '1px solid #666' : 'none')};
 `;

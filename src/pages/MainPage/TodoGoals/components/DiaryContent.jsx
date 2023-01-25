@@ -2,13 +2,13 @@ import styled from 'styled-components';
 import useMutate from '../../../../hooks/useMutate';
 
 const DiaryContent = ({ currDiary }) => {
-  const { handleMutation } = useMutate(`/diaries/${currDiary?.id}`, 'delete');
+  const { handleMutation: deleteContents } = useMutate(`/diaries/${currDiary?.id}`, 'delete');
   return (
     <>
       <Item>{currDiary?.contents}</Item>
       <ButtonWrapper>
         <Button>수정</Button>
-        <Button onClick={handleMutation}>삭제</Button>
+        <Button onClick={deleteContents}>삭제</Button>
       </ButtonWrapper>
     </>
   );
@@ -22,6 +22,8 @@ const Item = styled.div`
   padding: 1rem;
   line-height: 1.2rem;
   font-size: 0.8em;
+  overflow: scroll;
+  overflow-wrap: break-word;
 `;
 
 const ButtonWrapper = styled.div`
@@ -33,6 +35,7 @@ const Button = styled.button`
   font-size: 0.6em;
   font-weight: bold;
   background-color: inherit;
+  margin-top: 1em;
   padding: 0.5em;
   width: 20%;
   cursor: pointer;

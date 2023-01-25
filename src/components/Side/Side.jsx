@@ -34,7 +34,7 @@ const Container = styled.div`
   z-index: 1;
   flex-direction: column;
   width: 500px;
-  height: 30vh;
+  height: 40vh;
   padding: 4rem;
   /* background-color: #e0e0e0; */
   background-color: #8e8e8e;

@@ -6,7 +6,7 @@ import { dateInfoUpdate } from '../../../../store/slices/inputSlice';
 import DateUtils from '../../../../utils/DateUtils';
 import DateStatus from './DateStatus';
 
-const CalendarDate = ({ date, name, idx, month, week }) => {
+const CalendarDate = ({ date, name, idx, month, week, setToggle }) => {
   const { dateInfo } = useSelector(state => state.input);
   const isToday = name === DateUtils.convert(new Date());
   const isThisMonth = new Date(name).getMonth() + 1 !== month;
@@ -14,11 +14,7 @@ const CalendarDate = ({ date, name, idx, month, week }) => {
 
   const color = isThisMonth ? 'grey' : idx === 0 || idx === 6 ? '#d32f2f' : 'black';
   const highlight = isToday ? '#ffcdd2' : isSelected ? '#bbdefb' : 'none';
-  const { setGlobalInput } = useInput({ date: name, week: week }, dateInfoUpdate);
-
-  // useEffect(() => {
-  //   if (name === DateUtils.convert(new Date())) setGlobalInput();
-  // }, []);
+  const { setGlobalInput } = useInput({ date: name, week: week }, dateInfoUpdate, setToggle);
 
   return (
     <TableDate name={name} color={color} onClick={setGlobalInput} highlight={highlight}>

@@ -3,7 +3,6 @@ import NavBar from './components/NavBar';
 import { ImMenu } from 'react-icons/im';
 import Search from '../Search/Search';
 import useToggle from '../../hooks/useToggle';
-import { sideToggleChange } from '../../store/slices/toggleSlice';
 import Side from '../Side/Side';
 
 const Header = () => {
@@ -43,5 +42,5 @@ const HeaderContainer = styled.header`
   height: 60px;
   min-width: 100vw;
   padding: 0 1.5em;
-  background-color: #e0e0e0;
+  /* background-color: #e0e0e0; */
 `;

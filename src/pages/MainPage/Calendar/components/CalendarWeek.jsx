@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import DateUtils from '../../../../utils/DateUtils';
 import CalendarDate from './CalendarDate';
 
-const CalendarWeek = ({ data, year, month, idx, weeks }) => {
+const CalendarWeek = ({ data, year, month, idx, weeks, setToggle }) => {
   const thisWeek = `${year}-${month < 10 ? `0${month}` : month} week${idx + 1}`;
 
   return (
@@ -10,7 +10,15 @@ const CalendarWeek = ({ data, year, month, idx, weeks }) => {
       {data.map((date, i) => {
         const dateName = DateUtils.generateDateName(idx, i, year, month, date, weeks.length - 1);
         return (
-          <CalendarDate key={i} date={date} idx={i} name={dateName} month={month} week={thisWeek} />
+          <CalendarDate
+            key={i}
+            date={date}
+            idx={i}
+            name={dateName}
+            month={month}
+            week={thisWeek}
+            setToggle={setToggle}
+          />
         );
       })}
     </Row>

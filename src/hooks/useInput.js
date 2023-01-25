@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-const useInput = (input, action) => {
+const useInput = (input, action, ...rest) => {
   const dispatch = useDispatch();
   const [inputValue, setInputValue] = useState(input);
 
@@ -21,8 +21,9 @@ const useInput = (input, action) => {
     dispatch(action({ ...input, [name]: value }));
   };
 
-  const setGlobalInput = () => {
+  const setGlobalInput = e => {
     dispatch(action(input));
+    [...rest].forEach(el => el(e));
   };
 
   return { inputValue, handleInput, initInput, handleGlobalInput, setGlobalInput };

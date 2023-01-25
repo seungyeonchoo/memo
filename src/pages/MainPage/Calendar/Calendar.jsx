@@ -4,7 +4,7 @@ import CalendarTitle from './components/CalendarTitle';
 import CalendarTable from './components/CalendarTable';
 import DateUtils from '../../../utils/DateUtils';
 
-const Calendar = () => {
+const Calendar = ({ setToggle, calendarToggle }) => {
   const thisYear = new Date().getFullYear();
   const thisMonth = new Date().getMonth() + 1;
   const [year, setYear] = useState(thisYear);
@@ -12,16 +12,20 @@ const Calendar = () => {
   const handleDate = { setYear, setMonth };
   return (
     <Container>
-      {window.visualViewport.width < 800 && (
+      {window.innerWidth < 800 && (
         <HiddenButton onClick={() => DateUtils.handleToPrev(year, month, handleDate)} />
       )}
-      <Box margin={window.visualViewport.width < 800}>
-        {window.visualViewport.width > 800 && (
-          <CalendarTitle year={year} month={month} handleMonth={handleDate} />
-        )}
-        <CalendarTable year={year} month={month} handleMonth={handleDate} />
+      <Box margin={window.innerWidth < 800}>
+        <CalendarTitle
+          year={year}
+          month={month}
+          handleMonth={handleDate}
+          setToggle={setToggle}
+          calendarToggle={calendarToggle}
+        />
+        <CalendarTable year={year} month={month} handleMonth={handleDate} setToggle={setToggle} />
       </Box>
-      {window.visualViewport.width < 800 && (
+      {window.innerWidth < 800 && (
         <HiddenButton onClick={() => DateUtils.handleToNext(year, month, handleDate)} />
       )}
     </Container>
@@ -38,7 +42,7 @@ const Box = styled.div`
   width: 450px;
   height: 100%;
   margin: ${props => (props.margin ? '0' : '0 4rem')};
-  border-bottom: 1px solid #666;
+  /* border-bottom: 1px solid #666; */
 `;
 
 const HiddenButton = styled.button`

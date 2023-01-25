@@ -39,7 +39,12 @@
       "is_public": false,
       "is_complete": false,
       "repeat": "Weekly",
-      "done": ["2023-01 week3", "2023-01-19"],
+      "done": [
+        "2023-01 week3",
+        "2023-01-19",
+        "2023-01 week4",
+        "2023-01-24"
+      ],
       "id": 2
     },
     {
@@ -51,7 +56,15 @@
       "is_public": false,
       "is_complete": false,
       "repeat": "Daily",
-      "done": ["2023-01-18", "2023-01-23", "2023-01-23"],
+      "done": [
+        "2023-01-18",
+        "2023-01-23",
+        "2023-01-23",
+        "2023-01-24",
+        "2023-01-24",
+        "2023-01-25",
+        "2023-01-25"
+      ],
       "id": 3
     },
     {
@@ -63,7 +76,12 @@
       "is_public": false,
       "is_complete": false,
       "repeat": "Daily",
-      "done": ["2023-01-19", "2023-01-19", "2023-01-20", "2023-01-20"],
+      "done": [
+        "2023-01-19",
+        "2023-01-19",
+        "2023-01-20",
+        "2023-01-20"
+      ],
       "id": 4
     },
     {
@@ -75,7 +93,12 @@
       "is_public": false,
       "is_complete": false,
       "repeat": "Daily",
-      "done": ["2023-01-19", "2023-01-19", "2023-01-20", "2023-01-20"],
+      "done": [
+        "2023-01-19",
+        "2023-01-19",
+        "2023-01-20",
+        "2023-01-20"
+      ],
       "id": 5
     }
   ],
@@ -129,6 +152,12 @@
       "contents": "ㅁㄴㅇ",
       "userId": 1,
       "id": 7
+    },
+    {
+      "date": "2023-01-24",
+      "contents": "ssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshd ssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshd",
+      "userId": 1,
+      "id": 8
     }
   ]
 }
