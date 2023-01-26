@@ -1,6 +1,6 @@
 const STORAGE = sessionStorage;
 
-class Storage {
+class StorageUtils {
   static setToken = token => {
     STORAGE.setItem('ACCESS_TOKEN', token);
   };
@@ -27,4 +27,4 @@ class Storage {
   };
 }
 
-export default Storage;
+export default StorageUtils;

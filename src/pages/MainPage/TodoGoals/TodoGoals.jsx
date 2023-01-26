@@ -41,5 +41,5 @@ const Container = styled.section`
   width: 450px;
   height: 500px;
   margin: 0 4rem;
-  border-bottom: ${props => (!props.border ? '1px solid #666' : 'none')};
+  /* border-bottom: ${props => (!props.border ? '1px solid #666' : 'none')}; */
 `;

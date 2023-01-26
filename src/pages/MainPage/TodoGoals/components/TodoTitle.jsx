@@ -6,7 +6,9 @@ const TodoTitle = ({ toggle, handleToggle, handleCalendarToggle, calendarToggle 
 
   return (
     <Text border={window.innerWidth > 800}>
-      {!calendarToggle && <div onClick={handleCalendarToggle}>{dateInfo.date}</div>}
+      {(!calendarToggle || window.innerWidth > 800) && (
+        <div onClick={handleCalendarToggle}>{dateInfo.date}</div>
+      )}
       {!calendarToggle && (
         <div>
           <Button onClick={handleToggle} disabled={!toggle}>

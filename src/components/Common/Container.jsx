@@ -11,9 +11,9 @@ const StyledContainer = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #e0e0e0;
-  /* position: absolute;
-  z-index: ${props => props.z_index || 0}; */
+  background-color: #fff;
+  position: absolute;
+  /* z-index: ${props => props.z_index || 0}; */
   border-radius: 10px;
   min-height: 70vh;
   min-width: 60vh;

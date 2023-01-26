@@ -30,5 +30,6 @@ const Wrapper = styled.div`
 
 const SearchContainer = styled.section`
   display: flex;
+  position: relative;
   flex-direction: column;
 `;

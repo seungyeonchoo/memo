@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from 'react-query';
 import { useNavigate } from 'react-router-dom';
 import Http from '../services/Http';
-import Storage from '../utils/NewStorage';
+import StorageUtils from '../utils/StorageUtils';
 
 const useMutate = (url, method, inputValue, ...rest) => {
   const queryClient = useQueryClient();
@@ -17,9 +17,9 @@ const useMutate = (url, method, inputValue, ...rest) => {
         [...rest].forEach(el => el(e));
 
         if (url === 'signin') {
-          Storage.setToken(data.accessToken);
-          Storage.setId(data.user.id);
-          nav(`users/${data.user.id}`);
+          StorageUtils.setToken(data.accessToken);
+          StorageUtils.setId(data.user.id);
+          nav(`/main`);
         }
       },
     });

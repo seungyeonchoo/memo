@@ -26,8 +26,6 @@ export default CalendarTable;
 const TableBox = styled.div`
   display: flex;
   justify-content: center;
-  border-bottom: 1px solid #666;
-  padding-bottom: 3em;
 `;
 
 const Table = styled.table`

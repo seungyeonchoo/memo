@@ -12,6 +12,8 @@ const Detail = () => {
 
   return (
     <Container>
+      <div>start : {goal?.date}</div>
+      <div>end : {goal?.due_date}</div>
       {dateList.map(el => (
         <div key={el}>{goal?.done.includes(el) ? 'done : ' + el : el}</div>
       ))}

@@ -1,5 +1,8 @@
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import useToggle from '../../hooks/useToggle';
+import StorageUtils from '../../utils/StorageUtils';
 import AuthRegister from './components/AuthRegister';
 import AuthTitle from './components/AuthTitle';
 import LoginInput from './components/LoginInput';
@@ -7,6 +10,12 @@ import RegisterInput from './components/RegisterInput';
 
 const AuthPage = () => {
   const { toggle, handleToggle } = useToggle();
+  const token = StorageUtils.getToken();
+  const nav = useNavigate();
+
+  // useEffect(() => {
+  //   if (token) nav('/main');
+  // }, []);
 
   return (
     <Container>

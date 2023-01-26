@@ -13,6 +13,7 @@ const GoalStatus = ({ goal }) => {
 export default GoalStatus;
 
 const StatusBox = styled.div`
+  width: 15%;
   display: flex;
   flex-direction: column;
   align-items: center;

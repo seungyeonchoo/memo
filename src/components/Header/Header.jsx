@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import NavBar from './components/NavBar';
 import { ImMenu } from 'react-icons/im';
+import { BsArrowReturnLeft } from 'react-icons/bs';
 import Search from '../Search/Search';
 import useToggle from '../../hooks/useToggle';
 import Side from '../Side/Side';
@@ -17,7 +18,9 @@ const Header = () => {
         {searchToggle ? (
           <>
             <Search />
-            <span onClick={handleSearchToggle}>x</span>
+            <ReturnButton onClick={handleSearchToggle}>
+              <BsArrowReturnLeft />
+            </ReturnButton>
           </>
         ) : (
           <NavBar toggle={searchToggle} handleToggle={handleSearchToggle} />
@@ -43,4 +46,9 @@ const HeaderContainer = styled.header`
   min-width: 100vw;
   padding: 0 1.5em;
   /* background-color: #e0e0e0; */
+`;
+
+const ReturnButton = styled.span`
+  margin: -2em;
+  z-index: 1;
 `;
