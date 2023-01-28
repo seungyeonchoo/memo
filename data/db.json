@@ -39,7 +39,12 @@
       "is_public": false,
       "is_complete": false,
       "repeat": "Weekly",
-      "done": ["2023-01 week3", "2023-01-19", "2023-01 week4", "2023-01-24"],
+      "done": [
+        "2023-01 week3",
+        "2023-01-19",
+        "2023-01 week4",
+        "2023-01-24"
+      ],
       "id": 2
     },
     {
@@ -58,7 +63,9 @@
         "2023-01-24",
         "2023-01-24",
         "2023-01-25",
-        "2023-01-25"
+        "2023-01-25",
+        "2023-01-28",
+        "2023-01-28"
       ],
       "id": 3
     },
@@ -71,7 +78,12 @@
       "is_public": false,
       "is_complete": false,
       "repeat": "Daily",
-      "done": ["2023-01-19", "2023-01-19", "2023-01-20", "2023-01-20"],
+      "done": [
+        "2023-01-19",
+        "2023-01-19",
+        "2023-01-20",
+        "2023-01-20"
+      ],
       "id": 4
     },
     {
@@ -83,8 +95,32 @@
       "is_public": false,
       "is_complete": false,
       "repeat": "Daily",
-      "done": ["2023-01-19", "2023-01-19", "2023-01-20", "2023-01-20"],
+      "done": [
+        "2023-01-19",
+        "2023-01-19",
+        "2023-01-20",
+        "2023-01-20"
+      ],
       "id": 5
+    },
+    {
+      "due_date": "2023-03-22",
+      "goal_name": "코딩테스트",
+      "description": "1일 5문제 풀기",
+      "userId": 1,
+      "date": "2023-01-28",
+      "is_public": false,
+      "is_complete": false,
+      "repeat": "Daily",
+      "done": [
+        "2023-01-19",
+        "2023-01-19",
+        "2023-01-20",
+        "2023-01-20",
+        "2023-01-28",
+        "2023-01-28"
+      ],
+      "id": 6
     }
   ],
   "groups": [],
@@ -143,6 +179,12 @@
       "contents": "ssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshd ssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshd",
       "userId": 1,
       "id": 8
+    },
+    {
+      "date": "2023-01-28",
+      "contents": "다이오리",
+      "userId": 1,
+      "id": 9
     }
   ]
 }

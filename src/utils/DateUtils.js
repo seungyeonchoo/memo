@@ -94,12 +94,14 @@ class DateUtils {
     const e = Math.min(new Date(end), new Date());
     const len = (e - s) / (1000 * 60 * 60 * 24);
 
-    for (let i = 0; i <= len - 1; i++) {
-      const date = this.convert(new Date(s.setDate(s.getDate() + 1)));
+    for (let i = 0; i <= len; i++) {
+      // const date = this.convert(new Date(s.setDate(s.getDate() + 1)));
+      let date = this.convert(s);
       if (repeat === 'Daily') ans.push(date);
       else if (repeat === 'Weekly' && !ans.includes(this.getWeekList(date))) {
         ans.push(this.getWeekList(date));
       }
+      date = this.convert(new Date(s.setDate(s.getDate() + 1)));
     }
     return ans;
   };

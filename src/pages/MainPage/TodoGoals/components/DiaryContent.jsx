@@ -7,7 +7,7 @@ const DiaryContent = ({ currDiary }) => {
     <>
       <Item>{currDiary?.contents}</Item>
       <ButtonWrapper>
-        <Button>수정</Button>
+        {/* <Button>수정</Button> */}
         <Button onClick={deleteContents}>삭제</Button>
       </ButtonWrapper>
     </>
