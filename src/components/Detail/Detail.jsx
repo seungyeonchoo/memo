@@ -17,6 +17,7 @@ const Detail = () => {
   return (
     <DetailContainer>
       <TitleText>{goal?.goal_name}</TitleText>
+      <Repeat>{goal?.repeat}</Repeat>
       <GoalInfo goal={goal} />
       <GoalFulfill list={dateList} goal={goal} />
       <button onClick={handleGlobalToggle}>X</button>
@@ -30,10 +31,11 @@ const TitleText = styled.h1`
   font-size: 1rem;
   font-weight: bold;
   text-align: left;
-  margin: 0.5em 0;
+  /* margin: 0.5em 0; */
 `;
 
 const DetailContainer = styled.section`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,4 +45,13 @@ const DetailContainer = styled.section`
   margin: 0 4rem;
   background-color: #fff;
   z-index: 1;
+`;
+
+const Repeat = styled.span`
+  position: absolute;
+  top: 30px;
+  right: 100px;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: red;
 `;

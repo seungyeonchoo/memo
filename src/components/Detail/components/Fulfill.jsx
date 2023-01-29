@@ -3,9 +3,11 @@ import styled from 'styled-components';
 const Fulfill = ({ goal, date, idx }) => {
   return (
     <Item>
-      <span>Day {idx + 1}</span>
-      <span>{date}</span>
-      <span>{goal?.done.includes(date) ? 'success' : 'failure'}</span>
+      <Text>
+        {goal?.repeat === 'Daily' ? 'Day' : 'Week'} {idx + 1}
+      </Text>
+      <Text>{date}</Text>
+      <Text>{goal?.done.includes(date) ? 'success' : 'failure'}</Text>
     </Item>
   );
 };
@@ -19,4 +21,8 @@ const Item = styled.li`
   display: flex;
   justify-content: space-between;
   margin: 0.5em 0;
+`;
+
+const Text = styled.span`
+  width: 30%;
 `;
