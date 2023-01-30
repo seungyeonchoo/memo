@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import UserProfile from './UserProfile/UserProfile';
 import Goal from '../../components/Goal/Goal';
 import useFetch from '../../hooks/useFetch';
 import Detail from '../../components/Detail/Detail';
@@ -8,16 +7,16 @@ import { useSelector } from 'react-redux';
 
 const UserPage = () => {
   const { id } = useParams();
-  const { toggle, param } = useSelector(state => state);
-  const { sideToggle, detailToggle } = toggle;
+  const { toggle, param, input } = useSelector(state => state);
   const { data: user } = useFetch(`users/${id}`, param.userParams, ['users', { id: id }]);
+  const { data: goal } = useFetch(`goals/${input.goalInput.id}`, param.goalParams, [
+    'goals',
+    { id: input.goalInput.id },
+  ]);
 
   return (
     <UserContainer>
-      {sideToggle && <UserProfile />}
-      {/* {detailToggle ? <Detail /> : <Goal data={user} type="users" />} */}
-      <Goal data={user} type="users" />
-      {detailToggle && <Detail />}
+      {toggle.detailToggle ? <Detail goal={goal} /> : <Goal data={user} type="users" />}
     </UserContainer>
   );
 };

@@ -2,13 +2,11 @@ import styled from 'styled-components';
 import GoalUtils from '../../../utils/GoalUtils';
 import GoalItem from '../GoalItem/GoalItem';
 
-const GoalList = ({ user, type }) => {
-  const goals =
-    type === 'users' ? GoalUtils.sortItems(user?.goals) : GoalUtils.sortItems(user?.groupGoals);
+const GoalList = ({ user }) => {
   return (
     <ListWrapper>
-      {goals?.length === 0 && <div>아직 등록된 목표가 없습니다.</div>}
-      {goals?.map(el => (
+      {GoalUtils.sortItems(user?.goals)?.length === 0 && <div>아직 등록된 목표가 없습니다.</div>}
+      {GoalUtils.sortItems(user?.goals)?.map(el => (
         <GoalItem key={el.id} goal={el} />
       ))}
     </ListWrapper>

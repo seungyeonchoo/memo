@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 const Fulfill = ({ goal, date, idx }) => {
+  const isComplete = goal?.done.includes(date);
+
   return (
-    <Item>
-      <Text>
-        {goal?.repeat === 'Daily' ? 'Day' : 'Week'} {idx + 1}
-      </Text>
+    <Item complete={isComplete}>
+      <Text>{goal?.repeat === 'Daily' ? `Day${idx + 1}` : `Week${idx + 1}`}</Text>
       <Text>{date}</Text>
-      <Text>{goal?.done.includes(date) ? 'success' : 'failure'}</Text>
+      <Text>{isComplete ? 'complete' : 'failure'}</Text>
     </Item>
   );
 };
@@ -21,6 +21,7 @@ const Item = styled.li`
   display: flex;
   justify-content: space-between;
   margin: 0.5em 0;
+  color: ${props => (props.complete ? 'blue' : 'red')};
 `;
 
 const Text = styled.span`

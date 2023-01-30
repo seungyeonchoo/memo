@@ -18,12 +18,12 @@ export default AutoComplete;
 const Wrapper = styled.ul`
   display: flex;
   flex-direction: column;
-  background-color: #fff;
-  top: 4em;
+  /* background-color: #fff; */
+  top: 3.1em;
   width: 20rem;
   position: absolute;
   padding: 0.5em;
-  background-color: #e0e0e0;
+  background-color: #fff;
   z-index: 10;
-  border-radius: 10px;
+  border: 1px solid #666;
 `;

@@ -3,10 +3,10 @@ import styled from 'styled-components';
 const GoalInfo = ({ goal }) => {
   return (
     <InfoBox>
-      <InfoText>{goal?.description}</InfoText>
-      <InfoText>
+      <span>{goal?.description}</span>
+      <span>
         From {goal?.date} To {goal?.due_date}
-      </InfoText>
+      </span>
     </InfoBox>
   );
 };
@@ -19,6 +19,5 @@ const InfoBox = styled.div`
   align-items: center;
   margin: 1em 0;
   font-size: 0.8em;
+  line-height: 1.5em;
 `;
-
-const InfoText = styled.span``;

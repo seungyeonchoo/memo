@@ -10,15 +10,15 @@ import { editToggleChange } from '../../../../store/slices/toggleSlice';
 const GoalButton = ({ goal }) => {
   const { editToggle, createToggle } = useSelector(state => state.toggle);
   const { setGlobalInput } = useInput(goal, goalInputChange);
-  const { handleGlobalToggle } = useToggle(editToggleChange, setGlobalInput);
-  const { handleMutation } = useMutate(`goals/${goal?.id}`, 'delete');
+  const { handleGlobalToggle: handleEditToggle } = useToggle(editToggleChange, setGlobalInput);
+  const { handleMutation: handleDelete } = useMutate(`goals/${goal?.id}`, 'delete');
 
   return (
     <ButtonWrapper>
-      <Button onClick={handleGlobalToggle} disabled={editToggle || createToggle}>
+      <Button onClick={handleEditToggle} disabled={editToggle || createToggle}>
         <AiFillEdit />
       </Button>
-      <Button onClick={handleMutation}>
+      <Button onClick={handleDelete}>
         <AiFillDelete />
       </Button>
     </ButtonWrapper>

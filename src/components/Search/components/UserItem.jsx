@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const UserItem = ({ user }) => {
   const nav = useNavigate();
+
   return (
     <Item onClick={() => nav(`/users/${user.id}`)}>
       <Name>{user.name}</Name>
@@ -18,15 +19,18 @@ const Item = styled.li`
   justify-content: space-between;
   align-items: flex-end;
   margin: 0 0.5em;
-  padding: 1em;
+  padding: 0.5em;
   cursor: pointer;
-
   &:hover {
     background-color: #fff;
   }
 `;
 
-const Name = styled.span``;
-const Email = styled.span`
+const Name = styled.span`
   font-size: 0.8em;
+  font-weight: bold;
+`;
+
+const Email = styled.span`
+  font-size: 0.5em;
 `;

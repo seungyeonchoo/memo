@@ -22,8 +22,10 @@ export default NavBar;
 
 const NavContainer = styled.nav`
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  /* font-size: 0.8em; */
+  font-size: 0.8em;
+  width: 50%;
   height: 100%;
 `;
 const NavBtn = styled.li`

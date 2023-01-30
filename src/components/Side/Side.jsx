@@ -11,8 +11,8 @@ const Side = () => {
   const { handleLogOut } = useAuth();
   const { userParams } = useSelector(state => state.param);
   const { data: user } = useFetch(`users/${user_id}`, userParams, ['users', { id: user_id }]);
-  const viewPort = window.visualViewport.width < 800;
-  console.log(viewPort);
+  const viewPort = window.innerWidth < 800;
+
   return (
     <Container z_index={1}>
       <Box>

@@ -1,16 +1,11 @@
-import { useSelector } from 'react-redux';
 import styled from 'styled-components';
-import useFetch from '../../hooks/useFetch';
 import useToggle from '../../hooks/useToggle';
 import { detailToggleChange } from '../../store/slices/toggleSlice';
 import DateUtils from '../../utils/DateUtils';
 import GoalInfo from './components/GoaInfo';
 import GoalFulfill from './components/GoalFulfill';
 
-const Detail = () => {
-  const { input, param } = useSelector(state => state);
-  const goalId = input.goalInput.id;
-  const { data: goal } = useFetch(`goals/${goalId}`, param.goalParams, ['goals', { id: goalId }]);
+const Detail = ({ goal }) => {
   const { handleGlobalToggle } = useToggle(detailToggleChange);
   const dateList = DateUtils.getDateList(goal?.date, goal?.due_date, goal?.repeat);
 
@@ -20,7 +15,7 @@ const Detail = () => {
       <Repeat>{goal?.repeat}</Repeat>
       <GoalInfo goal={goal} />
       <GoalFulfill list={dateList} goal={goal} />
-      <button onClick={handleGlobalToggle}>X</button>
+      <button onClick={handleGlobalToggle}>뒤로</button>
     </DetailContainer>
   );
 };
@@ -49,7 +44,7 @@ const DetailContainer = styled.section`
 
 const Repeat = styled.span`
   position: absolute;
-  top: 30px;
+  top: 25px;
   right: 100px;
   font-size: 0.8em;
   font-weight: bold;
