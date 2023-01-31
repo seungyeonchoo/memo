@@ -1,66 +1,22 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { goalInputChange, initialGoal } from '../store/slices/inputSlice';
-import {
-  authToggleChange,
-  createGoalToggleChange,
-  detailToggleChange,
-  editGoalToggleChange,
-  filterToggleChange,
-  sortToggleChange,
-} from '../store/slices/toggleSlice';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
-const useToggle = goal => {
+const useToggle = (action, ...rest) => {
+  const [toggle, setToggle] = useState(false);
   const dispatch = useDispatch();
-  const { createGoalToggle, authToggle, editGoalToggle, sortToggle, filterToggle } = useSelector(
-    state => state.toggle
-  );
 
-  // handle login and signup
-  const handleAuthToggle = () => {
-    dispatch(authToggleChange());
+  const handleToggle = e => {
+    e.stopPropagation();
+    setToggle(!toggle);
   };
 
-  // handle add goal toggle
-  const handleCreateGoalToggle = () => {
-    dispatch(goalInputChange(initialGoal));
-    dispatch(createGoalToggleChange());
+  const handleGlobalToggle = e => {
+    e.stopPropagation();
+    [...rest].forEach(el => el());
+    dispatch(action());
   };
 
-  // handle edit goal toggle
-  const handleEditGoalToggle = () => {
-    !editGoalToggle ? dispatch(goalInputChange(goal)) : dispatch(goalInputChange(initialGoal));
-    dispatch(editGoalToggleChange());
-  };
-
-  // handle sort and filter toggle
-
-  const handleSortToggle = () => {
-    dispatch(sortToggleChange());
-  };
-
-  const handleFilterToggle = () => {
-    dispatch(filterToggleChange());
-  };
-
-  // handle goal detail toggle
-
-  const handleDetailToggle = () => {
-    dispatch(detailToggleChange(goal));
-  };
-
-  return {
-    createGoalToggle,
-    authToggle,
-    editGoalToggle,
-    sortToggle,
-    filterToggle,
-    handleAuthToggle,
-    handleCreateGoalToggle,
-    handleEditGoalToggle,
-    handleSortToggle,
-    handleFilterToggle,
-    handleDetailToggle,
-  };
+  return { toggle, handleToggle, handleGlobalToggle };
 };
 
 export default useToggle;

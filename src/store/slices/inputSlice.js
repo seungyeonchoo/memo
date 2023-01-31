@@ -1,36 +1,29 @@
 import { createSlice } from '@reduxjs/toolkit';
-
-export const initialSignin = { email: '', password: '' };
-export const initialSignup = { email: '', password: '', password_confirm: '', name: '' };
-export const initialGoal = {
-  due_date: '',
-  goal_name: '',
-  description: '',
-  userId: '',
-  date: '',
-  is_public: false,
-  is_complete: false,
-};
+import DateUtils from '../../utils/DateUtils';
+import InputUtils from '../../utils/InputUtils';
 
 const inputSlice = createSlice({
   name: 'input',
   initialState: {
-    signin: initialSignin,
-    signup: initialSignup,
-    goalInput: initialGoal,
+    goalInput: InputUtils.initialGoal,
+    groupGoalInput: InputUtils.initialGroupGoal,
+    dateInfo: {
+      date: DateUtils.convert(new Date()),
+      week: DateUtils.getWeekList(DateUtils.convert(new Date())),
+    },
   },
   reducers: {
     goalInputChange: (state, action) => {
       state.goalInput = action.payload;
     },
-    signinChange: (state, action) => {
-      state.signin = action.payload;
+    groupGoalInputChange: (state, action) => {
+      state.groupGoalInput = action.payload;
     },
-    signupChange: (state, action) => {
-      state.signup = action.payload;
+    dateInfoUpdate: (state, action) => {
+      state.dateInfo = action.payload;
     },
   },
 });
 
-export const { goalInputChange, signinChange, signupChange } = inputSlice.actions;
+export const { goalInputChange, groupGoalInputChange, dateInfoUpdate } = inputSlice.actions;
 export default inputSlice.reducer;

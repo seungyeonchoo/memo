@@ -1,31 +1,27 @@
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import Button from '../../components/Common/Button';
-import useAuth from '../../hooks/useAuth';
 import useToggle from '../../hooks/useToggle';
-import { checkLoginInput, checkSignupInput } from '../../utils/checkIsValid';
+import StorageUtils from '../../utils/StorageUtils';
 import AuthRegister from './components/AuthRegister';
 import AuthTitle from './components/AuthTitle';
 import LoginInput from './components/LoginInput';
 import RegisterInput from './components/RegisterInput';
 
 const AuthPage = () => {
-  const { authToggle, handleAuthToggle } = useToggle();
-  const { signin, signup, handleAuthEvent } = useAuth();
-  const buttonText = authToggle ? '회원가입' : '로그인';
-  const isValid = authToggle ? checkSignupInput(signup) : checkLoginInput(signin);
+  const { toggle, handleToggle } = useToggle();
+  const token = StorageUtils.getToken();
+  const nav = useNavigate();
+
+  // useEffect(() => {
+  //   if (token) nav('/main');
+  // }, []);
 
   return (
     <Container>
-      <AuthTitle />
-      {authToggle ? <RegisterInput /> : <LoginInput />}
-      <Button
-        size="lg"
-        text={buttonText}
-        onClick={handleAuthEvent}
-        disabled={!isValid}
-        margin="auth"
-      />
-      <AuthRegister handleToggle={handleAuthToggle} />
+      <AuthTitle toggle={toggle} />
+      {toggle ? <RegisterInput handleToggle={handleToggle} /> : <LoginInput />}
+      <AuthRegister onClick={handleToggle} toggle={toggle} />
     </Container>
   );
 };
@@ -36,6 +32,9 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50vw;
-  margin: auto;
+  justify-content: center;
+  min-width: 30vw;
+  padding: 2em 0;
+  border-radius: 5px;
+  background-color: #e0e0e0;
 `;

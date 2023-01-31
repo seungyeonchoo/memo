@@ -1,26 +1,41 @@
 import styled from 'styled-components';
+import { Button } from '../../../components/Common/Button';
 import Input from '../../../components/Common/Input';
-import useAuth from '../../../hooks/useAuth';
+import useInput from '../../../hooks/useInput';
+import useMutate from '../../../hooks/useMutate';
+import InputUtils from '../../../utils/InputUtils';
 
-const LoginInput = () => {
-  const { signin, handleAuthInput } = useAuth();
+const LoginInput = ({}) => {
+  const initialInput = InputUtils.initialSignin;
+  const { inputValue, handleInput, initInput } = useInput(initialInput);
+  const { handleMutation } = useMutate('signin', 'post', inputValue, initInput);
+
   return (
     <Box>
       <Input
         label="이메일"
         type="email"
         name="email"
-        value={signin.email}
+        size="large"
+        value={inputValue.email}
         placeholder="이메일을 입력해주세요"
-        onChange={handleAuthInput}
+        onChange={handleInput}
       />
       <Input
         label="비밀번호"
         type="password"
         name="password"
-        value={signin.password}
+        size="large"
+        value={inputValue.password}
         placeholder="비밀번호를 입력해주세요"
-        onChange={handleAuthInput}
+        onChange={handleInput}
+      />
+      <Button
+        size="large"
+        text="SIGN IN"
+        onClick={handleMutation}
+        disabled={!InputUtils.signIn(inputValue)}
+        margin="auth"
       />
     </Box>
   );

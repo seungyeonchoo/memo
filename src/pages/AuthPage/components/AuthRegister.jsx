@@ -1,13 +1,10 @@
 import styled from 'styled-components';
-import useToggle from '../../../hooks/useToggle';
 
-const AuthRegister = () => {
-  const { authToggle, handleAuthToggle } = useToggle();
-  const moveTo = authToggle ? '로그인' : '회원가입';
-  const message = authToggle ? '이미 계정이 있으신가요?' : '아직 계정이 없으신가요?';
+const AuthRegister = ({ onClick, toggle }) => {
   return (
     <Box>
-      {message} <Button onClick={handleAuthToggle}>{moveTo} 화면으로</Button>
+      {toggle ? '이미 계정이 있으신가요?' : '아직 계정이 없으신가요?'}{' '}
+      <Button onClick={onClick}>{toggle ? '로그인' : '회원가입'} 화면으로</Button>
     </Box>
   );
 };

@@ -1,0 +1,202 @@
+{
+  "users": [
+    {
+      "email": "admin@admin.com",
+      "password": "$2a$10$W.7Rtf9ld5BpCLYt966QjO6wmeeJKVx39aFrJx4igcMDEj95KPxty",
+      "password_confirm": true,
+      "name": "admin",
+      "id": 1
+    },
+    {
+      "email": "cos4338@gmail.com",
+      "password": "$2a$10$eHmrR4Zwf8sAvdhf0ewhS.B2jTNa119gQR6Exqgw5nK4ghGlxOjRW",
+      "password_confirm": true,
+      "name": "추승연",
+      "id": 2
+    },
+    {
+      "email": "css@css.com",
+      "password": "$2a$10$XvYV4vu.u2JrPd0EZkDUhOCGncJQrmw44a5OcqnTMXCR4WLDFy20y",
+      "password_confirm": "tmddus12",
+      "name": "tmddus",
+      "id": 3
+    },
+    {
+      "email": "coo4338@naver.com",
+      "password": "$2a$10$MIBMuLdt0u7t0f/LSN6RiOKsHNi2pHkGSbdbMJvNmeLuFl/ZuzXDG",
+      "password_confirm": "tmddus12",
+      "name": "tmddus",
+      "id": 4
+    }
+  ],
+  "goals": [
+    {
+      "due_date": "2023-02-22",
+      "goal_name": "주1회 외식",
+      "description": "주1회 외식",
+      "userId": 1,
+      "date": "2023-01-18",
+      "is_public": false,
+      "is_complete": false,
+      "repeat": "Weekly",
+      "done": [
+        "2023-01 week3",
+        "2023-01-19",
+        "2023-01 week4",
+        "2023-01-24",
+        "2023-01 week5",
+        "2023-01-30"
+      ],
+      "id": 2
+    },
+    {
+      "due_date": "2023-03-31",
+      "goal_name": "금주",
+      "description": "no more alcohol",
+      "userId": 1,
+      "date": "2023-01-19",
+      "is_public": false,
+      "is_complete": false,
+      "repeat": "Daily",
+      "done": [
+        "2023-01-18",
+        "2023-01-23",
+        "2023-01-23",
+        "2023-01-24",
+        "2023-01-24",
+        "2023-01-25",
+        "2023-01-25",
+        "2023-01-28",
+        "2023-01-28",
+        "2023-01-30",
+        "2023-01-30"
+      ],
+      "id": 3
+    },
+    {
+      "due_date": "2023-03-22",
+      "goal_name": "코딩테스트",
+      "description": "1일 5문제 풀기",
+      "userId": 2,
+      "date": "2023-01-19",
+      "is_public": false,
+      "is_complete": false,
+      "repeat": "Daily",
+      "done": [
+        "2023-01-19",
+        "2023-01-19",
+        "2023-01-20",
+        "2023-01-20"
+      ],
+      "id": 4
+    },
+    {
+      "due_date": "2023-03-31",
+      "goal_name": "절약",
+      "description": "아껴쓰기",
+      "userId": 2,
+      "date": "2023-01-19",
+      "is_public": false,
+      "is_complete": false,
+      "repeat": "Daily",
+      "done": [
+        "2023-01-19",
+        "2023-01-19",
+        "2023-01-20",
+        "2023-01-20"
+      ],
+      "id": 5
+    },
+    {
+      "due_date": "2023-03-22",
+      "goal_name": "코딩테스트",
+      "description": "1일 5문제 풀기",
+      "userId": 1,
+      "date": "2023-01-28",
+      "is_public": false,
+      "is_complete": false,
+      "repeat": "Daily",
+      "done": [
+        "2023-01-19",
+        "2023-01-19",
+        "2023-01-20",
+        "2023-01-20",
+        "2023-01-28",
+        "2023-01-28",
+        "2023-01-30",
+        "2023-01-30"
+      ],
+      "id": 6
+    }
+  ],
+  "groups": [],
+  "groupGoals": [],
+  "diaries": [
+    {
+      "date": "",
+      "contents": "안녕하세여\n첫번째 일기 입니다.",
+      "userId": "2",
+      "id": 1
+    },
+    {
+      "date": "",
+      "contents": "asdasda",
+      "userId": "2",
+      "id": 2
+    },
+    {
+      "date": "2023-01-19",
+      "contents": "asfasf",
+      "userId": "2",
+      "id": 3
+    },
+    {
+      "date": "2023-01-19",
+      "contents": "asdasda",
+      "userId": "2",
+      "id": 4
+    },
+    {
+      "date": "2023-01-19",
+      "contents": "asdad",
+      "userId": 2,
+      "id": 5
+    },
+    {
+      "date": "2023-01-19",
+      "contents": "asfasfaf",
+      "userId": 2,
+      "id": "2023-01-19_2"
+    },
+    {
+      "date": "2023-01-22",
+      "contents": "테스트",
+      "userId": 1,
+      "id": 6
+    },
+    {
+      "date": "2023-01-22",
+      "contents": "ㅁㄴㅇ",
+      "userId": 1,
+      "id": 7
+    },
+    {
+      "date": "2023-01-24",
+      "contents": "ssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshd ssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshdssakfjhalskfhakhfkjahsfjkahfkjahfkjahfkjahsfksafjksafsafsafafasfafafasfaasdasdhakshd",
+      "userId": 1,
+      "id": 8
+    },
+    {
+      "date": "2023-01-28",
+      "contents": "다이오리",
+      "userId": 1,
+      "id": 9
+    },
+    {
+      "date": "2023-01-30",
+      "contents": "1. 금주 성공\n2. 코딩테스트 다섯 문제 풀이 완료\n3. 외식은 안했는데 할거",
+      "userId": 1,
+      "id": 10
+    }
+  ]
+}

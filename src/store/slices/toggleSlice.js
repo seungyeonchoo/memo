@@ -3,47 +3,35 @@ import { createSlice } from '@reduxjs/toolkit';
 const toggleSlice = createSlice({
   name: 'toggle',
   initialState: {
-    authToggle: false,
-    createGoalToggle: false,
-    editGoalToggle: false,
-    sortToggle: false,
-    filterToggle: false,
-    detailToggle: { toggle: false, goal: null },
+    createToggle: false,
+    editToggle: false,
+    detailToggle: false,
+    sideToggle: false,
   },
   reducers: {
-    authToggleChange: state => {
-      state.authToggle = !state.authToggle;
+    createToggleChange: state => {
+      state.createToggle = !state.createToggle;
     },
-    createGoalToggleChange: state => {
-      state.createGoalToggle = !state.createGoalToggle;
+    editToggleChange: state => {
+      state.editToggle = !state.editToggle;
     },
-    editGoalToggleChange: state => {
-      state.editGoalToggle = !state.editGoalToggle;
+    sideToggleChange: state => {
+      state.sideToggle = !state.sideToggle;
     },
-    sortToggleChange: state => {
-      state.sortToggle = !state.sortToggle;
-    },
-    filterToggleChange: state => {
-      state.filterToggle = !state.filterToggle;
-    },
-    detailToggleChange: (state, action) => {
-      if (!state.detailToggle.toggle && !state.detailToggle.goal) {
-        state.detailToggle.toggle = !state.detail.toggle;
-        state.detailToggle.goal = action.payload;
-      }
-
-      if (state.detailToggle.toggle) state.detailToggle.goal = action.payload;
+    // detailToggleChange: (state, action) => {
+    //   if (!action) state.detailToggle._toggle = !state.detailToggle._toggle;
+    //   else {
+    //     state.detailToggle._toggle = !state.detailToggle._toggle;
+    //     state.detailToggle.goal = action.payload;
+    //   }
+    // },
+    detailToggleChange: state => {
+      state.detailToggle = !state.detailToggle;
     },
   },
 });
 
-export const {
-  authToggleChange,
-  createGoalToggleChange,
-  editGoalToggleChange,
-  sortToggleChange,
-  filterToggleChange,
-  detailToggleChange,
-} = toggleSlice.actions;
+export const { createToggleChange, editToggleChange, detailToggleChange, sideToggleChange } =
+  toggleSlice.actions;
 
 export default toggleSlice.reducer;

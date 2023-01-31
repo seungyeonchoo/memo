@@ -10,7 +10,7 @@ const AppRouter = () => {
       <Header />
       <Routes>
         <Route path="/main" element={<MainPage />} />
-        <Route path="/user/:id" element={<UserPage />} />
+        <Route path="/users/:id" element={<UserPage />} />
       </Routes>
       <Footer />
     </>

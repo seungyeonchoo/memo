@@ -1,17 +1,15 @@
-import { TOKEN_KEY } from './constant';
-
-const TOKEN_STORAGE = localStorage;
+const TOKEN_STORAGE = sessionStorage;
 const USER_STORAGE = sessionStorage;
 
 class TokenStorage {
   setToken = token => {
-    TOKEN_STORAGE.setItem(TOKEN_KEY, token);
+    TOKEN_STORAGE.setItem('ACCESS_TOKEN', token);
   };
   getToken = () => {
-    return TOKEN_STORAGE.getItem(TOKEN_KEY);
+    return TOKEN_STORAGE.getItem('ACCESS_TOKEN');
   };
   removeToken = () => {
-    TOKEN_STORAGE.removeItem(TOKEN_KEY);
+    TOKEN_STORAGE.removeItem('ACCESS_TOKEN');
   };
 }
 
@@ -28,6 +26,11 @@ export class UserStorage {
   getName = () => {
     return USER_STORAGE.getItem('user_name');
   };
+  removeId = () => {
+    USER_STORAGE.removeItem('user_id');
+  };
 }
+
+export const user_id = new UserStorage().getId();
 
 export default TokenStorage;

@@ -1,11 +1,7 @@
 import styled from 'styled-components';
-import useToggle from '../../../hooks/useToggle';
 
-const AuthTitle = () => {
-  const { authToggle } = useToggle();
-  const message = authToggle ? '회원가입' : '로그인';
-
-  return <TitleText>{message}</TitleText>;
+const AuthTitle = ({ toggle }) => {
+  return <TitleText>{toggle ? '회원가입' : '로그인'}</TitleText>;
 };
 
 export default AuthTitle;
